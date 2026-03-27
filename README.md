@@ -1,75 +1,67 @@
-**Hi, I'm Nambo-Ade and I am DATA curious**
+# Hi, I'm Nambo-Ade, and I am DATA curious
 
-*This repo contains the INDEX OF SOME OF MY FAVORITE DIGITAL PROJECTS.*
-I LIKE WHEN DIGITAL AND REAL LIFE ARE CONNECTED, I'LL SHOW YOU IN EACH REPOSITORY.
-I LIKE TOO WHEN DIGITAL PROJECT ARE SCALABLE AND FRUGAL ON THEIR IMPACT ON ENVIRONMENT, THAT WHY I STORE SOME DATASETS AND SOURCES LOCALLY TO AVOIRD UPCHARGED DATA CENTERS, BUT YOU CAN ASK ME IF YOU WANT.
-I USE DATA TO AUTOMATE AND FACILITATE PROJECTS, IN PROJECT MANEGEMNT, FINANCE, DEVELOPEMENT OR CREATIVTY
+> **My Philosophy:** I love when the digital and real life are connected. I also believe digital projects should be scalable and frugal regarding their environmental impact. That is why I store some datasets locally to avoid upcharged, energy-heavy data centers (feel free to ask me for access!). 
 
-[PLACEHOLDER FOR MY PHOTO]
+I use data to automate and facilitate decision-making across Project Management, Finance, Development, and Creativity. This repository acts as the **Index of my favorite digital projects.**
 
+<div align="center">
+  <!-- REPLACE THE LINK BELOW WITH YOUR ACTUAL PHOTO URL -->
+  <img src="https://via.placeholder.com/200x200.png?text=Photo+of+Nambo-Ade" alt="Nambo-Ade" style="border-radius: 50%; width: 200px; height: 200px;">
+</div>
 
-## Tools
-- Python
-- Marimo
-- SQL...
+**Bio**: Data enthusiast bridging the digital and physical worlds. Passionate about sustainable tech, finance, and applying data analytics to diverse fields from botany to medieval history. 
+
+**Website**: https://adeline-hub.github.io/adeline-hub/  
+
+---
+
+## 🛠️ Tools & Environment
+*   **Languages & Libraries:** Python, SQL, Marimo
+*   **Environment:** PowerShell CLI, GitHub Actions
+
+---
+
+## 📂 Project Index
+
+### 🌍 Sustainability & Impact
+*   [**`danki-impact-scoring`**](link_to_repo): [One sentence explanation].
+*   [**`data-feminism`**](link_to_repo): [One sentence explanation].
+*   [**`municipal-posters-watch`**](link_to_repo): [One sentence explanation].
+*   [**`feminine-kinship`**](link_to_repo): [One sentence explanation].
+*   [**`greencircle-territory`**](link_to_repo): [One sentence explanation regarding VC and Territory].
+*   [**`marseille-corruption-perils`**](link_to_repo): [One sentence explanation regarding Blockchain].
+
+### 💼 Finance & Investments
+*   [**`circular-energy-fund`**](link_to_repo): [One sentence explanation regarding Blockchain and PM].
+*   [**`investment-tracker`**](link_to_repo): [One sentence explanation].
+*   [**`proptech-dashboard-render`**](link_to_repo): [One sentence explanation].
+*   [**`financial-feasibility-simulator`**](link_to_repo): [One sentence explanation].
+*   [**`finance-management`**](link_to_repo): [One sentence explanation].
+*   [**`python-finance-dashboard`**](link_to_repo): Building custom dashboards with Python instead of traditional BI tools for better flexibility.
+*   [**`business-deck-app`**](link_to_repo): An automation app for generating business decks.
+
+### 🌱 Botanist Data (Connecting Digital to Physical)
+*   [**`citrus-water-supply`**](link_to_repo): [One sentence explanation].
+*   [**`citrus-dashboard-render`**](link_to_repo): [One sentence explanation].
+*   [**`citrus-watering-automation`**](link_to_repo): [One sentence explanation].
+
+### 📜 Medievalism & History
+*   [**`medieval-poetess-analysis`**](link_to_repo): Analyzing the intensity of their verses.
+*   [**`medieval-monastic-mapping`**](link_to_repo): Mapping geographical and historical monastic data.
+*   [**`dei-projects`**](link_to_repo): Pick your value and god.
+
+### 📊 Data Visualization & Learning
+*   [**`dubois-challenge-2005`**](link_to_repo): [One sentence explanation].
+*   [**`30-day-chart-challenge`**](link_to_repo): [One sentence explanation].
+*   [**`feminist-data-literacy-mooc`**](link_to_repo): [One sentence explanation].
+*   [**`genetics-analysis`**](link_to_repo): [One sentence explanation].
+*   [**`seasonal-dash-template`**](link_to_repo): Template and CLI setup for seasonal dashboards.
+
+---
+
+## 📬 How to Reach Me
+I am always open to discussing frugal tech, data pipelines, or exciting job opportunities!
+*   **LinkedIn:** [Adeline](https://linkedin.com/in/yourprofile)
+*   **Portfolio / Webpage:** [adeline-Hub Pages](https://adeline-hub.github.io/adeline-hub)
+*   **Email:** [Email](mailto:nambona@pm.me)
   
-**Setting Up My Environment**
-- Power Shell CLI fan ordirectly to GitHUB
-- 
-## Machine Learning
-
-## Sustainability
-**Impact scoring**
-- one sentence explanation
-**Data Feminism**
-- one sentence explanation
-**Affiches municipales watch**
-- one sentence explanation
-**feminine_kinship**
-- feminine_kinship
-
-## Project Management
-**circular-energy-fund**
-- one sentence explanation
-**Investments track**
-- one sentence explanation
-- 
-## Investments
-**circular-energy-fund**
-- one sentence explanation
-**Investments track**
-- one sentence explanation
-**Investments track**
-- one sentence explanation
-**Investments track**
-- one sentence explanation
-  
-## Finance
-**Finance management**
-- one sentence explanation
-**Dahboard**
-- I find it more fun whit python that POWER BI or TABLEAU .. one sentence explanation
-**business-deck-app**
-- automation app ...one sentence explanation
-
-- 
-## Medievalism
-**medieval_poetess**
-- intensity of their verses ...one sentence explanation
-**medieval_monastic_mapping**
-- intensity of their verses ...one sentence explanation
-**medieval_poetess**
-- intensity of their verses ...one sentence explanation
-    
-## Botanist
-**Citrus watering**
-- one sentence explanation
-
-## DataViz 
-**duboischallenge2005**
-- one sentence explanation
-**30DayChartChallenge**
-- intensity of their verses ...one sentence explanation
-
-INSPIRATION 
-https://ssp3nc3r.github.io/post/
