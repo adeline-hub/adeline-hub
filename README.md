@@ -21,45 +21,53 @@ I use data to automate and facilitate decision-making across Project Management,
 
 ---
 
-## 📂 Project Index
-
-### 🌍 Sustainability & Impact
-*   [**`danki-impact-scoring`**](link_to_repo): [One sentence explanation].
-*   [**`data-feminism`**](link_to_repo): [One sentence explanation].
-*   [**`municipal-posters-watch`**](link_to_repo): [One sentence explanation].
-*   [**`feminine-kinship`**](link_to_repo): [One sentence explanation].
-*   [**`greencircle-territory`**](link_to_repo): [One sentence explanation regarding VC and Territory].
-*   [**`marseille-corruption-perils`**](link_to_repo): [One sentence explanation regarding Blockchain].
-
-### 💼 Finance & Investments
-*   [**`circular-energy-fund`**](link_to_repo): [One sentence explanation regarding Blockchain and PM].
-*   [**`investment-tracker`**](link_to_repo): [One sentence explanation].
-*   [**`proptech-dashboard-render`**](link_to_repo): [One sentence explanation].
-*   [**`financial-feasibility-simulator`**](link_to_repo): [One sentence explanation].
-*   [**`finance-management`**](link_to_repo): [One sentence explanation].
-*   [**`python-finance-dashboard`**](link_to_repo): Building custom dashboards with Python instead of traditional BI tools for better flexibility.
-*   [**`business-deck-app`**](link_to_repo): An automation app for generating business decks.
-
-### 🌱 Botanist Data (Connecting Digital to Physical)
-*   [**`citrus-water-supply`**](link_to_repo): [One sentence explanation].
-*   [**`citrus-dashboard-render`**](link_to_repo): [One sentence explanation].
-*   [**`citrus-watering-automation`**](link_to_repo): [One sentence explanation].
-
-### 📜 Medievalism & History
-*   [**`medieval-poetess-analysis`**](link_to_repo): Analyzing the intensity of their verses.
-*   [**`medieval-monastic-mapping`**](link_to_repo): Mapping geographical and historical monastic data.
-*   [**`dei-projects`**](link_to_repo): Pick your value and god.
-
-### 📊 Data Visualization & Learning
-*   [**`dubois-challenge-2005`**](link_to_repo): [One sentence explanation].
-*   [**`30-day-chart-challenge`**](link_to_repo): [One sentence explanation].
-*   [**`feminist-data-literacy-mooc`**](link_to_repo): [One sentence explanation].
-*   [**`genetics-analysis`**](link_to_repo): [One sentence explanation].
-*   [**`seasonal-dash-template`**](link_to_repo): Template and CLI setup for seasonal dashboards.
+## Teaching & Mentorship
+I am thrilled to share my passion for data and frugal tech by teaching others. 
+*   **[Insert Course Name Here]** at **[Insert School/Platform/Organization Here]**
+    *   **Focus:** [E.g., Teaching students how to build sustainable data pipelines and connect digital analytics to real-world applications.]
+    *   **Course Material:** [Link to the syllabus, course repo, or website if you have one]
 
 ---
 
-## 📬 How to Reach Me
+## Project Index
+
+### Sustainability & Impact
+*   [**`danki-impact-scoring`**](link_to_repo): A custom framework built to calculate and evaluate the environmental and social impact scores of various projects.
+*   [**`data-feminism`**](link_to_repo): Data explorations and visualizations inspired by the intersectional principles of Data Feminism.
+*   [**`municipal-posters-watch`**](link_to_repo): Scraping and analyzing municipal poster data to monitor local political messaging and community focus.
+*   [**`feminine-kinship`**](link_to_repo): Mapping and analyzing historical networks of feminine relationships and societal impact.
+*   [**`greencircle-territory`**](link_to_repo): Analyzing venture capital distribution and its environmental impact across different geographical territories.
+*   [**`marseille-corruption-perils`**](link_to_repo): Leveraging blockchain technology to transparently track data related to corruption and systemic risks in Marseille.
+
+### 💼 Finance & Investments
+*   [**`circular-energy-fund`**](link_to_repo): A blockchain-enabled tracking system for managing, auditing, and organizing circular energy fund investments.
+*   [**`investment-tracker`**](link_to_repo): A locally-hosted, scalable tool to monitor investment portfolios and track financial performance.
+*   [**`proptech-dashboard-render`**](link_to_repo): A deployed data visualization dashboard analyzing trends in the real estate technology (PropTech) market.
+*   [**`financial-feasibility-simulator`**](link_to_repo): An interactive simulator built to forecast the financial viability and risk of new ventures.
+*   [**`finance-management`**](link_to_repo): Automated data pipelines and scripts for tracking financial health efficiently.
+*   [**`python-finance-dashboard`**](link_to_repo): A lightweight financial dashboard built entirely in Python, proving that coding is more fun and flexible than heavy BI tools like Tableau.
+*   [**`business-deck-app`**](link_to_repo): An automated application designed to rapidly generate data-driven business pitch decks.
+
+### Botanist Data (Connecting Digital to Physical)
+*   [**`citrus-water-supply`**](link_to_repo): A data-driven model analyzing water consumption and supply optimization for citrus groves.
+*   [**`citrus-dashboard-render`**](link_to_repo): A live dashboard visualizing environmental metrics to monitor citrus plant health.
+*   [**`citrus-watering-automation`**](link_to_repo): An IoT and data-connected script that automates the physical watering schedule of citrus plants based on real-time data.
+
+### Medievalism & History
+*   [**`medieval-poetess-analysis`**](link_to_repo): Applying data analysis to measure the emotional and linguistic intensity of verses written by medieval poetesses.
+*   [**`medieval-monastic-mapping`**](link_to_repo): Geospatial mapping of historical monastic sites to visualize their distribution and historical influence.
+*   [**`dei-projects`**](link_to_repo): A historical data exploration linking medieval deities, societal values, and ancient power structures.
+
+### Data Visualization & Learning
+*   [**`dubois-challenge-2005`**](link_to_repo): Modern data visualizations inspired by the historical W.E.B. Du Bois visualization challenge.
+*   [**`30-day-chart-challenge`**](link_to_repo): A collection of diverse, daily data visualizations created for the global 30DayChartChallenge.
+*   [**`feminist-data-literacy-mooc`**](link_to_repo): Coursework and data sets focusing on intersectional feminism and ethics in data science.
+*   [**`genetics-analysis`**](link_to_repo): Analyzing complex genetic datasets to uncover biological patterns using Python.
+*   [**`seasonal-dash-template`**](link_to_repo): A reusable CLI-generated dashboard template designed for tracking seasonal project metrics.
+
+---
+
+## How to Reach Me
 I am always open to discussing frugal tech, data pipelines, or exciting job opportunities!
 *   **LinkedIn:** [Adeline](https://linkedin.com/in/yourprofile)
 *   **Portfolio / Webpage:** [adeline-Hub Pages](https://adeline-hub.github.io/adeline-hub)
