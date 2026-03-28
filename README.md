@@ -33,7 +33,7 @@ I am thrilled to share my passion for data and frugal tech by teaching others.
 
 ### Sustainability & Impact
 *   [**`danki-impact-scoring`**](link_to_repo): A custom framework built to calculate and evaluate the environmental and social impact scores of various projects.
-*   [**`data-feminism`**]([link_to_repo](https://github.com/adeline-hub/data-feminism)): Data explorations and visualizations inspired by the intersectional principles of Data and Feminism.
+*   [**`data-feminism`**](https://github.com/adeline-hub/data-feminism): Data explorations and visualizations inspired by the intersectional principles of Data and Feminism.
 *   [**`municipal-posters-watch`**](link_to_repo): Scraping and analyzing municipal poster data to monitor local political messaging and community focus.
 *   [**`feminine-kinship`**](link_to_repo): Mapping and analyzing historical networks of feminine relationships and societal impact.
 *   [**`greencircle-territory`**](link_to_repo): Analyzing venture capital distribution and its environmental impact across different geographical territories.
