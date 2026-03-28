@@ -50,7 +50,7 @@ I am thrilled to share my passion for data and frugal tech by teaching others.
 
 ### Botanist Data (Connecting Digital to Physical)
 *   [**`citrus-water-supply`**](https://github.com/adeline-hub/citrus-water-supply): How much water do your Citrus trees need according to  temperature, soil, etc. *Test the App.*
-*   [**`citrus-dashboard-render`**](https://github.com/adeline-hub/citrus-dashboard-render): A live dashboard visualizing environmental metrics to monitor citrus plant health.
+*   [**`citrus-dashboard-render`**](https://github.com/adeline-hub/citrus-dashboard-render): A dashboard visualizing geopolitics of citrus plant, *scalable to agro projects*.
 *   [**`citrus-watering-automation`**](link_to_repo): An IoT and data-connected script that automates the physical watering schedule of citrus plants based on real-time data.
 
 ### Medievalism & History
