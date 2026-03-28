@@ -67,6 +67,11 @@ I am thrilled to share my passion for data and frugal tech by teaching others.
 *   [**`seasonal-dash-template`**](link_to_repo): A reusable CLI-generated dashboard template designed for tracking seasonal project metrics.
 
 ---
+## Gallery 
+
+
+
+---
 
 ## How to Reach Me
 I am always open to discussing frugal tech, data pipelines, or exciting job opportunities!
