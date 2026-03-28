@@ -63,7 +63,7 @@ I am thrilled to share my passion for data and frugal tech by teaching others.
 *   [**`dubois-challenge-2005`**](link_to_repo): Modern data visualizations inspired by the historical W.E.B. Du Bois visualization challenge.
 *   [**`30-day-chart-challenge`**](link_to_repo): A collection of diverse, daily data visualizations created for the global 30DayChartChallenge.
 *   [**`feminist-data-literacy-mooc`**](link_to_repo): Coursework and data sets focusing on intersectional feminism and ethics in data science.
-*   [**`genetics-analysis`**](link_to_repo): Analyzing complex genetic datasets to uncover biological patterns using Python.
+*   [**`genetic-triangulation`**](https://github.com/adeline-hub/genetic-triangulation): Analyzing complex genetic datasets to uncover biological patterns using Python.
 *   [**`seasonal-dash-template`**](link_to_repo): A reusable CLI-generated dashboard template designed for tracking seasonal project metrics.
 
 ---
