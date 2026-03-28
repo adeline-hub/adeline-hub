@@ -47,7 +47,7 @@ I am thrilled to share my passion for data and frugal tech by teaching others.
 *   [**`finance-management`**](link_to_repo): Automated data pipelines and scripts for tracking financial health efficiently.
 *   [**`python-finance-dashboard`**](link_to_repo): A lightweight financial dashboard built entirely in Python, proving that coding is more fun and flexible than heavy BI tools like Tableau.
 *   [**`business-deck-app`**](link_to_repo): An automated application designed to rapidly generate data-driven business pitch decks.
-*   [**`danki_financial_feasibility_simulator`**](link_to_repo): App published on Render to quickly Project your financial future: Scenarios, Cash Flow, and Statements.
+*   [**`danki_financial_feasibility_simulator`**](https://github.com/adeline-hub/danki_financial_feasibility_simulator): App published on Render to quickly Project your financial future: Scenarios, Cash Flow, and Statements.
 
 ### Botanist Data (Connecting Digital to Physical)
 *   [**`citrus-water-supply`**](https://github.com/adeline-hub/citrus-water-supply): How much water do your Citrus trees need according to  temperature, soil, etc. *Test the App.*
