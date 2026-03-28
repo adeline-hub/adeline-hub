@@ -76,10 +76,10 @@ Check out my latest projects below. Click on any image to view the repository an
     <!-- PROJECT 1: GENETIC TRIANGULATION -->
     <td align="center" width="50%">
       <a href="https://github.com/adeline-hub/genetic-triangulation">
-        <img src="https://via.placeholder.com/400x250.png?text=Screenshot+of+DNA+App" width="100%" alt="Genetic Triangulation App"/>
+        <img src="https://github.com/adeline-hub/genetic-triangulation/blob/main/assets/Tringulation-toolkitv1.png?raw=true?text=Screenshot+of+DNA+App" width="100%" alt="Genetic Triangulation App"/>
       </a>
       <br />
-      <b>🧬 Genetic Triangulation Toolkit</b>
+      <b> Genetic Triangulation Toolkit</b>
       <br />
       <i>Dash, Plotly, Pandas</i>
     </td>
@@ -90,7 +90,7 @@ Check out my latest projects below. Click on any image to view the repository an
         <img src="https://via.placeholder.com/400x250.png?text=Screenshot+of+Danki+App" width="100%" alt="Danki Financial Simulator"/>
       </a>
       <br />
-      <b>💶 Danki Financial Simulator</b>
+      <b> Danki Financial Simulator</b>
       <br />
       <i>Python, Business Logic, Plotly</i>
     </td>
