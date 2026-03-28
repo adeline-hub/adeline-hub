@@ -49,7 +49,7 @@ I am thrilled to share my passion for data and frugal tech by teaching others.
 *   [**`business-deck-app`**](link_to_repo): An automated application designed to rapidly generate data-driven business pitch decks.
 
 ### Botanist Data (Connecting Digital to Physical)
-*   [**`citrus-water-supply`**](link_to_repo): A data-driven model analyzing water consumption and supply optimization for citrus groves.
+*   [**`citrus-water-supply`**](https://github.com/adeline-hub/citrus-water-supply): A data-driven model analyzing water consumption and supply optimization for citrus groves.
 *   [**`citrus-dashboard-render`**](link_to_repo): A live dashboard visualizing environmental metrics to monitor citrus plant health.
 *   [**`citrus-watering-automation`**](link_to_repo): An IoT and data-connected script that automates the physical watering schedule of citrus plants based on real-time data.
 
