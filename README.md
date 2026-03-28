@@ -6,7 +6,7 @@ I use data to automate and facilitate decision-making across Project Management,
 
 <div align="center">
   <!-- REPLACE THE LINK BELOW WITH YOUR ACTUAL PHOTO URL -->
-  <img src="https://github.com/adeline-hub/adeline-hub/blob/main/profile-navy-pc.png?raw=true" alt="Nambo-Ade" style="border-radius: 50%; width: 200px; height: 200px;">
+  <img src="https://github.com/adeline-hub/adeline-hub/blob/main/profile-navy-pc.png?raw=true" alt="Nambo-Ade" style="border-radius: 50%; width: 300px; height: 200px;">
 </div>
 
 **Bio**: Data enthusiast bridging the digital and physical worlds. Passionate about sustainable tech, finance, and applying data analytics to diverse fields from botany to medieval history. 
