@@ -76,7 +76,7 @@ Check out my latest projects below. Click on any image to view the repository an
     <!-- PROJECT 1: GENETIC TRIANGULATION -->
     <td align="center" width="50%">
       <a href="https://github.com/adeline-hub/genetic-triangulation">
-        <img src="https://github.com/adeline-hub/genetic-triangulation/blob/main/assets/Tringulation-toolkitv1.png?raw=true?text=Screenshot+of+DNA+App" width="25%" alt="Genetic Triangulation App"/>
+        <img src="https://github.com/adeline-hub/genetic-triangulation/blob/main/assets/Tringulation-toolkitv1.png?raw=true?text=Screenshot+of+DNA+App" width="50%" alt="Genetic Triangulation App"/>
       </a>
       <br />
       <b> Genetic Triangulation Toolkit</b>
@@ -86,7 +86,7 @@ Check out my latest projects below. Click on any image to view the repository an
     <!-- PROJECT 2: DANKI FINANCIAL SIMULATOR -->
     <td align="center" width="50%">
       <a href="https://github.com/adeline-hub/YOUR_DANKI_REPO_NAME">
-        <img src="https://github.com/adeline-hub/danki_financial_feasibility_simulator/blob/main/Capture%20d%E2%80%99%C3%A9cran.png?raw=true" width="25%" alt="Danki Financial Simulator"/>
+        <img src="https://github.com/adeline-hub/danki_financial_feasibility_simulator/blob/main/Capture%20d%E2%80%99%C3%A9cran.png?raw=true" width="50%" alt="Danki Financial Simulator"/>
       </a>
       <br />
       <b> Danki Financial Simulator</b>
