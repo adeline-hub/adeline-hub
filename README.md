@@ -69,6 +69,33 @@ I am thrilled to share my passion for data and frugal tech by teaching others.
 ---
 ## Gallery 
 
+Check out my latest projects below. Click on any image to view the repository and code!
+
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <!-- PROJECT 1: GENETIC TRIANGULATION -->
+    <td align="center" width="50%">
+      <a href="https://github.com/adeline-hub/genetic-triangulation">
+        <img src="https://via.placeholder.com/400x250.png?text=Screenshot+of+DNA+App" width="100%" alt="Genetic Triangulation App"/>
+      </a>
+      <br />
+      <b>🧬 Genetic Triangulation Toolkit</b>
+      <br />
+      <i>Dash, Plotly, Pandas</i>
+    </td>
+
+    <!-- PROJECT 2: DANKI FINANCIAL SIMULATOR -->
+    <td align="center" width="50%">
+      <a href="https://github.com/adeline-hub/YOUR_DANKI_REPO_NAME">
+        <img src="https://via.placeholder.com/400x250.png?text=Screenshot+of+Danki+App" width="100%" alt="Danki Financial Simulator"/>
+      </a>
+      <br />
+      <b>💶 Danki Financial Simulator</b>
+      <br />
+      <i>Python, Business Logic, Plotly</i>
+    </td>
+  </tr>
+</table>
 
 
 ---
