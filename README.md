@@ -16,7 +16,7 @@ I use data to automate and facilitate decision-making across Project Management,
 ---
 
 ## Tools & Environment
-*   **Languages & Libraries:** Python, SQL, Marimo, Dash, Render
+*   **Languages & Libraries:** Python, SQL, Marimo, Dash, Render, Quarto
 *   **Environment:** PowerShell CLI, GitHub Actions
 
 ---
@@ -94,15 +94,26 @@ Check out my latest projects below. Click on any image to view the repository an
       <i>Python, Business Logic, Plotly</i>
     </td>
   </tr>
-      <!-- PROJECT 3: CIRCULAR ENERGT FUND -->
+      <!-- PROJECT 3: CIRCULAR ENERGY FUND -->
     <td align="center" width="50%">
       <a href="https://github.com/adeline-hub/circular-energy-fund">
         <img src="https://github.com/adeline-hub/circular-energy-fund/blob/main/circularnrj.png?raw=true" width="75%" alt="Danki Financial Simulator"/>
       </a>
       <br />
-      <b> CIRCULAR ENERGT FUND</b>
+      <b> CIRCULAR ENERGY FUND</b>
       <br />
       <i>Python, Business Logic, Plotly</i>
+    </td>
+  </tr>
+      <!-- PROJECT 4: DANKI IMPACT SCORING -->
+    <td align="center" width="50%">
+      <a href="https://github.com/adeline-hub/danki-impact-scoring">
+        <img src="https://github.com/adeline-hub/danki-impact-scoring/blob/main/danki-impact-scoring2.png?raw=true" width="75%" alt="Danki Financial Simulator"/>
+      </a>
+      <br />
+      <b> DANKI IMPACT SCORING </b>
+      <br />
+      <i>Python, ESG, Investment, Quarto</i>
     </td>
   </tr>
 </table>
