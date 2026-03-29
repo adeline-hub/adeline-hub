@@ -40,13 +40,13 @@ I am thrilled to share my passion for data and frugal tech by teaching others.
 *   [**`marseille-corruption-perils`**](link_to_repo): Leveraging blockchain technology to transparently track data related to corruption and systemic risks in Marseille.
 
 ### Finance & Investments
-*   [**`circular-energy-fund`**](link_to_repo): A blockchain-enabled tracking system for managing, auditing, and organizing circular energy fund investments.
+*   [**`circular-energy-fund`**](https://github.com/adeline-hub/circular-energy-fund): A blockchain-enabled tracking system for managing, auditing, and organizing circular energy fund investments. https://circular-energy-fund.onrender.com/
 *   [**`investment-tracker`**](link_to_repo): A locally-hosted, scalable tool to monitor investment portfolios and track financial performance.
 *   [**`proptech-dashboard-render`**](link_to_repo): A deployed data visualization dashboard analyzing trends in the real estate technology (PropTech) market.
 *   [**`financial-feasibility-simulator`**](link_to_repo): An interactive simulator built to forecast the financial viability and risk of new ventures.
 *   [**`finance-management`**](link_to_repo): Automated data pipelines and scripts for tracking financial health efficiently.
 *   [**`python-finance-dashboard`**](link_to_repo): A lightweight financial dashboard built entirely in Python, proving that coding is more fun and flexible than heavy BI tools like Tableau.
-*   [**`business-deck-app`**](link_to_repo): An automated application designed to rapidly generate data-driven business pitch decks.
+*   [**`business-deck-app`**](https://github.com/adeline-hub/business-deck-app): An automated document management system [DMS] application designed to rapidly generate data-driven business pitch decks.
 *   [**`danki_financial_feasibility_simulator`**](https://github.com/adeline-hub/danki_financial_feasibility_simulator): App published on Render to quickly Project your financial future: Scenarios, Cash Flow, and Statements.
 
 ### Botanist Data (Connecting Digital to Physical)
@@ -86,6 +86,17 @@ Check out my latest projects below. Click on any image to view the repository an
     <!-- PROJECT 2: DANKI FINANCIAL SIMULATOR -->
     <td align="center" width="50%">
       <a href="https://github.com/adeline-hub/danki_financial_feasibility_simulator/">
+        <img src="https://github.com/adeline-hub/danki_financial_feasibility_simulator/blob/main/Capture%20d%E2%80%99%C3%A9cran.png?raw=true" width="75%" alt="Danki Financial Simulator"/>
+      </a>
+      <br />
+      <b> Danki Financial Simulator</b>
+      <br />
+      <i>Python, Business Logic, Plotly</i>
+    </td>
+  </tr>
+      <!-- PROJECT 3: CIRCULAR ENERGT FUND -->
+    <td align="center" width="50%">
+      <a href="https://github.com/adeline-hub/circular-energy-fund">
         <img src="https://github.com/adeline-hub/danki_financial_feasibility_simulator/blob/main/Capture%20d%E2%80%99%C3%A9cran.png?raw=true" width="75%" alt="Danki Financial Simulator"/>
       </a>
       <br />
