@@ -56,7 +56,7 @@ I am thrilled to share my passion for data and frugal tech by teaching others.
 
 ### Medievalism & History
 *   [**`medieval-poetess-analysis`**](link_to_repo): Applying data analysis to measure the emotional and linguistic intensity of verses written by medieval poetesses.
-*   [**`medieval-monastic-mapping`**](link_to_repo): Geospatial mapping of historical monastic sites to visualize their distribution and historical influence.
+*   [**`medieval-monastic-mapping`**](https://github.com/adeline-hub/medieval_monastic_mapping): Geospatial mapping of historical monastic sites to visualize their distribution and historical influence.
 *   [**`dei-projects`**](link_to_repo): A historical data exploration linking medieval deities, societal values, and ancient power structures.
 
 ### Data Visualization & Learning
