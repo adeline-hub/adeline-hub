@@ -79,7 +79,7 @@ Check out my latest projects below. Click on any image to view the repository an
         <img src="https://github.com/adeline-hub/genetic-triangulation/blob/main/assets/Tringulation-toolkitv1.png?raw=true?text=Screenshot+of+DNA+App" width="75%" alt="Genetic Triangulation App"/>
       </a>
       <br />
-      <b> Genetic Triangulation Toolkit</b>
+      <b> GENETIC TRIANGULATION</b>
       <br />
       <i>Dash, Plotly, Pandas</i>
     </td>
@@ -89,7 +89,7 @@ Check out my latest projects below. Click on any image to view the repository an
         <img src="https://github.com/adeline-hub/danki_financial_feasibility_simulator/blob/main/Capture%20d%E2%80%99%C3%A9cran.png?raw=true" width="75%" alt="Danki Financial Simulator"/>
       </a>
       <br />
-      <b> Danki Financial Simulator</b>
+      <b> DANKI FINANCIAL SIMULATOR</b>
       <br />
       <i>Python, Business Logic, Plotly</i>
     </td>
@@ -97,10 +97,10 @@ Check out my latest projects below. Click on any image to view the repository an
       <!-- PROJECT 3: CIRCULAR ENERGT FUND -->
     <td align="center" width="50%">
       <a href="https://github.com/adeline-hub/circular-energy-fund">
-        <img src="https://github.com/adeline-hub/danki_financial_feasibility_simulator/blob/main/Capture%20d%E2%80%99%C3%A9cran.png?raw=true" width="75%" alt="Danki Financial Simulator"/>
+        <img src="https://github.com/adeline-hub/circular-energy-fund/blob/main/circularnrj.png?raw=true" width="75%" alt="Danki Financial Simulator"/>
       </a>
       <br />
-      <b> Danki Financial Simulator</b>
+      <b> CIRCULAR ENERGT FUND</b>
       <br />
       <i>Python, Business Logic, Plotly</i>
     </td>
