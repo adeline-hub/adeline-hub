@@ -60,7 +60,7 @@ I am thrilled to share my passion for data and frugal tech by teaching others.
 *   [**`dei-projects`**](link_to_repo): A historical data exploration linking medieval deities, societal values, and ancient power structures.
 
 ### Data Visualization & Learning
-*   [**`dubois-challenge-2005`**](link_to_repo): Modern data visualizations inspired by the historical W.E.B. Du Bois visualization challenge.
+*   [**`dubois-challenge-2005`**](https://github.com/adeline-hub/duboischallenge2005): Modern data visualizations inspired by the historical W.E.B. Du Bois visualization challenge. https://adeline-hub.github.io/duboischallenge2005/
 *   [**`30-day-chart-challenge`**](link_to_repo): A collection of diverse, daily data visualizations created for the global 30DayChartChallenge.
 *   [**`feminist-data-literacy-mooc`**](link_to_repo): Coursework and data sets focusing on intersectional feminism and ethics in data science.
 *   [**`genetic-triangulation`**](https://github.com/adeline-hub/genetic-triangulation): Analyzing complex genetic datasets to uncover biological patterns using Python.
