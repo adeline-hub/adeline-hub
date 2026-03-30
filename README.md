@@ -1,8 +1,9 @@
 # Hi, I'm Nambo, and I am DATA curious
 
-> **My Philosophy:** I love when the digital and real life are connected. I also believe digital projects should be scalable and frugal regarding their environmental impact. That is why I store some datasets locally to avoid upcharged, energy-heavy data centers (feel free to ask me for access!). 
+> **My Philosophy:** I love it when the digital world and real life intersect. I also believe digital projects should be scalable and mindful of their environmental impact. That is why I store some datasets locally to avoid overpriced, energy-intensive data centers (feel free to ask me for access!). 
 
-I use data to automate and facilitate decision-making across Project Management, Finance, Development, and Creativity. This repository acts as the **Index of my favorite digital projects.**
+I use data to automate and facilitate decision-making across Project Management, Finance, Development, and Creative projects. This repository acts as the **index of my favorite digital projects.**
+My ultimate goal is to optimize my time online while still getting answers from sources I trust, using data I have analyzed and interpreted myself.
 
 <div align="center">
   <!-- REPLACE THE LINK BELOW WITH YOUR ACTUAL PHOTO URL -->
