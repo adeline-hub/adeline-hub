@@ -1,4 +1,4 @@
-# Hi, I'm Nambo-Ade, and I am DATA curious
+# Hi, I'm Nambo, and I am DATA curious
 
 > **My Philosophy:** I love when the digital and real life are connected. I also believe digital projects should be scalable and frugal regarding their environmental impact. That is why I store some datasets locally to avoid upcharged, energy-heavy data centers (feel free to ask me for access!). 
 
