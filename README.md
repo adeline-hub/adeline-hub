@@ -14,17 +14,8 @@ My ultimate goal is to optimize my time online while still getting answers from 
 ---
 
 ## Tools & Environment
-*   **Languages & Libraries:** Python, SQL, Marimo, Dash, Render, Quarto
+*   **Languages & Libraries:** Python, SQL, Marimo, Dash, Render, Quarto, Excel
 *   **Environment:** PowerShell CLI, GitHub Actions
-
----
-
-## Teaching & Mentorship
-I am thrilled to share my passion for data and frugal tech by teaching others. 
-*   **[Insert Course Name Here]** at **[Insert School/Platform/Organization Here]**
-    *   **Focus:** [E.g., Teaching students how to build sustainable data pipelines and connect digital analytics to real-world applications.]
-    *   **Course Material:** [Link to the syllabus, course repo, or website if you have one]
-
 ---
 
 ## Project Index
