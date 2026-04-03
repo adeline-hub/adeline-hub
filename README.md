@@ -107,18 +107,18 @@ Check out my latest projects below. Click on any image to view the repository an
     </td>
   </tr>
         <!-- PROJECT 4: MEDIEVAL MONASTIC MAPPING -->
-    <td align="center" width="50%">
+    <td align="center" width="40%">
       <a href="https://adeline-hub.github.io/medieval_monastic_mapping">
         <img src="https://github.com/adeline-hub/adeline-hub/blob/main/assets/monastic-camino.png?raw=true" width="75%" alt="Danki Financial Simulator"/>
       </a>
       <br />
       <b> MEDIEVAL MONASTIC MAPPING</b>
       <br />
-      <i>Python, ESG Logic, Plotly, Quarto, D3JS</i>
+      <i>Python, ESG Logic, Plotly, Quarto, D3.js</i>
     </td>
   </tr>
       <!-- PROJECT 5: DANKI IMPACT SCORING -->
-    <td align="center" width="50%">
+    <td align="center" width="40%">
       <a href="https://github.com/adeline-hub/danki-impact-scoring">
         <img src="https://github.com/adeline-hub/danki-impact-scoring/blob/main/danki-impact-scoring2.png?raw=true" width="75%" alt="Danki Financial Simulator"/>
       </a>
