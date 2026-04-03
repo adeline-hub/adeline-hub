@@ -281,7 +281,7 @@
         <!-- LEFT COLUMN (Smaller Articles) -->
         <div class="side-col">
             
-            <a href="https://circular-energy-fund.onrender.com/" target="_blank" class="article-card">
+            <a href="https://circular-energy-fund.onrender.com/" target="_blank" class="article-card" data-category="finance">
                 <div class="img-placeholder img-standard"></div>
                 <div class="tag-container">
                     <span class="tag" style="border-color: var(--neon-green); color: var(--neon-green);">FINANCE</span>
@@ -292,7 +292,7 @@
 
             <div class="divider"></div>
 
-            <a href="https://adeline-hub.github.io/duboischallenge2005/" target="_blank" class="article-card">
+            <a href="https://adeline-hub.github.io/duboischallenge2005/" target="_blank" class="article-card"  data-category="impact">
                 <div class="img-placeholder img-standard"></div>
                 <div class="tag-container">
                     <span class="tag">DATAVIZ</span>
@@ -317,7 +317,7 @@
         <!-- CENTER COLUMN (The Main Hero Story) -->
         <div class="main-col">
             
-            <a href="https://adeline-hub.github.io/medieval_monastic_mapping/" target="_blank" class="article-card">
+            <a href="https://adeline-hub.github.io/medieval_monastic_mapping/" target="_blank" class="article-card" data-category="history">
                 <!-- Large Vertical Image Placeholder -->
                 <div class="img-placeholder img-hero"></div>
                 
@@ -374,5 +374,38 @@
 
     </main>
 
+    <!-- MAGIC FILTER SCRIPT -->
+    <script>
+        const buttons = document.querySelectorAll('.filter-btn');
+        const articles = document.querySelectorAll('.article-card');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault(); // Stops the page from jumping to the top
+
+                // 1. Remove the neon green underline from all buttons
+                buttons.forEach(btn => btn.classList.remove('active'));
+                
+                // 2. Add the neon green underline to the clicked button
+                button.classList.add('active');
+
+                // 3. Find out which category was clicked
+                const filter = button.getAttribute('data-filter');
+
+                // 4. Loop through all articles and hide/show them
+                articles.forEach(article => {
+                    if (filter === 'all' || article.getAttribute('data-category') === filter) {
+                        article.style.display = 'flex'; // Show it
+                        // Add a tiny animation effect
+                        article.style.opacity = '0';
+                        setTimeout(() => article.style.opacity = '1', 50);
+                        article.style.transition = 'opacity 0.4s ease';
+                    } else {
+                        article.style.display = 'none'; // Hide it
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
