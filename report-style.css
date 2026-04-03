@@ -1,0 +1,315 @@
+/* ============================================
+   .DANKI BRAND 2026 - GREEN IT COMPLIANT
+   Medieval Monastic Audit — Unified Stylesheet
+   ============================================ */
+
+/* ---- Variables ---- */
+:root {
+  --danki-vert: #33FFA2;
+  --danki-violet: #FF33FF;
+  --danki-charbon: #121212;
+  --danki-gris: #737373;
+  --danki-blanc: #FFFFFF;
+  --danki-fond: #1A1A1A;
+  --danki-carte: #222222;
+  --danki-radius: 8px;
+  --danki-font: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* ============================================
+   1. BASE
+   ============================================ */
+
+body {
+  font-family: var(--danki-font);
+  background-color: var(--danki-fond);
+  color: var(--danki-blanc);
+  line-height: 1.7;
+  font-size: 0.95em;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+h1 { color: var(--danki-vert); font-size: 1.8em; }
+h2 { color: var(--danki-blanc); font-size: 1.4em; }
+h3 { color: var(--danki-gris); font-size: 1.1em; }
+
+a {
+  color: var(--danki-vert);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom 0.2s;
+}
+
+a:hover {
+  border-bottom: 1px solid var(--danki-vert);
+}
+
+p {
+  max-width: 100%; /* Prevent overflow on small screens was max-width: 75ch; */
+  margin-bottom: 1em;
+}
+
+strong {
+  color: var(--danki-blanc);
+}
+
+/* ============================================
+   2. LAYOUT
+   ============================================ */
+
+.page-layout-full .content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* ============================================
+   3. NAVBAR (Quarto Override)
+   ============================================ */
+
+.navbar {
+  background-color: var(--danki-charbon) !important;
+  border-bottom: 1px solid var(--danki-gris);
+}
+
+.navbar-brand {
+  color: var(--danki-vert) !important;
+  font-weight: 700;
+}
+
+.navbar-nav .nav-link {
+  color: var(--danki-blanc) !important;
+  font-size: 0.85em;
+  transition: color 0.2s;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--danki-vert) !important;
+}
+
+.navbar-nav .nav-link.active {
+  color: var(--danki-violet) !important;
+}
+
+/* ============================================
+   4. CARDS (Profile, Order, ESG)
+   ============================================ */
+
+.profile-card,
+.order-card,
+.esg-panel,
+.sisters-panel,
+.timeline-panel {
+  background-color: var(--danki-carte);
+  border: 1px solid var(--danki-gris);
+  border-radius: var(--danki-radius);
+  padding: 1.5rem;
+  margin: 1rem 0;
+}
+
+.profile-card h2 {
+  color: var(--danki-vert);
+  margin-top: 0;
+}
+
+.esg-panel h3 {
+  color: var(--danki-violet);
+  margin-top: 0;
+}
+
+.order-card h3 {
+  color: var(--danki-vert);
+  margin-top: 0;
+}
+
+.sisters-panel h3 {
+  color: var(--danki-blanc);
+  margin-top: 0;
+}
+
+.timeline-panel h3 {
+  color: var(--danki-violet);
+  margin-top: 0;
+}
+
+/* ============================================
+   5. TABLES
+   ============================================ */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.9em;
+}
+
+thead {
+  border-bottom: 2px solid var(--danki-vert);
+}
+
+th {
+  text-align: left;
+  padding: 0.6rem;
+  color: var(--danki-gris);
+  font-weight: 600;
+}
+
+td {
+  padding: 0.6rem;
+  border-bottom: 1px solid #333333;
+  color: var(--danki-blanc);
+}
+
+tr:hover {
+  background-color: rgba(51, 255, 162, 0.05);
+}
+
+/* ============================================
+   6. INPUTS (Quarto OJS Selectors)
+   ============================================ */
+
+select,
+input[type="text"],
+input[type="search"] {
+  background-color: var(--danki-charbon);
+  color: var(--danki-blanc);
+  border: 1px solid var(--danki-gris);
+  border-radius: var(--danki-radius);
+  padding: 0.5rem 1rem;
+  font-family: var(--danki-font);
+  font-size: 0.9em;
+  width: 100%;
+  max-width: 400px;
+}
+
+select:focus,
+input:focus {
+  outline: none;
+  border-color: var(--danki-vert);
+  box-shadow: 0 0 0 2px rgba(51, 255, 162, 0.2);
+}
+
+label {
+  color: var(--danki-gris);
+  font-size: 0.85em;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+/* ============================================
+   7. CHARTS (Plotly / OJS Plot Override)
+   ============================================ */
+
+svg text {
+  fill: var(--danki-blanc) !important;
+  font-family: var(--danki-font) !important;
+}
+
+svg line,
+svg path {
+  stroke: var(--danki-gris);
+}
+
+/* ============================================
+   8. CODE BLOCKS
+   ============================================ */
+
+pre {
+  background-color: var(--danki-charbon);
+  border: 1px solid #333333;
+  border-radius: var(--danki-radius);
+  padding: 1rem;
+  overflow-x: auto;
+  font-size: 0.85em;
+}
+
+code {
+  color: var(--danki-vert);
+  font-size: 0.9em;
+}
+
+/* ============================================
+   9. TOC (Table of Contents Override)
+   ============================================ */
+
+.sidebar nav[role="doc-toc"] a {
+  color: var(--danki-gris);
+  font-size: 0.85em;
+}
+
+.sidebar nav[role="doc-toc"] a:hover {
+  color: var(--danki-vert);
+}
+
+.sidebar nav[role="doc-toc"] a.active {
+  color: var(--danki-violet);
+  border-left: 2px solid var(--danki-violet);
+}
+
+/* ============================================
+   10. BANDS (ESG Score Visualization)
+   ============================================ */
+
+.band-dark-green { color: #00C853; }
+.band-green { color: #33FFA2; }
+.band-amber { color: #FFD600; }
+.band-red { color: #FF1744; }
+
+/* ============================================
+   11. RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+  .page-layout-full .content {
+    padding: 1rem;
+  }
+
+  table {
+    font-size: 0.8em;
+  }
+
+  select,
+  input {
+    max-width: 100%;
+  }
+
+  h1 { font-size: 1.4em; }
+  h2 { font-size: 1.2em; }
+}
+
+/* ============================================
+   12. PRINT (PDF Export)
+   ============================================ */
+
+@media print {
+  body {
+    background-color: white;
+    color: black;
+  }
+
+  .navbar,
+  .sidebar {
+    display: none;
+  }
+
+  .profile-card,
+  .order-card,
+  .esg-panel,
+  .sisters-panel,
+  .timeline-panel {
+    background-color: white;
+    border: 1px solid #cccccc;
+  }
+
+  a { color: black; }
+  h1 { color: black; }
+  code { color: #333333; }
+}
