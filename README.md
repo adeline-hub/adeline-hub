@@ -68,75 +68,10 @@ I am thrilled to share my passion for data and frugal tech by teaching others.
 *   [**`seasonal-dash-template`**](link_to_repo): A reusable CLI-generated dashboard template designed for tracking seasonal project metrics.
 
 ---
-## Gallery 
-
-Check out my latest projects below. Click on any image to view the repository and code!
-
-<table border="0" cellpadding="0" cellspacing="0">
-  <tr>
-    <!-- PROJECT 1: GENETIC TRIANGULATION -->
-    <td align="center" width="50%">
-      <a href="https://github.com/adeline-hub/genetic-triangulation">
-        <img src="https://github.com/adeline-hub/genetic-triangulation/blob/main/assets/Tringulation-toolkitv1.png?raw=true?text=Screenshot+of+DNA+App" width="75%" alt="Genetic Triangulation App"/>
-      </a>
-      <br />
-      <b> GENETIC TRIANGULATION</b>
-      <br />
-      <i>Dash, Plotly, Pandas</i>
-    </td>
-    <!-- PROJECT 2: DANKI FINANCIAL SIMULATOR -->
-    <td align="center" width="50%">
-      <a href="https://github.com/adeline-hub/danki_financial_feasibility_simulator/">
-        <img src="https://github.com/adeline-hub/danki_financial_feasibility_simulator/blob/main/Capture%20d%E2%80%99%C3%A9cran.png?raw=true" width="75%" alt="Danki Financial Simulator"/>
-      </a>
-      <br />
-      <b> DANKI FINANCIAL SIMULATOR</b>
-      <br />
-      <i>Python, Business Logic, Plotly</i>
-    </td>
-  </tr>
-      <!-- PROJECT 3: CIRCULAR ENERGY FUND -->
-    <td align="center" width="50%">
-      <a href="https://github.com/adeline-hub/circular-energy-fund">
-        <img src="https://github.com/adeline-hub/circular-energy-fund/blob/main/circularnrj.png?raw=true" width="75%" alt="Danki Financial Simulator"/>
-      </a>
-      <br />
-      <b> CIRCULAR ENERGY FUND</b>
-      <br />
-      <i>Python, Business Logic, Plotly</i>
-    </td>
-  </tr>
-        <!-- PROJECT 4: MEDIEVAL MONASTIC MAPPING -->
-    <td align="center" width="40%">
-      <a href="https://adeline-hub.github.io/medieval_monastic_mapping">
-        <img src="https://github.com/adeline-hub/adeline-hub/blob/main/assets/monastic-camino.png?raw=true" width="75%" alt="Danki Financial Simulator"/>
-      </a>
-      <br />
-      <b> MEDIEVAL MONASTIC MAPPING</b>
-      <br />
-      <i>Python, ESG Logic, Plotly, Quarto, D3.js</i>
-    </td>
-  </tr>
-      <!-- PROJECT 5: DANKI IMPACT SCORING -->
-    <td align="center" width="40%">
-      <a href="https://github.com/adeline-hub/danki-impact-scoring">
-        <img src="https://github.com/adeline-hub/danki-impact-scoring/blob/main/danki-impact-scoring2.png?raw=true" width="75%" alt="Danki Financial Simulator"/>
-      </a>
-      <br />
-      <b> DANKI IMPACT SCORING </b>
-      <br />
-      <i>Python, ESG, Investment, Quarto</i>
-    </td>
-  </tr>
-  
-</table>
-
-
----
 
 ## How to Reach Me
 I am always open to discussing frugal tech, data pipelines, or exciting job opportunities!
-*   **LinkedIn:** [Adeline](https://linkedin.com/in/yourprofile)
+*   **LinkedIn:** [Adeline](https://linkedin.com/in/adeline-navy)
 *   **Portfolio / Webpage:** [adeline-Hub Pages](https://adeline-hub.github.io/adeline-hub)
 *   **Email:** [Email](mailto:nambona@pm.me)
   
