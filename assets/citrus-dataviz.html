@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Global Orchard | Data Humanism</title>
+    
+    <!-- D3.js Library -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    
+    <!-- Google Fonts for Poetic Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            /* Deep, dark oceanic water background */
+            background-color: #06111C; 
+            color: #E2E8F0;
+            font-family: 'Lora', serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        #dataviz-container {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            height: 90vh;
+        }
+
+        .title-box {
+            position: absolute;
+            top: 40px;
+            left: 50px;
+            max-width: 400px;
+        }
+
+        h1 {
+            font-family: 'Caveat', cursive;
+            font-size: 3.5rem;
+            color: #FFAA33;
+            margin: 0 0 10px 0;
+            font-weight: 400;
+            letter-spacing: 2px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #94A3B8;
+            margin: 0;
+            font-style: italic;
+        }
+
+        .annotation {
+            font-family: 'Caveat', cursive;
+            font-size: 1.2rem;
+            fill: #E2E8F0;
+        }
+
+        /* SVG Glows and Filters */
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="dataviz-container">
+        <div class="title-box">
+            <h1>Citrus Water Supply</h1>
+        </div>
+        <div id="chart"></div>
+    </div>
+
+    <script>
+        // 1. SYNTHETIC DATA (Top Citrus Producers)
+        // production: Millions of tonnes
+        // water_footprint: Liters of water per kg of fruit
+        const data = [
+            { country: "Brazil", lat: -14.235, lon: -51.925, production: 19.3, water_footprint: 550, type: "Orange", color: "#FF8C00" },
+            { country: "China", lat: 35.861, lon: 104.195, production: 28.0, water_footprint: 400, type: "Mandarin", color: "#FFB02E" },
+            { country: "USA (Florida)", lat: 27.766, lon: -81.686, production: 7.4, water_footprint: 750, type: "Grapefruit", color: "#FF6B6B" },
+            { country: "Spain", lat: 39.326, lon: -4.838, production: 6.8, water_footprint: 900, type: "Lemon", color: "#FFD700" },
+            { country: "Mexico", lat: 23.634, lon: -102.552, production: 8.4, water_footprint: 600, type: "Lime", color: "#32CD32" },
+            { country: "India", lat: 20.593, lon: 78.962, production: 12.0, water_footprint: 850, type: "Lemon", color: "#FFD700" },
+            { country: "South Africa", lat: -30.559, lon: 22.937, production: 3.3, water_footprint: 1050, type: "Orange", color: "#FF8C00" },
+            { country: "Egypt", lat: 26.820, lon: 30.802, production: 4.5, water_footprint: 1200, type: "Orange", color: "#FF8C00" }
+        ];
+
+        // 2. SETUP SVG
+        const container = document.getElementById("dataviz-container");
+        const width = container.clientWidth;
+        const height = container.clientHeight;
+
+        const svg = d3.select("#chart")
+            .append("svg")
+            .attr("width", width)
+            .attr("height", height);
+
+        // 3. DEFS: Rind Texture, Glows, and Gradients
+        const defs = svg.append("defs");
+
+        // The glowing orange gradient for the "Earth"
+        const orangeGradient = defs.append("radialGradient")
+            .attr("id", "orange-gradient")
+            .attr("cx", "40%")
+            .attr("cy", "40%")
+            .attr("r", "60%");
+        orangeGradient.append("stop").attr("offset", "0%").attr("stop-color", "#FFB75E");
+        orangeGradient.append("stop").attr("offset", "80%").attr("stop-color", "#E85D04");
+        orangeGradient.append("stop").attr("offset", "100%").attr("stop-color", "#9D0208");
+
+        // SVG Filter to create the porous "Orange Rind" texture
+        const rindFilter = defs.append("filter").attr("id", "rind-texture");
+        rindFilter.append("feTurbulence")
+            .attr("type", "fractalNoise")
+            .attr("baseFrequency", "0.5")
+            .attr("numOctaves", "3")
+            .attr("result", "noise");
+        rindFilter.append("feColorMatrix")
+            .attr("type", "matrix")
+            .attr("values", "1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.15 0") // Low opacity noise
+            .attr("in", "noise")
+            .attr("result", "coloredNoise");
+        rindFilter.append("feBlend")
+            .attr("mode", "multiply")
+            .attr("in", "SourceGraphic")
+            .attr("in2", "coloredNoise");
+
+        // 4. THE GLOBE (THE ORANGE)
+        // Orthographic creates a 3D sphere look. We rotate it to show the Atlantic (Americas + Europe/Africa)
+        const projection = d3.geoOrthographic()
+            .scale(minDimensions() * 0.4)
+            .translate([width / 2, height / 2 + 50])
+            .rotate([20, -10, 0]); // Rotated to show Brazil, Spain, USA, Africa beautifully
+
+        const path = d3.geoPath().projection(projection);
+
+        function minDimensions() { return Math.min(width, height); }
+
+        // Draw the textured Orange (Earth)
+        svg.append("path")
+            .datum({type: "Sphere"})
+            .attr("d", path)
+            .attr("fill", "url(#orange-gradient)")
+            .attr("filter", "url(#rind-texture)")
+            .attr("stroke", "#6A040F")
+            .attr("stroke-width", 2);
+
+        // Optional: Faint graticule (latitude/longitude lines) to look like citrus segments
+        svg.append("path")
+            .datum(d3.geoGraticule()())
+            .attr("d", path)
+            .attr("fill", "none")
+            .attr("stroke", "#FFBA08")
+            .attr("stroke-opacity", 0.15)
+            .attr("stroke-width", 1);
+
+        // 5. DATA HUMANISM GENERATORS (The Hand-drawn Glyphs)
+        
+        // Generator for a squiggly "Water Root" line
+        function generateRoot(length) {
+            let points = [[0, 0]];
+            let currentY = 0;
+            while(currentY < length) {
+                currentY += 10 + Math.random() * 15;
+                let xOffset = (Math.random() - 0.5) * 15; // Squiggle left/right
+                points.push([xOffset, currentY > length ? length : currentY]);
+            }
+            const lineGen = d3.line().curve(d3.curveBasis);
+            return lineGen(points);
+        }
+
+        // Generator for an organic "Leaf" path
+        function generateLeaf(radius) {
+            // Draws an imperfect teardrop/leaf shape
+            return `M 0,0 C ${radius},${-radius} ${radius/2},${-radius*2} 0,${-radius*2} C ${-radius/2},${-radius*2} ${-radius},${-radius} 0,0 Z`;
+        }
+
+        // 6. DRAWING THE GLYPHS ON THE GLOBE
+        // We only draw nodes that are visible on this side of the 3D sphere
+        const visibleData = data.filter(d => {
+            const coords = projection([d.lon, d.lat]);
+            return coords != null; // True if on the front of the globe
+        });
+
+        const glyphs = svg.selectAll(".glyph")
+            .data(visibleData)
+            .enter()
+            .append("g")
+            .attr("class", "glyph")
+            .attr("transform", d => `translate(${projection([d.lon, d.lat])})`);
+
+        // A. Draw the Roots (Water Footprint)
+        glyphs.append("path")
+            .attr("d", d => generateRoot(d.water_footprint / 10)) // Scale the length
+            .attr("fill", "none")
+            .attr("stroke", "rgba(51, 255, 162, 0.6)") // Danki neon green, transparent
+            .attr("stroke-width", 1.5)
+            .attr("stroke-dasharray", "4, 2"); // Hand-drawn dashed feel
+
+        // B. Draw the Leaves (Production Volume)
+        glyphs.append("path")
+            .attr("d", d => generateLeaf(Math.sqrt(d.production) * 5)) // Size by area
+            .attr("fill", d => d.color)
+            .attr("opacity", 0.85)
+            .attr("stroke", "#FFF")
+            .attr("stroke-width", 0.5)
+            .attr("transform", () => `rotate(${Math.random() * 40 - 20})`); // Organic random tilt
+
+        // C. Draw the Seed (Geographic Point)
+        glyphs.append("circle")
+            .attr("r", 3)
+            .attr("fill", "#06111C")
+            .attr("stroke", "#FFF")
+            .attr("stroke-width", 1);
+
+        // D. Hand-written Annotations
+        glyphs.append("text")
+            .attr("class", "annotation")
+            .attr("x", 15)
+            .attr("y", -10)
+            .text(d => d.country)
+            .attr("transform", "rotate(-10)"); // Slight hand-written slant
+            
+        glyphs.append("text")
+            .attr("class", "annotation")
+            .attr("x", 15)
+            .attr("y", 5)
+            .style("font-size", "0.9rem")
+            .style("fill", "#94A3B8")
+            .text(d => d.type)
+            .attr("transform", "rotate(-10)");
+
+        // 7. THE LUPI-STYLE LEGEND (Bottom Right)
+        const legend = svg.append("g")
+            .attr("transform", `translate(${width - 250}, ${height - 200})`);
+
+        legend.append("text")
+            .attr("font-family", "Caveat")
+            .attr("font-size", "1.5rem")
+            .attr("fill", "#FFF")
+            .text("How to read this tree:");
+
+        // Legend: Leaf
+        legend.append("path")
+            .attr("d", generateLeaf(12))
+            .attr("fill", "#FF8C00")
+            .attr("transform", "translate(20, 40)");
+        legend.append("text")
+            .attr("font-family", "Lora")
+            .attr("font-size", "0.85rem")
+            .attr("fill", "#94A3B8")
+            .attr("x", 45).attr("y", 35)
+            .text("Size = Production Volume");
+        legend.append("text")
+            .attr("font-family", "Lora")
+            .attr("font-size", "0.85rem")
+            .attr("fill", "#94A3B8")
+            .attr("x", 45).attr("y", 50)
+            .text("Color = Citrus Type");
+
+        // Legend: Root
+        legend.append("path")
+            .attr("d", generateRoot(60))
+            .attr("fill", "none")
+            .attr("stroke", "rgba(51, 255, 162, 0.6)")
+            .attr("stroke-width", 1.5)
+            .attr("stroke-dasharray", "4,2")
+            .attr("transform", "translate(20, 60)");
+        legend.append("text")
+            .attr("font-family", "Lora")
+            .attr("font-size", "0.85rem")
+            .attr("fill", "#94A3B8")
+            .attr("x", 45).attr("y", 90)
+            .text("Length = Water Footprint");
+        legend.append("text")
+            .attr("font-family", "Lora")
+            .attr("font-size", "0.75rem")
+            .attr("fill", "#64748B")
+            .attr("x", 45).attr("y", 105)
+            .text("(Liters of water per kg of fruit)");
+
+    </script>
+</body>
+</html>
