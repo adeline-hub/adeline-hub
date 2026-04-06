@@ -16,6 +16,9 @@ My ultimate goal is to optimize my time online while still getting answers from 
 ## Tools & Environment
 *   **Languages & Libraries:** Python, SQL, Marimo, Dash, Render, Quarto, Excel
 *   **Environment:** PowerShell CLI, GitHub Actions
+*  **Ecoconception**: SVG over PNG, colors selection
+
+
 ---
 
 ## Project Index
