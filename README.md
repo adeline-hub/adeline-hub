@@ -62,4 +62,8 @@ I am always open to discussing frugal tech, data pipelines, or exciting job oppo
 *   **LinkedIn:** [Adeline](https://linkedin.com/in/adeline-navy)
 *   **Portfolio / Webpage:** [adeline-Hub Pages](https://adeline-hub.github.io/adeline-hub)
 *   **Email:** [Email](mailto:nambona@pm.me)
-  
+
+---
+
+## General sources 
+- [Référentiel général d'écoconception de services numériques (RGESN)](https://ecoresponsable.numerique.gouv.fr/publications/referentiel-general-ecoconception/)
