@@ -15,7 +15,7 @@ My ultimate goal is to optimize my time online while still getting answers from 
 
 ## Tools & Environment
 *   **Languages & Libraries:** Python, SQL, Marimo, Dash, Render, Quarto, Excel
-*   **Environment:** PowerShell CLI, GitHub Actions, European cloud like Proton for sensible data (GRDO)
+*   **Environment:** PowerShell CLI, GitHub Actions, European cloud like Proton (GRDP/SecNumCloud principles)
 *  **Ecoconception**: SVG over PNG, colors selection
 
 
