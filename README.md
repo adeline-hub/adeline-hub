@@ -1,8 +1,8 @@
 # Hi, I'm Nambo, and I am DATA curious
 
 
-> I use data to automate and facilitate decision-making across Project Management, Finance, Development, and Creative projects. This repository acts as the **index of my favorite digital projects.**
-My ultimate goal is to optimize my time online while still getting answers from sources I trust, using data I have analyzed and interpreted myself.
+> I use data to automate and facilitate decision-making across Project Management, Finance, Development, and Creative projects. And a lot for fun. This repository acts as the **index of my favorite digital projects.**
+Open Data is my main data provider, enriched with personal datasets, somme scraping, NLP or corporate data.
 
 <div align="center">
   <!-- REPLACE THE LINK BELOW WITH YOUR ACTUAL PHOTO URL -->
