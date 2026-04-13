@@ -165,6 +165,51 @@
                 font-size: 2.5rem;
             }
         }
+                /* ==========================================
+           4. TERMINAL CALL TO ACTION
+           ========================================== */
+        .cta-terminal {
+            display: inline-block;
+            margin-top: 2rem;
+            font-family: 'Courier New', Courier, monospace; /* Gives it the code look */
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--neon-green);
+            text-decoration: none;
+            padding: 12px 24px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            background: var(--card-bg);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        .cta-terminal:hover {
+            border-color: var(--neon-green);
+            box-shadow: 0 0 20px rgba(51, 255, 162, 0.15);
+            transform: translateY(-3px);
+            color: var(--text-main);
+        }
+
+        /* The blinking block cursor */
+        .cursor {
+            display: inline-block;
+            width: 10px;
+            height: 1.2rem;
+            background-color: var(--neon-green);
+            vertical-align: text-bottom;
+            margin-left: 4px;
+            animation: blink 1s step-end infinite;
+        }
+
+        .cta-terminal:hover .cursor {
+            background-color: var(--text-main);
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
     </style>
 </head>
 <body>
@@ -197,13 +242,41 @@
         </div>
     </header>
 
+
     <!-- MAIN ABOUT CONTENT -->
     <main class="about-container">
-        <h1 class="about-title">nambona adeline</h1>
+        <h1 class="about-title">Nambona Adeline</h1>
         <p class="about-interests">
             Data Feminism <span>•</span> Medieval History <span>•</span> Financial Analytics <span>•</span> Impact & Sustainability
         </p>
+        
+        <!-- NEW TERMINAL BUTTON -->
+        <a href="mailto:hello@dankistudio.com" class="cta-terminal">
+            <span id="typing-text"></span><span class="cursor"></span>
+        </a>
+        
     </main>
 
+    <!-- TYPING EFFECT SCRIPT -->
+    <script>
+        // 1. Put the function you chose here!
+        const textToType = "> initiate_collaboration()";
+        
+        const typeTarget = document.getElementById("typing-text");
+        let i = 0;
+
+        function typeWriter() {
+            if (i < textToType.length) {
+                typeTarget.innerHTML += textToType.charAt(i);
+                i++;
+                // 2. Adjust typing speed here (lower number = faster)
+                setTimeout(typeWriter, 100); 
+            }
+        }
+
+        // Start typing 0.5 seconds after the page loads
+        setTimeout(typeWriter, 500);
+    </script>
+    
 </body>
 </html>
