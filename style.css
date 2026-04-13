@@ -1,0 +1,22 @@
+/* Add this to your existing CSS */
+.global-nav {
+    display: flex;
+    gap: 2rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+.global-nav a {
+    color: var(--text-muted);
+}
+.global-nav a:hover, .global-nav a.current-page {
+    color: var(--text-main);
+}
+.filter-nav {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 2rem;
+    font-size: 0.85rem;
+    /* ... keep your existing nav styles here ... */
+}
