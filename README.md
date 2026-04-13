@@ -1,4 +1,4 @@
-# Hi, I'm Nambo, and I am DATA curious
+# Hi, I'm Nambo [Ade], and I am DATA curious
 
 
 > I use data to automate and facilitate decision-making across Project Management, Finance, Development, and Creative projects. And a lot for fun. This repository acts as the **index of my favorite digital projects.**
