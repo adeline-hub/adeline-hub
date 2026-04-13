@@ -2,46 +2,579 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Data Management | Danki Studio</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Management | .danki studio</title>
+    <link rel="icon" type="image/png" href="assets/favicon.ico">
+    <!-- Import Roboto Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ==========================================
+           1. DANKI BRAND VARIABLES & RESET
+           ========================================== */
+        :root {
+            --bg-charcoal: #121212;
+            --text-main: #FFFFFF;
+            --text-muted: #737373;
+            --neon-green: #33FFA2;
+            --neon-violet: #FF33FF;
+            --card-bg: #1A1A1A;
+            --border-color: #2A2A2A;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-charcoal);
+            color: var(--text-main);
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--neon-green);
+        }
+
+        /* ==========================================
+           2. MAGAZINE HEADER
+           ========================================== */
+        header {
+            padding: 2rem 5%;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            background-color: rgba(18, 18, 18, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap; /* Helps on smaller screens */
+            gap: 1.5rem;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            color: var(--neon-violet);
+        }
+
+        /* --- NEW: GLOBAL NAVIGATION STYLES --- */
+        .global-nav {
+            display: flex;
+            gap: 2rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .global-nav a {
+            color: var(--text-muted);
+            padding-bottom: 5px;
+        }
+
+        .global-nav a:hover {
+            color: var(--text-main);
+        }
+
+        .global-nav a.current-page {
+            color: var(--text-main);
+            border-bottom: 2px solid var(--neon-green);
+        }
+        /* -------------------------------------- */
+
+        /* Social Icons */
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .social-links a svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--text-muted);
+            transition: fill 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-links a:hover svg {
+            fill: var(--neon-green);
+            transform: translateY(-2px);
+        }
+
+        /* Original Filter Navigation */
+        nav {
+            display: flex;
+            gap: 2rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            overflow-x: auto;
+        }
+
+        /* This is for your category filters */
+        nav a.active {
+            border-bottom: 2px solid var(--neon-green);
+            padding-bottom: 5px;
+        }
+
+        /* ==========================================
+           3. MAGAZINE GRID LAYOUT
+           ========================================== */
+        .magazine-container {
+            max-width: 1600px;
+            margin: 3rem auto;
+            padding: 0 5%;
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr; /* Left Col, Center Hero, Right Col */
+            gap: 3rem;
+        }
+
+        /* Column Layouts */
+        .side-col {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .main-col {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ==========================================
+           4. ARTICLE CARDS & TYPOGRAPHY
+           ========================================== */
+        .article-card {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            cursor: pointer;
+        }
+
+        /* Image Placeholders */
+        .img-placeholder {
+            width: 100%;
+            background: linear-gradient(145deg, var(--card-bg), #111);
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.4s ease, border-color 0.4s ease;
+        }
+
+        .article-card:hover .img-placeholder {
+            transform: translateY(-5px);
+            border-color: var(--neon-green);
+            box-shadow: 0 10px 30px rgba(51, 255, 162, 0.05);
+        }
+
+        /* Aspect ratios for different card types */
+        .img-standard { aspect-ratio: 16 / 10; }
+        .img-hero { aspect-ratio: 4 / 5; } /* Tall magazine cover style */
+
+        /* Tags (e.g., NEWS, INSIGHT) */
+        .tag-container {
+            display: flex;
+            gap: 0.8rem;
+        }
+
+        .tag {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 4px 12px;
+            border: 1px solid var(--text-muted);
+            border-radius: 20px;
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        /* Headline Styles */
+        .headline {
+            font-size: 1.4rem;
+            font-weight: 400;
+            line-height: 1.3;
+            margin-top: 0.5rem;
+        }
+
+        .hero-headline {
+            font-size: 2.5rem;
+            font-weight: 500;
+            line-height: 1.2;
+            margin-top: 1rem;
+        }
+
+        .date {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+        }
+
+        /* Divider lines for side columns */
+        .divider {
+            height: 1px;
+            background-color: var(--border-color);
+            margin: 1.5rem 0;
+        }
+
+        /* ==========================================
+           5. RESPONSIVE DESIGN (Mobile/Tablet)
+           ========================================== */
+        @media (max-width: 1100px) {
+            .magazine-container {
+                grid-template-columns: 1fr 1fr;
+            }
+            .main-col {
+                grid-column: span 2;
+                order: -1; /* Puts hero on top */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .magazine-container {
+                grid-template-columns: 1fr;
+            }
+            .main-col {
+                grid-column: span 1;
+            }
+            .hero-headline {
+                font-size: 2rem;
+            }
+            nav {
+                flex-wrap: nowrap;
+            }
+            .header-top {
+                justify-content: center;
+            }
+        }
+                /* ==========================================
+           6. SECONDARY GRID (More Articles)
+           ========================================== */
+        .secondary-section {
+            max-width: 1600px;
+            margin: 4rem auto;
+            padding: 0 5%;
+        }
+
+        .section-header {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .secondary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+    </style>
 </head>
 <body>
 
-    <!-- GLOBAL HEADER -->
+    <!-- MAGAZINE HEADER -->
     <header>
         <div class="header-top">
-            <a href="index.html" class="logo"><span>.</span>danki studio</a>
+            <a href="index.html" class="logo" style="text-decoration: none; color: white;"><span>.</span>danki studio</a>
             
-            <!-- Global Nav: Notice "current-page" is now on Data -->
-            <nav class="global-nav">
+            <!-- NEW MULTI-PAGE NAVIGATION -->
+            <div class="global-nav">
                 <a href="index.html">About</a>
                 <a href="data.html" class="current-page">Data Management</a>
                 <a href="projects.html">Project Management</a>
-            </nav>
-
+            </div>
+            
+            <!-- NEW SOCIAL ICONS -->
             <div class="social-links">
-                <a href="https://github.com/adeline-hub" target="_blank">GitHub</a>
-                <a href="https://www.linkedin.com/in/adeline-navy/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/adeline-hub" target="_blank" aria-label="GitHub">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/adeline-navy/" target="_blank" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                </a>
             </div>
         </div>
         
-        <!-- THEMATIC SELECTION (Your existing filter nav) -->
-        <nav class="filter-nav">
+        <!-- YOUR ORIGINAL THEMATIC FILTER NAV -->
+        <nav>
             <a href="#" class="filter-btn active" data-filter="all">LATEST</a>
             <a href="#" class="filter-btn" data-filter="impact">IMPACT & SUSTAINABILITY</a>
             <a href="#" class="filter-btn" data-filter="finance">FINANCE</a>
-            <!-- Keep rest of your filters -->
+            <a href="#" class="filter-btn" data-filter="history">MEDIEVAL HISTORY</a>
+            <a href="#" class="filter-btn" data-filter="botanist">BOTANIST DATA</a>
         </nav>
     </header>
 
-    <!-- KEEP ALL YOUR EXISTING MAGAZINE GRID CONTENT AND SCRIPT HERE -->
+    <!-- MAGAZINE GRID -->
     <main class="magazine-container">
-       <!-- All your article cards... -->
+
+        <!-- LEFT COLUMN -->
+        <div class="side-col">
+            <a href="https://circular-energy-fund.onrender.com/" target="_blank" class="article-card" data-category="finance">
+                <div class="img-placeholder img-standard">
+                    <img src="https://github.com/adeline-hub/adeline-hub/blob/main/assets/soren-h-omfN1pW-n2Y-unsplash.jpg?raw=true" alt="Photo by Soren H on Unsplash" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="tag-container">
+                    <span class="tag" style="border-color: var(--neon-green); color: var(--neon-green);">FINANCE</span>
+                </div>
+                <h2 class="headline">Blockchain Meets Circular Economy: A New Blueprint for Energy Fund Investments</h2>
+                <div class="date">Live Web App</div>
+            </a>
+            <div class="divider"></div>
+            <a href="https://adeline-hub.github.io/duboischallenge2005/" target="_blank" class="article-card"  data-category="impact">
+                <div class="img-placeholder img-standard">
+                    <img src="https://github.com/adeline-hub/duboischallenge2005/blob/main/2025/5.%20Assessed%20Valuation%20of%20all%20Taxable%20Property%20Owned%20by%20Georgia%20Negroes%20(plate%2022)/WEBduBois_challenge_navy_5.png?raw=true" alt="W.E.B. Du Bois Data Visualization" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="tag-container">
+                    <span class="tag">DATAVIZ</span>
+                    <span class="tag">CHALLENGE</span>
+                </div>
+                <h2 class="headline">Reimagining W.E.B. Du Bois: Data Visualization as a Tool for Historical Justice</h2>
+                <div class="date">Interactive Gallery</div>
+            </a>
+            <div class="divider"></div>
+            <a href="#" class="article-card">
+                <div class="tag-container">
+                    <span class="tag" style="border-color: var(--neon-violet); color: var(--neon-violet);">IMPACT</span>
+                </div>
+                <h2 class="headline">Intersectional Metrics: Applying Data Feminism to Modern Analytics & Society</h2>
+                <div class="date">Research & Data Exploration</div>
+            </a>
+        </div>
+
+        <!-- CENTER COLUMN (The Main Hero Story) -->
+        <div class="main-col">
+            <a href="https://adeline-hub.github.io/medieval_monastic_mapping/" target="_blank" class="article-card" data-category="history">
+                <div class="img-placeholder img-hero">
+                    <img src="https://github.com/adeline-hub/medieval_monastic_mapping/blob/main/docs/img/605905ogrodzenie1.jpg?raw=true" alt="ogrodzenie" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="tag-container" style="margin-top: 1rem;">
+                    <span class="tag" style="border-color: var(--neon-green); color: var(--neon-green);">INSIGHT</span>
+                    <span class="tag">HISTORY</span>
+                </div>
+                <h1 class="hero-headline">The Cartography of Silence: How Medieval Monasteries Shaped European Networks</h1>
+                <div class="date" style="font-size: 1rem; margin-top: 1rem;">
+                    Geospatial mapping and data scrollytelling exploring the distribution and historical influence of monastic sites.
+                </div>
+            </a>
+        </div>
+
+        <!-- RIGHT COLUMN -->
+        <div class="side-col">
+            <a href="https://adeline-hub.github.io/citrus-water-supply/app.html" class="article-card" data-category="botanist">
+                <div class="img-placeholder img-standard">
+                    <img src="https://github.com/adeline-hub/adeline-hub/blob/main/assets/rayia-soderberg-ezSFnAFi9hY-unsplash.jpg?raw=true" alt="Photoby" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="tag-container">
+                    <span class="tag" style="border-color: var(--neon-violet); color: var(--neon-violet);">BOTANIST</span>
+                </div>
+                <h2 class="headline">From Soil to Server: Automating the Geopolitics of Citrus Cultivation</h2>
+                <div class="date">IoT & Dashboard Analytics</div>
+            </a>
+            <div class="divider"></div>
+            <a href="https://github.com/adeline-hub/danki-impact-scoring" class="article-card" data-category="impact">
+                <div class="img-placeholder img-standard">
+                    <img src="https://github.com/adeline-hub/adeline-hub/blob/main/assets/emma-henderson-B645igbiKCw-unsplash.jpg?raw=true" alt="Photo by Emma Henderson on Unsplash" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="tag-container">
+                    <span class="tag">IMPACT</span>
+                </div>
+                <h2 class="headline">Beyond the Balance Sheet: Calculating the True ESG Impact of Venture Capital</h2>
+                <div class="date">Python Scoring Algorithm</div>
+            </a>
+            <div class="divider"></div>
+            <a href="https://github.com/adeline-hub/danki_financial_feasibility_simulator" class="article-card" data-category="finance">
+                <div class="tag-container">
+                    <span class="tag" style="border-color: var(--neon-green); color: var(--neon-green);">FINANCE</span>
+                </div>
+                <h2 class="headline">Forecasting Viability: Building an Interactive Financial Simulator for New Ventures</h2>
+                <div class="date">Locally-Hosted Tool</div>
+            </a>
+        </div>
     </main>
 
-    <!-- Keep your Javascript filter script at the bottom -->
+    <!-- SECONDARY GRID -->
+    <section class="secondary-section">
+        <h3 class="section-header">More Projects & Explorations</h3>
+        <div class="secondary-grid">
+            <a href="#" class="article-card" data-category="impact">
+                <div class="img-placeholder img-standard"></div>
+                <div class="tag-container">
+                    <span class="tag" style="border-color: var(--neon-violet); color: var(--neon-violet);">IMPACT</span>
+                </div>
+                <h2 class="headline" style="font-size: 1.1rem;">Danki Impact Scoring: ESG for Private Equity</h2>
+                <div class="date">Scoring Algorithm</div>
+            </a>
+            <a href="https://feminine-kinship.onrender.com/" class="article-card" data-category="history">
+                <div class="img-placeholder img-standard">
+                     <img src="https://github.com/adeline-hub/adeline-hub/blob/main/assets/ato-aikins-CyjcBJs0uDE-unsplash.jpg?raw=true" alt="Photo by Ato Aikins on Unsplash" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="tag-container">
+                    <span class="tag" style="border-color: var(--neon-green); color: var(--neon-green);">HISTORY</span>
+                </div>
+                <h2 class="headline" style="font-size: 1.1rem;">Feminine Kinship: Mapping Historical Networks</h2>
+                <div class="date">Network Analysis</div>
+            </a>
+            <a href="#" class="article-card" data-category="finance">
+                <div class="img-placeholder img-standard"></div>
+                <div class="tag-container">
+                    <span class="tag">FINANCE</span>
+                </div>
+                <h2 class="headline" style="font-size: 1.1rem;">Python vs Tableau: A Lightweight Financial Dashboard</h2>
+                <div class="date">Python Web App</div>
+            </a>
+            <a href="https://huggingface.co/spaces/AdeYang/municipales-affiches" class="article-card" data-category="impact">
+                <div class="img-placeholder img-standard">
+                    <img src="https://github.com/adeline-hub/adeline-hub/blob/main/assets/affiches.png?raw=true" alt="affiches-municipales" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="tag-container">
+                    <span class="tag" style="border-color: var(--neon-violet); color: var(--neon-violet);">IMPACT</span>
+                </div>
+                <h2 class="headline" style="font-size: 1.1rem;">Municipal Posters Watch: Tracking Local Politics</h2>
+                <div class="date">Web Scraping & NLP</div>
+            </a>
+        </div>
+    </section>
+
+    <!-- SECOND MAGAZINE BLOCK -->
+    <section class="magazine-container">
+        <!-- LEFT COLUMN -->
+        <div class="side-col">
+            <a href="#" class="article-card" data-category="finance">
+                <div class="img-placeholder img-standard"></div>
+                <div class="tag-container">
+                    <span class="tag" style="border-color: var(--neon-green); color: var(--neon-green);">FINANCE</span>
+                </div>
+                <h2 class="headline">PropTech Dashboard: Visualizing Real Estate Tech Trends</h2>
+                <div class="date">Deployed Data Visualization</div>
+            </a>
+            <div class="divider"></div>
+            <a href="#" class="article-card" data-category="impact">
+                <div class="img-placeholder img-standard">
+                    <img src="https://github.com/adeline-hub/adeline-hub/blob/main/assets/caitlin-steinlocke-zjaxdaGW0RA-unsplash.jpg?raw=true" alt="Photo by Caitlin SteinLocke on Unsplash" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="tag-container">
+                    <span class="tag" style="border-color: var(--neon-violet); color: var(--neon-violet);">IMPACT</span>
+                </div>
+                <h2 class="headline">Marseille Corruption Perils: A Blockchain Transparency Tool</h2>
+                <div class="date">Systemic Risk Tracking</div>
+            </a>
+            <div class="divider"></div>
+            <a href="#" class="article-card" data-category="botanist">
+                <div class="tag-container">
+                    <span class="tag">BOTANIST</span>
+                </div>
+                <h2 class="headline">Citrus Dashboard: Visualizing Geopolitics in Agriculture</h2>
+                <div class="date">Interactive App</div>
+            </a>
+        </div>
+
+        <!-- CENTER COLUMN -->
+        <div class="main-col">
+            <a href="#" class="article-card" data-category="impact">
+                <div class="img-placeholder img-hero">
+                    <img src="https://github.com/adeline-hub/adeline-hub/blob/main/assets/lobacheva-ina-8C-Ay69oE9o-unsplash.jpg?raw=true"  alt="Photo by Lobacheva Ina on Unsplash"  style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="tag-container" style="margin-top: 1rem;">
+                    <span class="tag" style="border-color: var(--neon-violet); color: var(--neon-violet);">INSIGHT</span>
+                    <span class="tag">SUSTAINABILITY</span>
+                </div>
+                <h1 class="hero-headline">Data Feminism: Intersectional Principles in Modern Analytics</h1>
+                <div class="date" style="font-size: 1rem; margin-top: 1rem;">
+                    Data explorations and visualizations inspired by the intersectional principles of Data and Feminism.
+                </div>
+            </a>
+        </div>
+
+        <!-- RIGHT COLUMN -->
+        <div class="side-col">
+            <a href="https://adeline-hub.github.io/medieval_poetess/" class="article-card" data-category="history">
+                <div class="img-placeholder img-standard">
+                    <img src="https://github.com/adeline-hub/medieval_poetess/blob/main/assets/alexiade.jpeg?raw=true" alt="alexiade" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="tag-container">
+                    <span class="tag" style="border-color: var(--neon-green); color: var(--neon-green);">HISTORY</span>
+                </div>
+                <h2 class="headline">Medieval Poetesses: Emotional Intensity in Historical Verse</h2>
+                <div class="date">Linguistic Data Analysis</div>
+            </a>
+            <div class="divider"></div>
+            <a href="#" class="article-card" data-category="impact">
+                <div class="img-placeholder img-standard"></div>
+                <div class="tag-container">
+                    <span class="tag">DATAVIZ</span>
+                </div>
+                <h2 class="headline">30-Day Chart Challenge: A Daily Global Data Visualization Diary</h2>
+                <div class="date">Collection & Gallery</div>
+            </a>
+            <div class="divider"></div>
+            <a href="#" class="article-card" data-category="finance">
+                <div class="tag-container">
+                    <span class="tag" style="border-color: var(--neon-green); color: var(--neon-green);">FINANCE</span>
+                </div>
+                <h2 class="headline">Business Deck App: Automated Data-Driven Pitch Generation</h2>
+                <div class="date">DMS Application</div>
+            </a>
+        </div>
+    </section>
+
+    <!-- MAGIC FILTER SCRIPT -->
     <script>
-        // Your existing filter script...
+        const buttons = document.querySelectorAll('.filter-btn');
+        const articles = document.querySelectorAll('.article-card');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault(); 
+                buttons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                const filter = button.getAttribute('data-filter');
+
+                articles.forEach(article => {
+                    if (filter === 'all' || article.getAttribute('data-category') === filter) {
+                        article.style.display = 'flex'; 
+                        article.style.opacity = '0';
+                        setTimeout(() => article.style.opacity = '1', 50);
+                        article.style.transition = 'opacity 0.4s ease';
+                    } else {
+                        article.style.display = 'none'; 
+                    }
+                });
+            });
+        });
     </script>
 </body>
 </html>
