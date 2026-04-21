@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Project | .danki studio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* DANKI BRAND CSS */
+        :root { --bg-charcoal: #121212; --text-main: #FFFFFF; --text-muted: #737373; --neon-green: #33FFA2; --neon-violet: #FF33FF; --card-bg: #1A1A1A; --border-color: #2A2A2A; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--bg-charcoal); color: var(--text-main); font-family: 'Roboto', sans-serif; line-height: 1.6; }
+        a { text-decoration: none; color: inherit; transition: color 0.3s ease; }
+        header { padding: 2rem 5%; border-bottom: 1px solid var(--border-color); position: sticky; top: 0; background: rgba(18, 18, 18, 0.95); z-index: 100; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 2rem; font-weight: 700; text-transform: uppercase; } .logo span { color: var(--neon-violet); }
+        .global-nav { display: flex; gap: 2rem; font-size: 0.9rem; text-transform: uppercase; font-weight: 500; }
+        .global-nav a { color: var(--text-muted); } .global-nav a.current-page { color: var(--text-main); border-bottom: 2px solid var(--neon-green); }
+        
+        /* TEMPLATE SPECIFIC CSS */
+        .content-wrapper { max-width: 900px; margin: 4rem auto; padding: 0 5%; }
+        .page-title { font-size: 2.5rem; margin-bottom: 1rem; line-height: 1.2; }
+        .tag-container { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-bottom: 2rem; }
+        .tag { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; padding: 4px 12px; border: 1px solid var(--text-muted); border-radius: 20px; font-weight: 500; }
+        
+        .img-placeholder { width: 100%; aspect-ratio: 16/9; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 4px; margin-bottom: 3rem; }
+        
+        h3 { color: var(--neon-green); text-transform: uppercase; letter-spacing: 1.5px; font-size: 1rem; margin: 2.5rem 0 1rem 0; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; }
+        p { color: #CCCCCC; margin-bottom: 1.5rem; font-weight: 300; }
+        
+        /* Code Block */
+        pre { background: #0A0A0A; border: 1px solid var(--border-color); border-left: 4px solid var(--neon-violet); padding: 1.5rem; border-radius: 4px; overflow-x: auto; margin-bottom: 2rem; }
+        code { font-family: 'Courier New', Courier, monospace; color: #E0E0E0; font-size: 0.9rem; }
+        
+        .tools-grid { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem; }
+        .tool-badge { background: var(--card-bg); padding: 8px 16px; border-radius: 4px; border: 1px solid var(--border-color); font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo"><span>.</span>danki studio</a>
+        <div class="global-nav"><a href="index.html">About</a><a href="data.html" class="current-page">Data Management</a><a href="projects.html">Project Management</a><a href="insights.html">Insights</a></div>
+    </header>
+
+    <main class="content-wrapper">
+        <div class="tag-container">
+            <span class="tag" style="border-color: var(--neon-violet); color: var(--neon-violet);">DATA ARCHITECTURE</span>
+            <span class="tag" style="border-color: var(--text-main); color: var(--text-main);">FINTECH</span>
+        </div>
+        <h1 class="page-title">Database Architecture Modernization</h1>
+        
+        <div class="img-placeholder">
+            <img src="" alt="Project architecture diagram" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+
+        <h3>Product Manager Synthesis</h3>
+        <p>This project aimed to resolve latency issues in the legacy data pipeline by migrating to a cloud-native architecture. By focusing on data integrity and real-time availability, we reduced processing time by 40%, directly impacting the speed at which the financial modeling team could deploy new algorithms. The solution balances robust backend engineering with seamless frontend analytics.</p>
+
+        <h3>Tools & Technologies Used</h3>
+        <div class="tools-grid">
+            <span class="tool-badge">Python (Pandas, SQLAlchemy)</span>
+            <span class="tool-badge">PostgreSQL</span>
+            <span class="tool-badge">AWS S3 & Redshift</span>
+            <span class="tool-badge">Apache Airflow</span>
+            <span class="tool-badge">Tableau</span>
+        </div>
+
+        <h3>Implementation & Code Snippet</h3>
+        <p>To ensure idempotency in our data transformation layer, we implemented an upsert logic within the ETL pipeline. Below is an abstracted representation of the core data merging function.</p>
+        
+        <pre><code>import pandas as pd
+from sqlalchemy import create_engine
+
+def upsert_financial_data(df_new, table_name, engine):
+    """
+    Upserts new financial records into the target database.
+    Ensures no duplicate transaction IDs are recorded.
+    """
+    # Create temporary table
+    df_new.to_sql('temp_table', engine, if_exists='replace', index=False)
+    
+    # SQL query for conflict resolution (PostgreSQL specific)
+    upsert_query = f"""
+    INSERT INTO {table_name}
+    SELECT * FROM temp_table
+    ON CONFLICT (transaction_id) 
+    DO UPDATE SET 
+        status = EXCLUDED.status,
+        updated_at = CURRENT_TIMESTAMP;
+    """
+    with engine.begin() as conn:
+        conn.execute(upsert_query)</code></pre>
+
+        <h3>Outcomes</h3>
+        <p>The modernization not only achieved the latency goals but also introduced automated data quality checks, reducing manual data-cleaning hours by 15 hours per week.</p>
+    </main>
+</body>
+</html>
