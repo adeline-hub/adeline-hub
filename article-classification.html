@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article | .danki studio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* DANKI BRAND CSS */
+        :root { --bg-charcoal: #121212; --text-main: #FFFFFF; --text-muted: #737373; --neon-green: #33FFA2; --neon-violet: #FF33FF; --card-bg: #1A1A1A; --border-color: #2A2A2A; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--bg-charcoal); color: var(--text-main); font-family: 'Roboto', sans-serif; line-height: 1.7; }
+        a { text-decoration: none; color: inherit; transition: color 0.3s ease; }
+        header { padding: 2rem 5%; border-bottom: 1px solid var(--border-color); position: sticky; top: 0; background: rgba(18, 18, 18, 0.95); z-index: 100; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 2rem; font-weight: 700; text-transform: uppercase; } .logo span { color: var(--neon-violet); }
+        .global-nav { display: flex; gap: 2rem; font-size: 0.9rem; text-transform: uppercase; font-weight: 500; }
+        .global-nav a { color: var(--text-muted); } .global-nav a.current-page { color: var(--text-main); border-bottom: 2px solid var(--neon-green); }
+        
+        /* TEMPLATE SPECIFIC CSS */
+        .content-wrapper { max-width: 800px; margin: 4rem auto; padding: 0 5%; }
+        
+        .article-meta { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem; }
+        .page-title { font-size: 2.8rem; margin-bottom: 2rem; line-height: 1.2; font-weight: 700; }
+        
+        .tag { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1px; padding: 4px 10px; border: 1px solid var(--neon-green); color: var(--neon-green); border-radius: 20px; font-weight: 500; }
+        
+        .img-placeholder { width: 100%; aspect-ratio: 16/9; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 4px; margin-bottom: 3rem; }
+        
+        h2 { color: var(--text-main); font-size: 1.5rem; margin: 2.5rem 0 1rem 0; font-weight: 500; }
+        p { color: #CCCCCC; margin-bottom: 1.5rem; font-weight: 300; font-size: 1.05rem; }
+        
+        .highlight { color: var(--neon-green); font-weight: 500; }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo"><span>.</span>danki studio</a>
+        <div class="global-nav"><a href="index.html">About</a><a href="data.html">Data Management</a><a href="projects.html">Project Management</a><a href="insights.html" class="current-page">Insights</a></div>
+    </header>
+
+    <main class="content-wrapper">
+        <div class="article-meta">
+            <span>April 21, 2026</span>
+            <span class="tag">THOUGHT PIECE</span>
+            <span class="tag" style="border-color: var(--text-main); color: var(--text-main);">MANAGEMENT</span>
+        </div>
+        
+        <h1 class="page-title">A Functional Framework for Project Information Architecture</h1>
+        
+        <div class="img-placeholder">
+            <img src="" alt="Factory or Kanban board" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+
+      <p><em>Integrating ISO 15489 and ISO 19650 for Project Managers</em></p>
+       
+      <p>In the absence of a global standard for project classification, practitioners often rely on ad hoc systems that lead to information silos and version control failures. To build a robust Document Management System (DMS), PMs must distinguish between <strong>Classification</strong> (rigorous, hierarchical filing) and <strong>Categorization</strong> (flexible grouping based on similarity). While categorization supports creative phases, formal classification is required for long-term project control.</p>
+
+      <h2>Top-Level: Functional Classification (ISO 15489)</h2>
+        <p>Standardizing folders by "Subject" is inherently unstable. Following <strong>ISO 15489</strong>, documentation should be structured by <strong>Function</strong>—what the document <em>does</em> for the project.</p>
+        <ul>
+            <li><strong>100 Governance:</strong> Charters, contracts, and legal compliance.</li>
+            <li><strong>200 Requirements:</strong> User stories, business logic, and data models.</li>
+            <li><strong>300 Design:</strong> Architecture diagrams and UI/UX wireframes.</li>
+            <li><strong>400 Implementation:</strong> Technical documentation and API schemas.</li>
+            <li><strong>500 Quality Assurance:</strong> Test plans, bug reports, and validation logs.</li>
+            <li><strong>600 Operations:</strong> Release notes and configuration data.</li>
+        </ul>
+      <h2>Sub-Level: Information Status (ISO 19650)</h2>
+        <p>To eliminate versioning ambiguity, each functional folder utilizes the <strong>Common Data Environment (CDE)</strong> status levels defined in <strong>ISO 19650</strong>.</p>
+        <ul>
+            <li><strong>S1 (Work In Progress):</strong> Unvetted team drafts and informal notes.</li>
+            <li><strong>S2 (Shared):</strong> Information approved for cross-disciplinary coordination.</li>
+            <li><strong>S3 (Published):</strong> Validated, contractual deliverables.</li>
+            <li><strong>S4 (Archived):</strong> Superseded or obsolete records kept for audit trails.</li>
+        </ul>
+      <h2>The Metadata Layer: Faceted Naming</h2>
+        <p>Research into <strong>Faceted Classification</strong> proves that "where" a file is located is often less important than "how" it is named. A faceted convention ensures every file is self-describing and searchable.</p>  
+        <div class="naming-convention">
+            [ProjectCode]-[Originator]-[System]-[DocType]-[Status]-[Revision]
+        </div>
+        <div class="highlight">
+            <strong>Example:</strong> <code>PRJ-DEVT-DB-SCH-S3-R01.sql</code><br>
+            <small><em>(Project Alpha - Dev Team - Database - Schema - Published - Revision 01)</em></small>
+        </div>
+       <h2>Conclusion</h2>
+        <p>A DMS should be engineered, not forced. By combining <strong>Functional Classification</strong> for structure and <strong>CDE Status</strong> for maturity, a Project Manager ensures information serves the project lifecycle rather than complicating it.</p>
+  
+    </main>
+</body>
+</html>
