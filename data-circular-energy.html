@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circular Energy Dashboard | .danki studio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* DANKI BRAND CSS */
+        :root { --bg-charcoal: #121212; --text-main: #FFFFFF; --text-muted: #737373; --neon-green: #33FFA2; --neon-violet: #FF33FF; --card-bg: #1A1A1A; --border-color: #2A2A2A; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--bg-charcoal); color: var(--text-main); font-family: 'Roboto', sans-serif; line-height: 1.6; }
+        a { text-decoration: none; color: inherit; transition: color 0.3s ease; }
+        header { padding: 2rem 5%; border-bottom: 1px solid var(--border-color); position: sticky; top: 0; background: rgba(18, 18, 18, 0.95); z-index: 100; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 2rem; font-weight: 700; text-transform: uppercase; } .logo span { color: var(--neon-violet); }
+        .global-nav { display: flex; gap: 2rem; font-size: 0.9rem; text-transform: uppercase; font-weight: 500; }
+        .global-nav a { color: var(--text-muted); } .global-nav a.current-page { color: var(--text-main); border-bottom: 2px solid var(--neon-green); }
+        
+        /* TEMPLATE SPECIFIC CSS */
+        .content-wrapper { max-width: 900px; margin: 4rem auto; padding: 0 5%; }
+        .page-title { font-size: 2.5rem; margin-bottom: 1rem; line-height: 1.2; }
+        .tag-container { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-bottom: 2rem; }
+        .tag { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; padding: 4px 12px; border: 1px solid var(--text-muted); border-radius: 20px; font-weight: 500; }
+        
+        .img-placeholder { width: 100%; aspect-ratio: 16/9; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 4px; margin-bottom: 3rem; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-style: italic;}
+        
+        h3 { color: var(--neon-green); text-transform: uppercase; letter-spacing: 1.5px; font-size: 1rem; margin: 2.5rem 0 1rem 0; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; }
+        p { color: #CCCCCC; margin-bottom: 1.5rem; font-weight: 300; }
+        ul { color: #CCCCCC; margin-bottom: 1.5rem; padding-left: 1.5rem; font-weight: 300; }
+        li { margin-bottom: 0.5rem; }
+        
+        /* Code Block */
+        pre { background: #0A0A0A; border: 1px solid var(--border-color); border-left: 4px solid var(--neon-violet); padding: 1.5rem; border-radius: 4px; overflow-x: auto; margin-bottom: 2rem; }
+        code { font-family: 'Courier New', Courier, monospace; color: #E0E0E0; font-size: 0.9rem; }
+        
+        .tools-grid { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem; }
+        .tool-badge { background: var(--card-bg); padding: 8px 16px; border-radius: 4px; border: 1px solid var(--border-color); font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo"><span>.</span>danki studio</a>
+        <div class="global-nav"><a href="index.html">About</a><a href="data.html" class="current-page">Data Management</a><a href="projects.html">Project Management</a><a href="insights.html">Insights</a></div>
+    </header>
+
+    <main class="content-wrapper">
+        <div class="tag-container">
+            <span class="tag" style="border-color: var(--neon-violet); color: var(--neon-violet);">DATA VISUALIZATION</span>
+            <span class="tag" style="border-color: var(--neon-green); color: var(--neon-green);">BLOCKCHAIN</span>
+            <span class="tag" style="border-color: var(--text-main); color: var(--text-main);">FINTECH / ENERGY</span>
+        </div>
+        <h1 class="page-title">Circular Energy Fund: Smart Grid & Blockchain Dashboard</h1>
+        
+        <div class="img-placeholder">
+            <img src="https://via.placeholder.com/900x500/1a1a1a/33FFA2?text=Smart+Grid+Heatmap+Visualization" alt="Dashboard Preview" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+
+        <h3>Sintesi del Product Manager</h3>
+        <p>Il progetto consisteva nello sviluppo di una web app interattiva per gli investitori del <strong>Circular Energy Fund</strong> (un impianto fotovoltaico partecipativo in Sicilia). L'obiettivo principale era garantire assoluta trasparenza, tracciabilità e governance condivisa. Integrando i dati IoT della Smart Grid comunitaria (produzione, consumi, accumulo batteria da 500 kWh) con un registro Blockchain, abbiamo creato una dashboard che permette ai soci di monitorare in tempo reale il proprio ROI, l'energia autoconsumata e i token energetici generati.</p>
+
+        <h3>Strumenti e Tecnologie</h3>
+        <div class="tools-grid">
+            <span class="tool-badge">Python (Streamlit, Pandas)</span>
+            <span class="tool-badge">Plotly (Heatmaps)</span>
+            <span class="tool-badge">Web3.py / Smart Contracts</span>
+            <span class="tool-badge">IoT REST APIs (Inverter/Batteria)</span>
+        </div>
+
+        <h3>Implementazione & Ottimizzazione del Codice</h3>
+        <p>Durante lo sviluppo dell'interfaccia con Streamlit, abbiamo riscontrato avvisi di deprecazione relativi alla renderizzazione responsiva dei grafici Plotly (<em>"The use_column_width parameter has been deprecated..."</em>). Abbiamo rifattorizzato il codice per utilizzare i nuovi standard di layout di Streamlit, garantendo che le heatmap orarie di produzione e consumo si adattassero perfettamente su dispositivi mobili e desktop.</p>
+        
+        <pre><code>import streamlit as st
+import plotly.express as px
+import pandas as pd
+
+def render_smart_grid_heatmap(df_energy):
+    """
+    Genera la heatmap oraria per confrontare Produzione VS Consumi della Smart Grid.
+    Risolve il warning di deprecazione di 'use_column_width'.
+    """
+    # Creazione della heatmap con Plotly
+    fig = px.density_heatmap(
+        df_energy, 
+        x="Ora_del_giorno", 
+        y="Mese", 
+        z="Energia_kWh",
+        color_continuous_scale="Viridis",
+        title="Smart Grid - Produzione vs Consumi (Heatmap Oraria)"
+    )
+    
+    # FIX: Utilizzo di use_container_width=True invece del deprecato use_column_width
+    st.plotly_chart(fig, use_container_width=True)
+
+    # Rendering dei KPI principali tramite metriche Streamlit
+    col1, col2, col3 = st.columns(3)
+    col1.metric("Autoconsumo", "87%")
+    col2.metric("Energia Condivisa", "260 MWh")
+    col3.metric("Capacità Batteria", "500 kWh")</code></pre>
+
+        <h3>Risultati e Impatto</h3>
+        <p>La piattaforma ha permesso di gestire agevolmente i dati dei 100 soci iniziali, visualizzando un tasso di autoconsumo pari all'<strong>87%</strong>. Grazie al sistema di accumulo integrato (500 kWh) visualizzato nella dashboard, i soci possono vedere chiaramente come l'energia venga immagazzinata nelle ore di surplus fotovoltaico e rilasciata nelle ore serali, riducendo drasticamente l'energia immessa in rete e garantendo i benefici netti di <strong>≥ 30.000 €/anno</strong> previsti dall'analisi economica.</p>
+    </main>
+</body>
+</html>
