@@ -51,9 +51,147 @@
         </div>
         <h1 class="page-title">Circular Energy Fund: Smart Grid & Blockchain Dashboard</h1>
         
-        <div class="img-placeholder">
-            <img src="https://via.placeholder.com/900x500/1a1a1a/33FFA2?text=Smart+Grid+Heatmap+Visualization" alt="Dashboard Preview" style="width: 100%; height: 100%; object-fit: cover;">
-        </div>
+<div class="img-placeholder" style="margin-top: 2rem; border: none; aspect-ratio: 21/9; background-color: var(--bg-charcoal); position: relative; display: flex; align-items: center; justify-content: center;">
+    
+    <svg width="100%" height="100%" viewBox="0 0 1200 500" style="background-color: var(--bg-charcoal);">
+        <!-- Titolo -->
+        <text x="600" y="50" text-anchor="middle" fill="var(--text-main)" font-family="Roboto" font-size="24" font-weight="bold">
+            Architettura Sistema Integrato: IoT + Blockchain + Dashboard
+        </text>
+        
+        <!-- ===== LAYER 1: IOT SENSORS ===== -->
+        <g transform="translate(100, 150)">
+            <rect x="0" y="0" width="250" height="80" rx="8" fill="var(--card-bg)" stroke="var(--neon-green)" stroke-width="2"/>
+            <text x="125" y="25" text-anchor="middle" fill="var(--text-main)" font-family="Roboto" font-size="14" font-weight="bold">
+                SENSORI IoT
+            </text>
+            <text x="125" y="45" text-anchor="middle" fill="var(--text-muted)" font-family="Roboto" font-size="10">
+                • Pannelli Fotovoltaici (Sicilia)
+            </text>
+            <text x="125" y="60" text-anchor="middle" fill="var(--text-muted)" font-family="Roboto" font-size="10">
+                • Smart Meter Consumi
+            </text>
+        </g>
+        
+        <!-- Freccia 1 -->
+        <g transform="translate(350, 190)">
+            <path d="M0,0 L100,0" stroke="var(--neon-violet)" stroke-width="3" stroke-dasharray="5,5"/>
+            <polygon points="100,0 95,5 105,5" fill="var(--neon-violet)"/>
+        </g>
+        
+        <!-- ===== LAYER 2: BLOCKCHAIN ===== -->
+        <g transform="translate(450, 100)">
+            <rect x="0" y="0" width="300" height="180" rx="10" fill="var(--card-bg)" stroke="var(--neon-violet)" stroke-width="3"/>
+            <text x="150" y="30" text-anchor="middle" fill="var(--neon-violet)" font-family="Roboto" font-size="16" font-weight="bold">
+                ETHEREUM SMART CONTRACTS
+            </text>
+            
+            <!-- Smart Contract 1 -->
+            <rect x="20" y="50" width="260" height="30" rx="5" fill="#1A1A1A" stroke="var(--border-color)" stroke-width="1"/>
+            <text x="40" y="70" fill="var(--text-main)" font-family="Roboto" font-size="10">
+                💎 CircularEnergyToken.sol
+            </text>
+            
+            <!-- Smart Contract 2 -->
+            <rect x="20" y="90" width="260" height="30" rx="5" fill="#1A1A1A" stroke="var(--border-color)" stroke-width="1"/>
+            <text x="40" y="110" fill="var(--text-main)" font-family="Roboto" font-size="10">
+                ⚡ EnergyDistribution.sol
+            </text>
+            
+            <!-- Smart Contract 3 -->
+            <rect x="20" y="130" width="260" height="30" rx="5" fill="#1A1A1A" stroke="var(--border-color)" stroke-width="1"/>
+            <text x="40" y="150" fill="var(--text-main)" font-family="Roboto" font-size="10">
+                📊 GovernanceToken.sol
+            </text>
+        </g>
+        
+        <!-- Freccia 2 -->
+        <g transform="translate(750, 190)">
+            <path d="M0,0 L100,0" stroke="var(--neon-green)" stroke-width="3" stroke-dasharray="5,5"/>
+            <polygon points="100,0 95,5 105,5" fill="var(--neon-green)"/>
+        </g>
+        
+        <!-- ===== LAYER 3: DASHBOARD ===== -->
+        <g transform="translate(850, 150)">
+            <rect x="0" y="0" width="250" height="120" rx="8" fill="var(--card-bg)" stroke="var(--neon-green)" stroke-width="2"/>
+            <text x="125" y="30" text-anchor="middle" fill="var(--text-main)" font-family="Roboto" font-size="16" font-weight="bold">
+                DASHBOARD
+            </text>
+            <text x="125" y="55" text-anchor="middle" fill="var(--neon-green)" font-family="Roboto" font-size="12">
+                ⚡ Circular Energy Fund
+            </text>
+            
+            <!-- KPI nel dashboard -->
+            <g transform="translate(20, 70)">
+                <rect x="0" y="0" width="50" height="25" rx="3" fill="#1A1A1A"/>
+                <text x="25" y="15" text-anchor="middle" fill="var(--text-main)" font-family="Roboto" font-size="9">
+                    87%
+                </text>
+                <text x="25" y="35" text-anchor="middle" fill="var(--text-muted)" font-family="Roboto" font-size="6">
+                    Autoconsumo
+                </text>
+            </g>
+            
+            <g transform="translate(80, 70)">
+                <rect x="0" y="0" width="50" height="25" rx="3" fill="#1A1A1A"/>
+                <text x="25" y="15" text-anchor="middle" fill="var(--text-main)" font-family="Roboto" font-size="9">
+                    260
+                </text>
+                <text x="25" y="35" text-anchor="middle" fill="var(--text-muted)" font-family="Roboto" font-size="6">
+                    MWh
+                </text>
+            </g>
+            
+            <g transform="translate(140, 70)">
+                <rect x="0" y="0" width="50" height="25" rx="3" fill="#1A1A1A"/>
+                <text x="25" y="15" text-anchor="middle" fill="var(--text-main)" font-family="Roboto" font-size="9">
+                    500
+                </text>
+                <text x="25" y="35" text-anchor="middle" fill="var(--text-muted)" font-family="Roboto" font-size="6">
+                    kWh
+                </text>
+            </g>
+        </g>
+        
+        <!-- ===== CONNESSIONI ===== -->
+        <!-- Collegamento ai Soci -->
+        <g transform="translate(900, 280)">
+            <text x="0" y="0" fill="var(--text-muted)" font-family="Roboto" font-size="10">
+                👥 <tspan fill="var(--text-main)" font-weight="bold">100 Soci</tspan> accedono alla dashboard in tempo reale
+            </text>
+        </g>
+        
+        <!-- Collegamento API -->
+        <g transform="translate(500, 320)">
+            <text x="0" y="0" fill="var(--text-muted)" font-family="Roboto" font-size="10">
+                🔗 API REST + Web3.py per query in tempo reale
+            </text>
+        </g>
+        
+        <!-- Legenda Colorata -->
+        <g transform="translate(50, 400)">
+            <rect x="0" y="0" width="1100" height="80" rx="5" fill="var(--card-bg)" stroke="var(--border-color)" stroke-width="1"/>
+            
+            <!-- Legenda IoT -->
+            <g transform="translate(50, 25)">
+                <rect x="0" y="0" width="15" height="15" rx="3" fill="var(--card-bg)" stroke="var(--neon-green)" stroke-width="2"/>
+                <text x="25" y="12" fill="var(--text-main)" font-family="Roboto" font-size="10">IoT Layer: Raccolta Dati Sensori</text>
+            </g>
+            
+            <!-- Legenda Blockchain -->
+            <g transform="translate(350, 25)">
+                <rect x="0" y="0" width="15" height="15" rx="3" fill="var(--card-bg)" stroke="var(--neon-violet)" stroke-width="2"/>
+                <text x="25" y="12" fill="var(--text-main)" font-family="Roboto" font-size="10">Blockchain Layer: Immutabilità & Smart Contracts</text>
+            </g>
+            
+            <!-- Legenda Dashboard -->
+            <g transform="translate(750, 25)">
+                <rect x="0" y="0" width="15" height="15" rx="3" fill="var(--card-bg)" stroke="var(--neon-green)" stroke-width="2"/>
+                <text x="25" y="12" fill="var(--text-main)" font-family="Roboto" font-size="10">Dashboard Layer: Visualizzazione & Analytics</text>
+            </g>
+        </g>
+    </svg>
+</div>
 
         <h3>Sintesi del Product Manager</h3>
         <p>Il progetto consisteva nello sviluppo di una web app interattiva per gli investitori del <strong>Circular Energy Fund</strong> (un impianto fotovoltaico partecipativo in Sicilia). L'obiettivo principale era garantire assoluta trasparenza, tracciabilità e governance condivisa. Integrando i dati IoT della Smart Grid comunitaria (produzione, consumi, accumulo batteria da 500 kWh) con un registro Blockchain, abbiamo creato una dashboard che permette ai soci di monitorare in tempo reale il proprio ROI, l'energia autoconsumata e i token energetici generati.</p>
