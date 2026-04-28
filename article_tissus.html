@@ -49,6 +49,64 @@
         .table-of-contents ul { list-style: none; padding: 0; }
         .table-of-contents li { margin: 0.5rem 0; }
         .table-of-contents a { color: var(--neon-green); transition: color 0.3s; }
+        /* MAP HERO - Style Danki Studio */
+        .map-hero { 
+            position: relative; 
+            width: 100%; 
+            height: 750px; 
+            margin: 4rem 0; 
+            border-radius: 20px; 
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--bg-charcoal) 0%, #000 100%);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+            border: 2px solid transparent;
+            background-clip: padding-box;
+        }
+        
+        .map-hero iframe {
+            width: 100%; 
+            height: 100%; 
+            border: none !important;
+            border-radius: 18px;
+        }
+        
+        .map-hero .caption {
+            position: absolute;
+            bottom: 25px;
+            left: 25px;
+            right: 25px;
+            background: rgba(18, 18, 18, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 1.5rem 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--neon-green);
+            text-align: center;
+        }
+        
+        .map-hero .caption-title {
+            color: var(--neon-violet) !important;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+        }
+        
+        .map-hero .caption-subtitle {
+            color: var(--neon-green);
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+        
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .map-hero { height: 500px !important; margin: 2rem 0; }
+            .map-hero .caption { 
+                position: relative !important; 
+                margin-top: 1.5rem; 
+                left: 0 !important; 
+                right: 0 !important;
+            }
+        }
     </style>
 </head>
 <body>
