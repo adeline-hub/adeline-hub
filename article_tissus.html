@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Article | .danki studio</title>
+    <title>Le Manifeste des Tissus | .danki studio</title>
     <link rel="icon" type="image/png" href="assets/favicon.ico">
-
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         /* DANKI BRAND CSS */
@@ -19,74 +18,163 @@
         .global-nav a { color: var(--text-muted); } .global-nav a.current-page { color: var(--text-main); border-bottom: 2px solid var(--neon-green); }
         
         /* TEMPLATE SPECIFIC CSS */
-        .content-wrapper { max-width: 800px; margin: 4rem auto; padding: 0 5%; }
-        
-        .article-meta { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem; }
-        .page-title { font-size: 2.8rem; margin-bottom: 2rem; line-height: 1.2; font-weight: 700; }
+        .content-wrapper { max-width: 900px; margin: 4rem auto; padding: 0 5%; }
+        .article-meta { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem; display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; }
+        .page-title { font-size: 3.2rem; margin-bottom: 2rem; line-height: 1.2; font-weight: 700; }
+        .authors { font-size: 1.1rem; font-weight: 400; color: var(--neon-green); margin-bottom: 1rem; }
+        .year { font-size: 1.5rem; font-weight: 300; color: var(--text-muted); }
         
         .tag { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1px; padding: 4px 10px; border: 1px solid var(--neon-green); color: var(--neon-green); border-radius: 20px; font-weight: 500; }
         
-        .img-placeholder { width: 100%; aspect-ratio: 16/9; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 4px; margin-bottom: 3rem; }
+        .img-placeholder { width: 100%; aspect-ratio: 16/9; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; margin: 2rem 0; overflow: hidden; }
+        .img-placeholder img { width: 100%; height: 100%; object-fit: cover; }
         
-        h2 { color: var(--text-main); font-size: 1.5rem; margin: 2.5rem 0 1rem 0; font-weight: 500; }
+        .tissue-sample { display: grid; grid-template-columns: 1fr 2fr; gap: 2rem; margin: 3rem 0; padding: 2rem; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; }
+        .tissue-img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 4px; }
+        .tissue-info h3 { color: var(--neon-green); font-size: 1.2rem; margin-bottom: 1rem; }
+        .tissue-info .detail { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem; }
+        
+        h1 { color: var(--text-main); font-size: 2.5rem; margin: 3rem 0 2rem 0; font-weight: 500; }
+        h2 { color: var(--text-main); font-size: 1.8rem; margin: 3rem 0 1.5rem 0; font-weight: 500; }
+        h3 { color: var(--neon-violet); font-size: 1.4rem; margin: 2rem 0 1rem 0; }
+        
         p { color: #CCCCCC; margin-bottom: 1.5rem; font-weight: 300; font-size: 1.05rem; }
-        
-        .highlight { color: var(--neon-green); font-weight: 500; }
+        ul, ol { color: #CCCCCC; margin-bottom: 1.5rem; padding-left: 1.5rem; }
+        li { margin-bottom: 0.5rem; }
+        strong { color: var(--text-main); }
+        em { color: var(--neon-green); font-style: italic; }
+        .highlight { color: var(--neon-green); font-weight: 500; background: rgba(51, 255, 162, 0.1); padding: 1rem; border-left: 4px solid var(--neon-green); margin: 2rem 0; }
+        code { background: var(--card-bg); padding: 0.2rem 0.4rem; border-radius: 4px; font-family: 'Roboto Mono', monospace; }
+        .table-of-contents { background: var(--card-bg); padding: 2rem; border-radius: 8px; margin: 3rem 0; }
+        .table-of-contents ul { list-style: none; padding: 0; }
+        .table-of-contents li { margin: 0.5rem 0; }
+        .table-of-contents a { color: var(--neon-green); transition: color 0.3s; }
     </style>
 </head>
 <body>
     <header>
         <a href="index.html" class="logo"><span>.</span>danki studio</a>
-        <div class="global-nav"><a href="index.html">About</a><a href="data.html">Data Management</a><a href="projects.html">Project Management</a><a href="insights.html" class="current-page">Insights</a></div>
+        <div class="global-nav">
+            <a href="index.html">About</a>
+            <a href="data.html">Data Management</a>
+            <a href="projects.html">Project Management</a>
+            <a href="insights.html" class="current-page">Insights</a>
+        </div>
     </header>
 
     <main class="content-wrapper">
         <div class="article-meta">
-            <span>April 28, 2026</span>
-            <span class="tag">INDUSTRY</span>
-            <span class="tag" style="border-color: var(--text-main); color: var(--text-main);">ECONOMY</span>
+            <span>2026</span>
+            <span class="tag">TEXTILE</span>
+            <span class="tag" style="border-color: var(--neon-violet); color: var(--neon-violet);">HÉRITAGE</span>
+            <span class="tag" style="border-color: var(--text-main); color: var(--text-main);">ARTISANAT</span>
         </div>
         
-        <h1 class="page-title">Le manifeste des tissus</h1>
+        <h1 class="page-title">LE MANIFESTE DES TISSUS</h1>
         
+        <div class="authors">Marie-Chantal Cathaux & Nambona-Adeline Yanguere</div>
+
         <div class="img-placeholder">
-            <img src="https://github.com/adeline-hub/adeline-hub/blob/main/assets/tissus/CH04_2000_EGY_COT_004%20(3).jpeg?raw=true" alt="Factory or Kanban board" style="width: 100%; height: 100%; object-fit: cover;">
+            <img src="https://github.com/adeline-hub/adeline-hub/blob/main/assets/tissus/CH04_2000_EGY_COT_004%20(3).jpeg?raw=true" alt="Tissus collection" style="width: 100%; height: 100%; object-fit: cover;">
         </div>
 
-      <p><em>Integrating ISO 15489 and ISO 19650 for Project Managers</em></p>
-       
-      <p>In the absence of a global standard for project classification, practitioners often rely on ad hoc systems that lead to information silos and version control failures. To build a robust Document Management System (DMS), PMs must distinguish between <strong>Classification</strong> (rigorous, hierarchical filing) and <strong>Categorization</strong> (flexible grouping based on similarity). While categorization supports creative phases, formal classification is required for long-term project control.</p>
-
-      <h2>Top-Level: Functional Classification (ISO 15489)</h2>
-        <p>Standardizing folders by "Subject" is inherently unstable. Following <strong>ISO 15489</strong>, documentation should be structured by <strong>Function</strong>—what the document <em>does</em> for the project.</p>
-        <ul>
-            <li><strong>100 Governance:</strong> Charters, contracts, and legal compliance.</li>
-            <li><strong>200 Requirements:</strong> User stories, business logic, and data models.</li>
-            <li><strong>300 Design:</strong> Architecture diagrams and UI/UX wireframes.</li>
-            <li><strong>400 Implementation:</strong> Technical documentation and API schemas.</li>
-            <li><strong>500 Quality Assurance:</strong> Test plans, bug reports, and validation logs.</li>
-            <li><strong>600 Operations:</strong> Release notes and configuration data.</li>
-        </ul>
-      <h2>Sub-Level: Information Status (ISO 19650)</h2>
-        <p>To eliminate versioning ambiguity, each functional folder utilizes the <strong>Common Data Environment (CDE)</strong> status levels defined in <strong>ISO 19650</strong>.</p>
-        <ul>
-            <li><strong>S1 (Work In Progress):</strong> Unvetted team drafts and informal notes.</li>
-            <li><strong>S2 (Shared):</strong> Information approved for cross-disciplinary coordination.</li>
-            <li><strong>S3 (Published):</strong> Validated, contractual deliverables.</li>
-            <li><strong>S4 (Archived):</strong> Superseded or obsolete records kept for audit trails.</li>
-        </ul>
-      <h2>The Metadata Layer: Faceted Naming</h2>
-        <p>Research into <strong>Faceted Classification</strong> proves that "where" a file is located is often less important than "how" it is named. A faceted convention ensures every file is self-describing and searchable.</p>  
-        <div class="naming-convention">
-            [ProjectCode]-[Originator]-[System]-[DocType]-[Status]-[Revision]
+        <div class="table-of-contents">
+            <h2>Table des matières</h2>
+            <ul>
+                <li><strong>INTRODUCTION</strong> → 1</li>
+                <li><strong>Data tissu</strong> → 2</li>
+                <li><strong>CH01 - Des textures avant tout</strong> → 5<br>
+                    Coton → 5 | Tissage → 5 | Motifs → 6
+                </li>
+                <li><strong>CH02 - Route de la soie</strong> → 11</li>
+                <li><strong>CH03 - Travailleur.ses des tissus</strong> → 25</li>
+                <li><strong>CH04 - Art et mémoire</strong> → 32</li>
+                <li><strong>CH05 - Dialogues contemporains</strong> → 48</li>
+                <li><strong>EPILOGUE</strong> → 63</li>
+            </ul>
         </div>
+
+        <section id="introduction">
+            <h2>INTRODUCTION</h2>
+            
+            <p>La personnalité d’un tissu est unique, inoubliable. <em>Le tissu est vivant</em>, enfant d’une plante, d’un animal ou d’un minerai, il naît, se transforme, se détériore et meurt. Il peut même renaître de ses fibres.</p>
+
+            <p>Alors pourquoi ne pas le collectionner comme on collectionne les amitiés, riches de leur diversité. Son caractère est intrinsèque, territorial, génétique, ou subjectif. Indomptable, léger ou…</p>
+
+            <div class="highlight">
+                <strong>À la question: « que fais-tu pour le système capitalisme ? »</strong>, le tissu répondra qu’il est le système capitaliste, ou mieux, <em>le système patriarcal universel</em>, seul capable de domestiquer la femme autour de ses outils de tissage.
+            </div>
+
+            <p>La question du lien entre production textile et traite négrière est fondamentale : <strong>le textile était la monnaie d'échange principale</strong> utilisée pour acheter des captifs sur les côtes africaines. Plusieurs centres de production, dont l’Inde, se sont massivement enrichis grâce à ce commerce, aux exportations annuelles de textiles vers l'Afrique. L'exploitation de millions de personnes africaines réduites en esclavage qui furent forcées de cultiver le coton alimentant les filatures de Manchester.</p>
+
+            <!-- Échantillon 1 -->
+            <div class="tissue-sample">
+                <img src="https://github.com/adeline-hub/adeline-hub/blob/main/assets/tissus/CH00_1980_FRA_COT_001.jpeg?raw=true" alt="Indienne de Provence - Souleiado" class="tissue-img">
+                <div class="tissue-info">
+                    <h3>CH00_1980_FRA_COT_001</h3>
+                    <div class="detail"><strong>Nom :</strong> "Indienne" de Provence (Modèle traditionnel)</div>
+                    <div class="detail"><strong>Fabricant :</strong> Souleiado (Société Charles Deméry, Tarascon)</div>
+                    <div class="detail"><strong>Date :</strong> Seconde moitié du XXe siècle</div>
+                    <div class="detail"><strong>Matière :</strong> 100% Coton imprimé</div>
+                    <p><em>Lien parfait entre le passé lointain (commerce Flandre-Italie) et le présent : pérennité des savoir-faire régionaux face à l'industrie.</em></p>
+                </div>
+            </div>
+
+            <p><strong>Le tissu Protocapitaliste</strong><br>
+            Des générations d’européens se sont rencontrés aux foires de Flandre, des générations d’africains à celles de Bamako, en Asie, il ne fallait pas manquer les halles de Samarkande, et les incas tissaient...</p>
+
+            <!-- Échantillon 2 -->
+            <div class="tissue-sample">
+                <img src="https://github.com/adeline-hub/adeline-hub/blob/main/assets/tissus/CH00_1900_RBX_COT_001.jpeg?raw=true" alt="Damassé Paisley - I. CRAYE & FILS" class="tissue-img">
+                <div class="tissue-info">
+                    <h3>CH00_1900_RBX_COT_001</h3>
+                    <div class="detail"><strong>Nom :</strong> Damassé à motif Paisley stylisé</div>
+                    <div class="detail"><strong>Fabricant :</strong> I. CRAYE & FILS (Roubaix, France / Estaimpuis, Belgique)</div>
+                    <div class="detail"><strong>Date :</strong> Milieu du XXe siècle (1950-1960)</div>
+                    <div class="detail"><strong>Matière :</strong> Rayonne et Coton</div>
+                    <p><em>Preuve physique de l'industrie textile du Nord, porosité franco-belge et innovation des premières fibres synthétiques.</em></p>
+                </div>
+            </div>
+
+            <p>La tradition est un point de rencontre, le tissu la raconte par l’évolution d’une technique, la modification d’un motif, l’adoption de nouvelles teintes. <strong>Monnaie d’échange, actif, portefeuille, dot, objet d’art, d’appartenance</strong>, le tissu n’est plus une matière première, c’est un artisanat, une industrie.</p>
+
+            <p>Depuis les drapiers de Flandre qui, dès le Moyen Âge, unissaient les ports du Nord aux comptoirs italiens, jusqu’aux manufactures de Manchester ou de Roubaix qui ont standardisé le rythme de nos vies, <em>le textile a été le premier grand récit de la mondialisation</em>.</p>
+
+            <p>Mais ce livre n’est pas une nomenclature industrielle. C’est une <strong>exploration sensible</strong>. Au fil des pages, nous suivons le fil d’une collection privée, celle d'une vie, où chaque étoffe n’est pas un simple morceau de coton ou de soie, mais un fragment d’histoire.</p>
+        </section>
+
+        <section id="ch01">
+            <h2>CH01 - Des textures avant tout</h2>
+            
+            <p>La matière première textile a d’abord été animale (mouton, vers à soie, lama) ou végétale (lin, chanvre), puis <strong>le coton avec le commerce triangulaire</strong> a mis sur le marché, enfin pour diminuer les coûts les industriels ont ajouté des fibres synthétiques.</p>
+
+            <h3>Coton</h3>
+            <div class="tissue-sample">
+                <img src="https://github.com/adeline-hub/adeline-hub/blob/main/assets/tissus/CH01_2000_EGY_COT_001.jpeg?raw=true" alt="Toile bleue à armure nattée" class="tissue-img">
+                <div class="tissue-info">
+                    <h3>CH01_2000_EGY_COT_001</h3>
+                    <div class="detail"><strong>Nom :</strong> Toile bleue à armure nattée</div>
+                    <div class="detail"><strong>Matière :</strong> 100% Coton à armure nattée</div>
+                    <div class="detail"><strong>Date :</strong> Fin du XXe siècle</div>
+                    <p><em>Ce tissu illustre la primauté de la structure sur le motif. Par son armure nattée, il offre une main robuste et une texture en relief.</em></p>
+                </div>
+            </div>
+
+            <h3>Tissage</h3>
+            <div class="tissue-sample">
+                <img src="https://github.com/adeline-hub/adeline-hub/blob/main/assets/tissus/CH01_2000_FRA_COT_003.jpeg?raw=true" alt="Napperon coton maille ajourée" class="tissue-img">
+                <div class="tissue-info">
+                    <h3>CH01_2000_FRA_COT_003</h3>
+                    <div class="detail"><strong>Nom :</strong> Napperon à maille ajourée (Style Provençal)</div>
+                    <div class="detail"><strong>Matière :</strong> 100% Coton naturel</div>
+                    <p><em>Technique de tissage en "filet" conférant une structure aérée. La beauté de l'utile où simplicité rencontre technicité ancestrale.</em></p>
+                </div>
+            </div>
+        </section>
+
         <div class="highlight">
-            <strong>Example:</strong> <code>PRJ-DEVT-DB-SCH-S3-R01.sql</code><br>
-            <small><em>(Project Alpha - Dev Team - Database - Schema - Published - Revision 01)</em></small>
+            <p><strong>À venir :</strong> Route de la soie, Travailleur.ses des tissus, Art et mémoire, Dialogues contemporains, Épilogue...</p>
         </div>
-       <h2>Conclusion</h2>
-        <p>A DMS should be engineered, not forced. By combining <strong>Functional Classification</strong> for structure and <strong>CDE Status</strong> for maturity, a Project Manager ensures information serves the project lifecycle rather than complicating it.</p>
-  
     </main>
 </body>
 </html>
