@@ -49,64 +49,42 @@
         .table-of-contents ul { list-style: none; padding: 0; }
         .table-of-contents li { margin: 0.5rem 0; }
         .table-of-contents a { color: var(--neon-green); transition: color 0.3s; }
-        /* MAP HERO - Style Danki Studio */
-        .map-hero { 
-            position: relative; 
-            width: 100%; 
-            height: 750px; 
-            margin: 4rem 0; 
-            border-radius: 20px; 
+        /* ── MAP HERO ── */
+        .map-hero {
+            width: 100%;
+            margin: 2rem 0;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
             overflow: hidden;
-            background: linear-gradient(135deg, var(--bg-charcoal) 0%, #000 100%);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
-            border: 2px solid transparent;
-            background-clip: padding-box;
+            background: var(--card-bg);
         }
         
         .map-hero iframe {
-            width: 100%; 
-            height: 100%; 
-            border: none !important;
-            border-radius: 18px;
+            width: 100%;
+            height: 75vh;
+            min-height: 600px;
+            border: none;
+            display: block;
         }
         
-        .map-hero .caption {
-            position: absolute;
-            bottom: 25px;
-            left: 25px;
-            right: 25px;
-            background: rgba(18, 18, 18, 0.95);
-            backdrop-filter: blur(20px);
-            padding: 1.5rem 2rem;
-            border-radius: 12px;
-            border: 1px solid var(--neon-green);
-            text-align: center;
+        .caption {
+            padding: 1rem 1.5rem;
+            border-top: 1px solid var(--border-color);
+            background: var(--card-bg);
         }
         
-        .map-hero .caption-title {
-            color: var(--neon-violet) !important;
-            font-size: 1.3rem;
-            font-weight: 600;
+        .caption-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-main);
             margin-bottom: 0.3rem;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
         }
         
-        .map-hero .caption-subtitle {
-            color: var(--neon-green);
-            font-size: 0.95rem;
-            opacity: 0.9;
+        .caption-subtitle {
+            font-size: 0.85rem;
+            color: var(--text-muted);
         }
         
-        /* RESPONSIVE */
-        @media (max-width: 768px) {
-            .map-hero { height: 500px !important; margin: 2rem 0; }
-            .map-hero .caption { 
-                position: relative !important; 
-                margin-top: 1.5rem; 
-                left: 0 !important; 
-                right: 0 !important;
-            }
-        }
     </style>
 </head>
 <body>
@@ -179,15 +157,21 @@
             </div>
 
             <p><strong>Le tissu Protocapitaliste</strong><br>
-            Des générations d’européens se sont rencontrés aux foires de Flandre, des générations d’africains à celles de Bamako, en Asie, il ne fallait pas manquer les halles de Samarkande, et les incas tissaient...</p>
+            Des générations d’européens se sont rencontrées aux foires de Flandre, des générations d’africains à celles de Bamako, en Asie, il ne fallait pas manquer les halles de Samarkande, et les incas tissaient...</p>
 
             <!-- HERO MAP INTERACTIVE -->
             <div class="map-hero">
-                <iframe src="assets/tissus/valeur_ajoutee_textile.html" frameborder="0"></iframe>
+                <iframe 
+                    src="assets/tissus/carte_textile3.html" 
+                    frameborder="0"
+                    style="width: 100%; height: 75vh; min-height: 600px; border: none; display: block;"
+                    loading="lazy"
+                    allowfullscreen
+                ></iframe>
                 <div class="caption">
                     <div class="caption-title">Zones de valeur ajoutée textile</div>
                     <div class="caption-subtitle">
-                        Époques superposées • Ma Collection MCC en <span style="color: var(--neon-violet);">♦ diamants</span>
+                        Époques superposées • Collection MCC en <span style="color: var(--neon-violet);">♦ diamants</span>
                     </div>
                 </div>
             </div>
@@ -241,6 +225,26 @@
             </div>
         </section>
 
+
+        <section id="ch02">
+            <h2>CH02 - Des textures avant tout</h2>
+            
+            <p>La matière première textile a d’abord été animale (mouton, vers à soie, lama) ou végétale (lin, chanvre), puis <strong>le coton avec le commerce triangulaire</strong> a envahi le marché, enfin pour diminuer les coûts les industriels ont ajouté des fibres synthétiques.</p>
+
+            <h3>Coton</h3>
+            <div class="tissue-sample">
+                <img src="https://github.com/adeline-hub/adeline-hub/blob/main/assets/tissus/CH01_2000_EGY_COT_001%20(2).jpeg?raw=true" alt="Toile bleue à armure nattée" class="tissue-img">
+                <div class="tissue-info">
+                    <h3>CH01_2000_EGY_COT_001</h3>
+                    <div class="detail"><strong>Nom :</strong> Toile bleue à armure nattée</div>
+                    <div class="detail"><strong>Matière :</strong> 100% Coton à armure nattée égyptienne</div>
+                    <div class="detail"><strong>Date :</strong> Fin du XXe siècle</div>
+                    <p><em>Ce tissu illustre la primauté de la structure sur le motif. Par son armure nattée, il offre une main robuste et une texture en relief.</em></p>
+                </div>
+            </div>
+
+        </section>       
+        
         <div class="highlight">
             <p><strong>À venir :</strong> Route de la soie, Travailleur.ses des tissus, Art et mémoire, Dialogues contemporains, Épilogue...</p>
         </div>
