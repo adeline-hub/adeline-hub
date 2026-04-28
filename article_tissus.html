@@ -29,10 +29,20 @@
         .img-placeholder { width: 100%; aspect-ratio: 16/9; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; margin: 2rem 0; overflow: hidden; }
         .img-placeholder img { width: 100%; height: 100%; object-fit: cover; }
         
-        .tissue-sample { display: grid; grid-template-columns: 1fr 2fr; gap: 2rem; margin: 3rem 0; padding: 2rem; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; }
-        .tissue-img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 4px; }
-        .tissue-info h3 { color: var(--neon-green); font-size: 1.2rem; margin-bottom: 1rem; }
+        /* TISSUE SAMPLE + LIGHTBOX */
+        .tissue-sample { display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin: 3rem 0; padding: 2rem; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; max-width: 1350px; }
+        .tissue-img { width: 100%; max-height: 80vh; object-fit: contain; border-radius: 4px; cursor: zoom-in; transition: opacity 0.3s; }
+        .tissue-img:hover { opacity: 0.85; }
+        .tissue-info h3 { color: var(--neon-violet); font-size: 1.2rem; margin-bottom: 1rem; }
         .tissue-info .detail { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem; }
+        .lightbox-overlay { display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.95); z-index: 9999; justify-content: center; align-items: center; cursor: zoom-out; padding: 2rem; }
+        .lightbox-overlay.active { display: flex; }
+        .lightbox-overlay img { max-width: 95vw; max-height: 90vh; object-fit: contain; border-radius: 4px; box-shadow: 0 0 60px rgba(0,0,0,0.5); animation: lightbox-in 0.3s ease; }
+        @keyframes lightbox-in { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+        .lightbox-close { position: fixed; top: 1.5rem; right: 1.5rem; font-size: 2rem; color: #FFFFFF; background: none; border: none; cursor: pointer; z-index: 10000; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: background 0.3s; }
+        .lightbox-close:hover { background: rgba(255,255,255,0.1); }
+        .lightbox-caption { position: fixed; bottom: 1.5rem; left: 50%; transform: translateX(-50%); color: #CCCCCC; font-size: 0.9rem; text-align: center; max-width: 80vw; }
+        @media (max-width: 768px) { .tissue-sample { padding: 1rem; margin: 2rem -5%; width: calc(100% + 10%); border-radius: 0; } .tissue-img { max-height: 60vh; } }
         
         h1 { color: var(--text-main); font-size: 2.5rem; margin: 3rem 0 2rem 0; font-weight: 500; }
         h2 { color: var(--text-main); font-size: 1.8rem; margin: 3rem 0 1.5rem 0; font-weight: 500; }
@@ -229,7 +239,7 @@
 
             <h3 id="#ch01-coton">Coton</h3>
             <div class="tissue-sample">
-                <img src="https://github.com/adeline-hub/adeline-hub/blob/main/assets/tissus/CH01_2000_EGY_COT_001%20(2).jpeg?raw=true" alt="Toile bleue à armure nattée" class="tissue-img">
+                <img src="https://github.com/adeline-hub/adeline-hub/blob/main/assets/tissus/CH01_2000_EGY_COT_001%20(2).jpeg?raw=true" alt="Khayamiya — Appliqué du Caire, tissu de tentier, coton coloré" class="tissue-img">
                 <div class="tissue-info">
                     <h3>CH01_2000_EGY_COT_001</h3>
                     <div class="detail"><strong>Nom :</strong> Toile bleue à armure nattée</div>
@@ -399,5 +409,15 @@
             <p><strong>À venir :</strong> Travailleur.ses des tissus, Art et mémoire, Dialogues contemporains, Épilogue...</p>
         </div>
     </main>
+    
+    <div class="lightbox-overlay" id="lightbox"><button class="lightbox-close" onclick="closeLightbox()">✕</button><img id="lightbox-img" src="" alt=""><div class="lightbox-caption" id="lightbox-caption"></div></div>
+    
+    <script>
+    function openLightbox(img){var lb=document.getElementById('lightbox');document.getElementById('lightbox-img').src=img.src;document.getElementById('lightbox-img').alt=img.alt;document.getElementById('lightbox-caption').textContent=img.alt||'';lb.classList.add('active');document.body.style.overflow='hidden';}
+    function closeLightbox(){document.getElementById('lightbox').classList.remove('active');document.body.style.overflow='';}
+    document.getElementById('lightbox').addEventListener('click',function(e){if(e.target.id!=='lightbox-img')closeLightbox();});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLightbox();});
+    </script>
+
 </body>
 </html>
