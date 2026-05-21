@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Residential Development Feasibility Study | .danki studio</title>
+    <link rel="icon" type="image/png" href="assets/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg-charcoal: #121212; --text-main: #FFFFFF; --text-muted: #737373; --neon-green: #33FFA2; --neon-violet: #FF33FF; --card-bg: #1A1A1A; --border-color: #2A2A2A; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--bg-charcoal); color: var(--text-main); font-family: 'Roboto', sans-serif; line-height: 1.6; }
+        a { text-decoration: none; color: inherit; transition: color 0.3s ease; }
+
+        header { padding: 2rem 5%; border-bottom: 1px solid var(--border-color); position: sticky; top: 0; background: rgba(18, 18, 18, 0.95); z-index: 100; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 2rem; font-weight: 700; text-transform: uppercase; }
+        .logo span { color: var(--neon-violet); }
+
+        .global-nav { display: flex; gap: 2rem; font-size: 0.9rem; text-transform: uppercase; font-weight: 500; }
+        .global-nav a { color: var(--text-muted); }
+        .global-nav a.current-page { color: var(--text-main); border-bottom: 2px solid var(--neon-green); }
+
+        .content-wrapper { max-width: 1000px; margin: 4rem auto; padding: 0 5%; }
+        .page-title { font-size: 2.5rem; margin-bottom: 2rem; line-height: 1.2; }
+
+        .project-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-bottom: 3rem; background: var(--card-bg); padding: 1.5rem; border: 1px solid var(--border-color); border-radius: 4px; border-top: 3px solid var(--neon-violet); }
+        .stat-item { display: flex; flex-direction: column; }
+        .stat-label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.3rem; }
+        .stat-value { font-size: 1.1rem; font-weight: 500; color: var(--text-main); }
+
+        .img-placeholder { width: 100%; aspect-ratio: 21/9; background: #111; border: 1px solid var(--border-color); border-radius: 4px; margin-bottom: 3rem; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-style: italic; }
+
+        h3 { color: var(--neon-violet); text-transform: uppercase; letter-spacing: 1.5px; font-size: 1rem; margin: 2.5rem 0 1rem 0; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; }
+        p { color: #CCCCCC; margin-bottom: 1.5rem; font-weight: 300; }
+        ul { color: #CCCCCC; margin-bottom: 1.5rem; padding-left: 1.5rem; font-weight: 300; }
+        li { margin-bottom: 0.5rem; }
+
+        .tag-block { margin-bottom: 1.5rem; }
+        .tag-block-title { font-size: 0.85rem; color: var(--text-main); margin-bottom: 0.8rem; font-weight: 500; }
+        .tag-container { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+        .tag { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1px; padding: 4px 10px; border: 1px solid; border-radius: 20px; font-weight: 500; }
+        .tag-approach { border-color: var(--neon-violet); color: var(--neon-violet); }
+        .tag-func { border-color: var(--neon-green); color: var(--neon-green); }
+        .tag-char { border-color: var(--text-muted); color: #E0E0E0; }
+
+        /* Finance Table */
+        .finance-box { background: #0A0A0A; padding: 1.5rem; border-left: 4px solid var(--neon-green); margin-bottom: 1.5rem; font-size: 0.95rem; }
+        .finance-box strong { color: var(--text-main); }
+        .timeline {position: relative; margin: 2rem 0 3rem 0; padding-left: 1.5rem; border-left: 2px solid var(--border-color);}
+        .timeline-item {position: relative; margin-bottom: 1.8rem; padding-left: 1rem;}
+        .timeline-item::before {content: ""; position: absolute; left: -1.95rem; top: 0.35rem; width: 10px; height: 10px; background: var(--neon-green); border-radius: 50%; box-shadow: 0 0 0 4px rgba(51, 255, 162, 0.08);}
+        .timeline-phase {font-size: 0.78rem; text-transform: uppercase; letter-spacing: 1px; color: var(--neon-green); margin-bottom: 0.25rem; font-weight: 500;}
+        .timeline-title {font-size: 1.05rem; font-weight: 500; color: var(--text-main); margin-bottom: 0.35rem;}
+        .timeline-desc {color: #CCCCCC; font-weight: 300;}
+        .stakeholder-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-bottom: 2rem;}
+        .stakeholder-card {background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 4px; padding: 1.2rem;}
+        .stakeholder-card h4 {font-size: 0.95rem; margin-bottom: 0.7rem; color: var(--text-main); text-transform: uppercase; letter-spacing: 1px;}
+        .stakeholder-card p {margin-bottom: 0; font-size: 0.95rem;}
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo"><span>.</span>danki studio</a>
+        <div class="global-nav">
+            <a href="index.html">About</a>
+            <a href="data.html">Data Management</a>
+            <a href="projects.html" class="current-page">Project Management</a>
+            <a href="insights.html">Insights</a>
+        </div>
+    </header>
+
+    <main class="content-wrapper">
+        <h1 class="page-title">Residential Development Feasibility Study</h1>
+
+        <div class="project-stats">
+            <div class="stat-item"><span class="stat-label">Role</span><span class="stat-value">Project Manager / Feasibility Lead</span></div>
+            <div class="stat-item"><span class="stat-label">Project Type</span><span class="stat-value">Residential Real Estate</span></div>
+            <div class="stat-item"><span class="stat-label">Location</span><span class="stat-value">Karbala, Iraq</span></div>
+            <div class="stat-item"><span class="stat-label">Asset Class</span><span class="stat-value">Multi-Building Housing Development</span></div>
+            <div class="stat-item"><span class="stat-label">Phase</span><span class="stat-value">Pre-Investment / Feasibility</span></div>
+        </div>
+
+        <div class="img-placeholder">
+            <img src="images/karbala.png" alt="Residential Development Feasibility Study" style="width: 50%; height: 100%; object-fit: cover;">
+        </div>
+
+        <h3>Project Objective</h3>
+        <p>
+            Assess the technical, financial, operational, and market feasibility of a residential real estate development composed of apartment buildings in Karbala. The study aimed to determine whether the project could be developed as a viable investment opportunity, under realistic construction, sales, regulatory, and infrastructure assumptions, while providing the client with a structured decision-making framework before commitment to design development and execution.
+        </p>
+
+        <h3>Feasibility Scope and Decision Framework</h3>
+        <div class="finance-box">
+            <p>
+                <strong>Scope of Study:</strong> Site potential review, development assumptions, market positioning, demand logic, preliminary cost structure, revenue scenarios, delivery constraints, and investment viability.<br>
+                <strong>Decision Focus:</strong> Go / No-Go / Reframe recommendation based on risk, market absorption, and capital requirements.<br>
+                <strong>Primary Outputs:</strong> Feasibility assessment, scenario analysis, development logic, stakeholder considerations, and project recommendations.
+            </p>
+        </div>
+
+        <h3>Development Timeline</h3>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-phase">Phase 1</div>
+                <div class="timeline-title">Project Initiation</div>
+                <div class="timeline-desc">
+                    Defined the business need, client objectives, expected development model, and key decision criteria. Established the scope of the feasibility study and aligned expectations among core stakeholders.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-phase">Phase 2</div>
+                <div class="timeline-title">Data Collection and Market Review</div>
+                <div class="timeline-desc">
+                    Consolidated available site, location, and market information to assess residential demand, target segments, local constraints, and the project’s potential positioning within Karbala’s urban context.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-phase">Phase 3</div>
+                <div class="timeline-title">Financial and Delivery Analysis</div>
+                <div class="timeline-desc">
+                    Financial and Delivery Analysis:</strong> Developed preliminary assumptions related to land use efficiency, construction cost ranges, phasing logic, sales potential, and financing sensitivity. Compared base-case, conservative, and optimistic scenarios.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-phase">Phase 4</div>
+                <div class="timeline-title">Risk Review and Feasibility Conclusion</div>
+                <div class="timeline-desc">
+                    Risk Review and Feasibility Conclusion:</strong> Identified major project risks including cost escalation, regulatory uncertainty, infrastructure dependencies, and sales absorption risk. Produced a structured recommendation to support client decision-making.
+                </div>
+            </div>
+
+        </div>
+
+        <h3>Key Outcomes and Project Wins</h3>
+        <ul>
+            <li><strong>Investment Clarity:</strong> Transformed a broad real estate ambition into a structured feasibility decision model with clear development assumptions and economic logic.</li>
+            <li><strong>Scenario-Based Analysis:</strong> Tested multiple viability scenarios to support more resilient planning under uncertainty, especially regarding construction costs and sales pace.</li>
+            <li><strong>Client Decision Support:</strong> Provided a practical basis for deciding whether to proceed, adjust project scale, refine the product mix, or postpone investment until critical conditions improved.</li>
+            <li><strong>Stakeholder Alignment:</strong> Clarified the key governance, approval, and coordination needs required before moving into concept design or execution planning.</li>
+        </ul>
+
+        <h3>Lessons Learned</h3>
+        <ul>
+            <li><strong>Early Assumption Testing Matters:</strong> In feasibility-stage real estate projects, the quality of the decision depends less on precision and more on the discipline used to test assumptions early, especially for demand, cost inflation, and infrastructure readiness.</li>
+            <li><strong>Scenario Planning Improves Credibility:</strong> Presenting a base case together with downside and upside scenarios made the recommendation more robust and more useful to the client than a single-point financial estimate.</li>
+            <li><strong>Stakeholder Mapping Should Start Early:</strong> Regulatory interfaces, local authorities, infrastructure actors, and investment decision-makers all affect feasibility. Mapping them early reduces blind spots before detailed planning begins.</li>
+        </ul>
+
+        <h3>Project Classification (PMI)</h3>
+
+        <div class="tag-block">
+            <div class="tag-block-title">Project Management Approaches</div>
+            <div class="tag-container">
+                <span class="tag tag-approach">PREDICTIVE PLANNING</span>
+                <span class="tag tag-approach">FEASIBILITY ANALYSIS</span>
+                <span class="tag tag-approach">RISK MANAGEMENT</span>
+                <span class="tag tag-approach">SCENARIO-BASED DECISION SUPPORT</span>
+            </div>
+        </div>
+
+        <div class="tag-block">
+            <div class="tag-block-title">Functional Responsibilities</div>
+            <div class="tag-container">
+                <span class="tag tag-func">SCOPE DEFINITION</span>
+                <span class="tag tag-func">STAKEHOLDER ENGAGEMENT</span>
+                <span class="tag tag-func">COST & BUDGET ANALYSIS</span>
+                <span class="tag tag-func">SCHEDULE THINKING</span>
+                <span class="tag tag-func">PROJECT GOVERNANCE</span>
+                <span class="tag tag-func">RISK ASSESSMENT</span>
+            </div>
+        </div>
+
+        <div class="tag-block">
+            <div class="tag-block-title">Project Characteristics</div>
+            <div class="tag-container">
+                <span class="tag tag-char">PRE-DEVELOPMENT</span>
+                <span class="tag tag-char">CAPITAL-INTENSIVE</span>
+                <span class="tag tag-char">MULTI-STAKEHOLDER ENVIRONMENT</span>
+                <span class="tag tag-char">HIGH REGULATORY DEPENDENCY</span>
+                <span class="tag tag-char">LOCATION-SPECIFIC INVESTMENT</span>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

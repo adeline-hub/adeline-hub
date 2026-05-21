@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rafraichissement BDD SQL | .danki studio</title>
+    <link rel="icon" type="image/png" href="assets/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* DANKI BRAND CSS */
+        :root { --bg-charcoal: #121212; --text-main: #FFFFFF; --text-muted: #737373; --neon-green: #33FFA2; --neon-violet: #FF33FF; --card-bg: #1A1A1A; --border-color: #2A2A2A; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--bg-charcoal); color: var(--text-main); font-family: 'Roboto', sans-serif; line-height: 1.6; }
+        a { text-decoration: none; color: inherit; transition: color 0.3s ease; }
+        header { padding: 2rem 5%; border-bottom: 1px solid var(--border-color); position: sticky; top: 0; background: rgba(18, 18, 18, 0.95); z-index: 100; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 2rem; font-weight: 700; text-transform: uppercase; } .logo span { color: var(--neon-violet); }
+        .global-nav { display: flex; gap: 2rem; font-size: 0.9rem; text-transform: uppercase; font-weight: 500; }
+        .global-nav a { color: var(--text-muted); } .global-nav a.current-page { color: var(--text-main); border-bottom: 2px solid var(--neon-green); }
+        
+        /* TEMPLATE SPECIFIC CSS */
+        .content-wrapper { max-width: 1000px; margin: 4rem auto; padding: 0 5%; }
+        .page-title { font-size: 2.5rem; margin-bottom: 2rem; line-height: 1.2; }
+        
+        /* Dashboard Stats */
+        .project-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-bottom: 3rem; background: var(--card-bg); padding: 1.5rem; border: 1px solid var(--border-color); border-radius: 4px; border-top: 3px solid var(--neon-violet); }
+        .stat-item { display: flex; flex-direction: column; }
+        .stat-label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.3rem; }
+        .stat-value { font-size: 1.1rem; font-weight: 500; color: var(--text-main); }
+        
+        .img-placeholder { width: 100%; aspect-ratio: 21/9; background: #111; border: 1px solid var(--border-color); border-radius: 4px; margin-bottom: 3rem; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-style: italic; }
+        
+        h3 { color: var(--neon-violet); text-transform: uppercase; letter-spacing: 1.5px; font-size: 1rem; margin: 2.5rem 0 1rem 0; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; }
+        p { color: #CCCCCC; margin-bottom: 1.5rem; font-weight: 300; }
+        ul { color: #CCCCCC; margin-bottom: 1.5rem; padding-left: 1.5rem; font-weight: 300; }
+        li { margin-bottom: 0.5rem; }
+
+        /* Tag Sections */
+        .tag-block { margin-bottom: 1.5rem; }
+        .tag-block-title { font-size: 0.85rem; color: var(--text-main); margin-bottom: 0.8rem; font-weight: 500; }
+        .tag-container { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+        .tag { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1px; padding: 4px 10px; border: 1px solid; border-radius: 20px; font-weight: 500; }
+        .tag-approach { border-color: var(--neon-violet); color: var(--neon-violet); }
+        .tag-func { border-color: var(--neon-green); color: var(--neon-green); }
+        .tag-char { border-color: var(--text-muted); color: #E0E0E0; }
+
+        /* Finance Table */
+        .finance-box { background: #0A0A0A; padding: 1.5rem; border-left: 4px solid var(--neon-green); margin-bottom: 1.5rem; font-size: 0.95rem; }
+        .finance-box strong { color: var(--text-main); }
+        .timeline {position: relative; margin: 2rem 0 3rem 0; padding-left: 1.5rem; border-left: 2px solid var(--border-color);}
+        .timeline-item {position: relative; margin-bottom: 1.8rem; padding-left: 1rem;}
+        .timeline-item::before {content: ""; position: absolute; left: -1.95rem; top: 0.35rem; width: 10px; height: 10px; background: var(--neon-green); border-radius: 50%; box-shadow: 0 0 0 4px rgba(51, 255, 162, 0.08);}
+        .timeline-phase {font-size: 0.78rem; text-transform: uppercase; letter-spacing: 1px; color: var(--neon-green); margin-bottom: 0.25rem; font-weight: 500;}
+        .timeline-title {font-size: 1.05rem; font-weight: 500; color: var(--text-main); margin-bottom: 0.35rem;}
+        .timeline-desc {color: #CCCCCC; font-weight: 300;}
+        .stakeholder-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-bottom: 2rem;}
+        .stakeholder-card {background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 4px; padding: 1.2rem;}
+        .stakeholder-card h4 {font-size: 0.95rem; margin-bottom: 0.7rem; color: var(--text-main); text-transform: uppercase; letter-spacing: 1px;}
+        .stakeholder-card p {margin-bottom: 0; font-size: 0.95rem;}
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo"><span>.</span>danki studio</a>
+        <div class="global-nav">
+            <a href="index.html">About</a>
+            <a href="data.html">Data Management</a>
+            <a href="projects.html" class="current-page">Project Management</a>
+            <a href="insights.html">Insights</a>
+        </div>
+    </header>
+
+    <main class="content-wrapper">
+        <h1 class="page-title">Rafraichissement BDD SQL</h1>
+
+        <div class="project-stats">
+            <div class="stat-item"><span class="stat-label">Rôle</span><span class="stat-value">Lead Consultant | Architecture Data</span></div>
+            <div class="stat-item"><span class="stat-label">Type de projet</span><span class="stat-value">Data Engineering</span></div>
+            <div class="stat-item"><span class="stat-label">Secteur</span><span class="stat-value">soutenabilité</span></div>
+            <div class="stat-item"><span class="stat-label">Contexte</span><span class="stat-value">DUER</span></div>
+            <div class="stat-item"><span class="stat-label">Phase</span><span class="stat-value">Modernisation de l’Infrastructure, Intégration de Données et Fiabilisation du Reporting</span></div>
+        </div>
+
+        <div class="img-placeholder">
+            <img src="images/risque.jpg" alt="Smart and Sustainable City Development Framework in Libya" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+
+        <h3>Objectif du projet</h3>
+        <p>Ce projet visait à moderniser une infrastructure historique de base de données SQL au sein d’une entreprise spécialisée dans la production de rapports pour des branches professionnelles du secteur de la santé en France. L’objectif principal consistait à améliorer significativement les performances, la qualité et l’intégrité des données, tout en renforçant les capacités de reporting et la fiabilité des flux d’information nécessaires aux parties prenantes métier.
+          L’intervention s’inscrivait dans une logique de transformation data à la fois technique et opérationnelle, avec un enjeu fort de continuité de service, de structuration des données et d’optimisation des usages analytiques.</p>
+
+        <h3>Enjeux stratégiques et cadre d’intervention</h3>
+        
+        <div class="finance-box">
+            <p>
+                <strong>Contexte :</strong> L’organisation s’appuyait sur une architecture SQL legacy qui soutenait des processus critiques de collecte, consolidation et restitution de données destinées à ses clients institutionnels et branches professionnelles. Avec l’évolution des volumes, de la complexité des traitements et des attentes en matière de reporting, les limites de l’environnement existant sont devenues plus visibles : lenteurs d’exécution, difficultés d’intégration entre sources, hétérogénéité des structures de données et risques accrus sur la cohérence des résultats produits.<br>
+                <strong>Enjeux :</strong> Le programme de modernisation devait donc répondre à un double impératif : stabiliser et fiabiliser l’existant tout en créant une architecture cible plus robuste, mieux gouvernée et capable de supporter des besoins de reporting plus exigeants dans un environnement sensible lié à la santé.<br>
+            </p>
+        </div>
+
+        <h3>Périmètre de la mission</h3>
+        <ul>
+            <li><strong>Diagnostic:</strong> le périmètre couvrait l’analyse de l’architecture de base de données existante, </li>
+            <li><strong>Modélisation:</strong> la redéfinition des modèles de données et des logiques d’intégration, </li>
+            <li><strong>Amélioration:</strong> ainsi que l’amélioration de la performance des traitements SQL. Il incluait également la rationalisation des flux entre différentes sources d’information, la structuration des règles de qualité des données et l’alignement des mécanismes de restitution avec les besoins métiers de reporting.</li>
+          </ul>
+
+          <p>Le projet intégrait une dimension forte de data engineering, avec une attention particulière portée à la maintenabilité, à la lisibilité des transformations, à la traçabilité des données et à la réduction des points de fragilité dans la chaîne de production des rapports.</p>
+        
+        <h3>Chronologie </h3>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-phase">Phase 1</div>
+                <div class="timeline-title">Diagnostic de l’existant et cartographie des flux</div>
+                <div class="timeline-desc">
+                    La première phase a porté sur l’audit de l’infrastructure SQL legacy, l’identification des dépendances critiques, la cartographie des tables, vues, procédures et flux d’alimentation, ainsi que l’analyse des irritants techniques et fonctionnels affectant la performance et la qualité des livrables.                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-phase">Phase 2</div>
+                <div class="timeline-title">Définition de l’architecture cible et des principes de transformation</div>
+                <div class="timeline-desc">
+                    Une architecture cible a ensuite été définie pour améliorer la structuration du socle data, clarifier les responsabilités entre sources, traitements et couches de restitution, et poser les bases d’un environnement plus évolutif, cohérent et orienté usage métier.                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-phase">Phase 3</div>
+                <div class="timeline-title">Optimisation SQL et refonte des traitements de données</div>
+                <div class="timeline-desc">
+                    Cette phase a consisté à revoir les requêtes, procédures et mécanismes d’agrégation afin d’améliorer les temps de traitement, de limiter les redondances, de sécuriser les calculs et de renforcer la stabilité de la chaîne de production analytique.                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-phase">Phase 4</div>
+                <div class="timeline-title">Intégration de données et fiabilisation des règles de qualité</div>
+                <div class="timeline-desc">
+                    Les flux d’intégration ont été consolidés pour mieux gérer l’hétérogénéité des sources, standardiser les transformations et introduire des contrôles renforcés sur la complétude, la cohérence et l’intégrité des données utilisées dans les rapports.                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-phase">Phase 5</div>
+                <div class="timeline-title">Alignement avec les besoins de reporting et restitution</div>
+                <div class="timeline-desc">
+                    Le modèle modernisé a été structuré pour répondre plus efficacement aux attentes des clients branches professionnelles, avec une meilleure disponibilité des données, une plus grande fiabilité des indicateurs et une capacité renforcée à produire des restitutions plus rapides et plus lisibles.                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-phase">Phase 6</div>
+                <div class="timeline-title">Stabilisation, documentation et logique de pérennisation</div>
+                <div class="timeline-desc">
+                    La dernière phase a porté sur la documentation de l’architecture et des flux, la formalisation des règles de gestion et la préparation d’un cadre de maintenance plus durable, afin de faciliter l’exploitation future et les évolutions progressives de la plateforme data.                </div>
+            </div>
+        </div>
+
+        <h3>Parties prenantes</h3>
+        <div class="stakeholder-grid">
+            <div class="stakeholder-card">
+                <h4>Direction de l’entreprise (sponsor)</h4>
+                <p>
+                    Le projet nécessitait une coordination étroite entre besoins opérationnels, contraintes d’infrastructure et exigences de qualité de service.
+                </p>
+            </div>
+
+            <div class="stakeholder-card">
+                <h4>Directeur Informatique</h4>
+                <p>
+                    Point d'entrée au système d'information et interlocuteurs principale pour les différents tests.         
+                </p>
+            </div>
+
+            <div class="stakeholder-card">
+                <h4>Equipes métier</h4>
+                <p>
+                    Ce sont les protagonistes et bénéficiaires principaux de la restructuration de la gestion des données.         
+                </p>
+            </div>
+
+            <div class="stakeholder-card">
+                <h4>Clients finaux (branches professionnelles)</h4>
+                <p>
+                    Le livrable devait répondre à un besoin commercial évolutif de la part des clients.         
+                </p>
+            </div>
+
+        </div>
+
+        <h3>Résultats et apports</h3>
+        <ul>
+            <li><strong>Performance :</strong> La modernisation de l’architecture SQL et des flux d’intégration a contribué à réduire les fragilités techniques, à améliorer l’intégrité des données et à renforcer la capacité de l’entreprise à produire des analyses et rapports plus cohérents.</li>
+            <li><strong>Valorisation des données:</strong> Au-delà des gains techniques, la démarche a également créé une meilleure lisibilité du patrimoine data, une plus grande maîtrise des transformations appliquées aux données et une base plus solide pour accompagner de futurs besoins analytiques ou réglementaires dans le secteur de la santé.</li>
+        </ul>
+
+        <h3>Lessons apprises</h3>
+        <ul>
+            <li><strong>Besoins métier :</strong> L’un des enseignements majeurs de ce projet est qu’une modernisation de base de données ne se limite pas à une optimisation technique. Elle exige une compréhension fine des usages métier, des logiques de transformation et des risques de qualité qui impactent directement la confiance accordée aux livrables de reporting.</li>
+            <li><strong>Equilibre :</strong> Le projet a également confirmé que la réussite d’un programme de data engineering repose sur l’équilibre entre performance, gouvernance des données, maintenabilité des traitements et capacité à faire évoluer l’architecture sans perturber les services existants.</li>
+        </ul>
+
+        <h3>Classification du projet (PMI)</h3>
+
+        <div class="tag-block">
+            <div class="tag-block-title">Approche de la Gestion de Projet (Project Management)</div>
+            <div class="tag-container">
+                <span class="tag tag-approach">PRATIQUES HYBRIDES</span>
+                <span class="tag tag-approach">QUALITE DES DONNEES</span>
+                <span class="tag tag-approach">PERFORMANCE</span>
+            </div>
+        </div>
+
+        <div class="tag-block">
+            <div class="tag-block-title">Responsabilités fonctionnelles</div>
+            <div class="tag-container">
+                <span class="tag tag-func">DATA ENGINEERING</span>
+                <span class="tag tag-func">ARCHITECTURE BASE DE DONNEES</span>
+                <span class="tag tag-func">MODERNISATION SI</span>
+            </div>
+        </div>
+
+        <div class="tag-block">
+            <div class="tag-block-title">Caractéristiques du projet</div>
+            <div class="tag-container">
+                <span class="tag tag-char">REPORTING</span>
+                <span class="tag tag-char">DONNEES DE SANTE</span>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conduite d’un PSE dans le secteur associatif | .danki studio</title>
+    <link rel="icon" type="image/png" href="assets/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* DANKI BRAND CSS */
+        :root { --bg-charcoal: #121212; --text-main: #FFFFFF; --text-muted: #737373; --neon-green: #33FFA2; --neon-violet: #FF33FF; --card-bg: #1A1A1A; --border-color: #2A2A2A; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--bg-charcoal); color: var(--text-main); font-family: 'Roboto', sans-serif; line-height: 1.6; }
+        a { text-decoration: none; color: inherit; transition: color 0.3s ease; }
+        header { padding: 2rem 5%; border-bottom: 1px solid var(--border-color); position: sticky; top: 0; background: rgba(18, 18, 18, 0.95); z-index: 100; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 2rem; font-weight: 700; text-transform: uppercase; } .logo span { color: var(--neon-violet); }
+        .global-nav { display: flex; gap: 2rem; font-size: 0.9rem; text-transform: uppercase; font-weight: 500; }
+        .global-nav a { color: var(--text-muted); } .global-nav a.current-page { color: var(--text-main); border-bottom: 2px solid var(--neon-green); }
+        
+        /* TEMPLATE SPECIFIC CSS */
+        .content-wrapper { max-width: 1000px; margin: 4rem auto; padding: 0 5%; }
+        .page-title { font-size: 2.5rem; margin-bottom: 2rem; line-height: 1.2; }
+        
+        /* Dashboard Stats */
+        .project-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-bottom: 3rem; background: var(--card-bg); padding: 1.5rem; border: 1px solid var(--border-color); border-radius: 4px; border-top: 3px solid var(--neon-violet); }
+        .stat-item { display: flex; flex-direction: column; }
+        .stat-label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.3rem; }
+        .stat-value { font-size: 1.1rem; font-weight: 500; color: var(--text-main); }
+        
+        .img-placeholder { width: 100%; aspect-ratio: 21/9; background: #111; border: 1px solid var(--border-color); border-radius: 4px; margin-bottom: 3rem; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-style: italic; }
+        
+        h3 { color: var(--neon-violet); text-transform: uppercase; letter-spacing: 1.5px; font-size: 1rem; margin: 2.5rem 0 1rem 0; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; }
+        p { color: #CCCCCC; margin-bottom: 1.5rem; font-weight: 300; }
+        ul { color: #CCCCCC; margin-bottom: 1.5rem; padding-left: 1.5rem; font-weight: 300; }
+        li { margin-bottom: 0.5rem; }
+
+        /* Tag Sections */
+        .tag-block { margin-bottom: 1.5rem; }
+        .tag-block-title { font-size: 0.85rem; color: var(--text-main); margin-bottom: 0.8rem; font-weight: 500; }
+        .tag-container { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+        .tag { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1px; padding: 4px 10px; border: 1px solid; border-radius: 20px; font-weight: 500; }
+        .tag-approach { border-color: var(--neon-violet); color: var(--neon-violet); }
+        .tag-func { border-color: var(--neon-green); color: var(--neon-green); }
+        .tag-char { border-color: var(--text-muted); color: #E0E0E0; }
+
+        /* Finance Table */
+        .finance-box { background: #0A0A0A; padding: 1.5rem; border-left: 4px solid var(--neon-green); margin-bottom: 1.5rem; font-size: 0.95rem; }
+        .finance-box strong { color: var(--text-main); }
+        .timeline {position: relative; margin: 2rem 0 3rem 0; padding-left: 1.5rem; border-left: 2px solid var(--border-color);}
+        .timeline-item {position: relative; margin-bottom: 1.8rem; padding-left: 1rem;}
+        .timeline-item::before {content: ""; position: absolute; left: -1.95rem; top: 0.35rem; width: 10px; height: 10px; background: var(--neon-green); border-radius: 50%; box-shadow: 0 0 0 4px rgba(51, 255, 162, 0.08);}
+        .timeline-phase {font-size: 0.78rem; text-transform: uppercase; letter-spacing: 1px; color: var(--neon-green); margin-bottom: 0.25rem; font-weight: 500;}
+        .timeline-title {font-size: 1.05rem; font-weight: 500; color: var(--text-main); margin-bottom: 0.35rem;}
+        .timeline-desc {color: #CCCCCC; font-weight: 300;}
+        .stakeholder-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-bottom: 2rem;}
+        .stakeholder-card {background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 4px; padding: 1.2rem;}
+        .stakeholder-card h4 {font-size: 0.95rem; margin-bottom: 0.7rem; color: var(--text-main); text-transform: uppercase; letter-spacing: 1px;}
+        .stakeholder-card p {margin-bottom: 0; font-size: 0.95rem;}
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo"><span>.</span>danki studio</a>
+        <div class="global-nav">
+            <a href="index.html">About</a>
+            <a href="data.html">Data Management</a>
+            <a href="projects.html" class="current-page">Project Management</a>
+            <a href="insights.html">Insights</a>
+        </div>
+    </header>
+
+    <main class="content-wrapper">
+        <h1 class="page-title">Gestion de crise et PSE</h1>
+
+        <div class="project-stats">
+            <div class="stat-item"><span class="stat-label">Rôle</span><span class="stat-value">Contrôle de gestion</span></div>
+            <div class="stat-item"><span class="stat-label">Type de projet</span><span class="stat-value">Contrôle de gestion</span></div>
+            <div class="stat-item"><span class="stat-label">Secteur</span><span class="stat-value">Économie sociale et solidaire / Secteur associatif</span></div>
+            <div class="stat-item"><span class="stat-label">Contexte</span><span class="stat-value">Diminution des subventions publiques</span></div>
+            <div class="stat-item"><span class="stat-label">Cadre méthodologique</span><span class="stat-value">Contrôle de gestion</span></div>
+            <div class="stat-item"><span class="stat-label">Phase</span><span class="stat-value">Diagnostic, restructuration, pilotage et réorganisation</span></div>
+        </div>
+
+        <div class="img-placeholder">
+            <img src="images/train.jpg" alt="Smart and Sustainable City Development Framework in Libya" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+
+        <h3>Objectif du projet</h3>
+        <p>Ce projet visait à accompagner une association confrontée à une réduction durable de ses financements publics dans la conduite d’un PSE, tout en structurant un dispositif de contrôle de gestion capable de soutenir les arbitrages stratégiques, sociaux et opérationnels. L’objectif n’était pas uniquement de réduire les coûts, mais de redéfinir un modèle de fonctionnement soutenable, lisible et pilotable dans le temps.</p>
+
+        <h3>Enjeux stratégiques et cadre d’intervention</h3>
+        
+        <div class="finance-box">
+            <p>
+                <strong>Enjeux:</strong> La baisse des subventions fragilisait l’équilibre global de l’association, remettant en cause la pérennité de certaines activités, la soutenabilité de la masse salariale et la capacité de l’organisation à maintenir son niveau de service. Dans ce contexte, la conduite du projet devait intégrer à la fois des impératifs économiques, des contraintes réglementaires, des enjeux de dialogue social et une attention forte à la mission d’intérêt général portée par la structure.<br>
+                <strong>Cadre:</strong> Le cadre d’intervention a donc été conçu autour de six dimensions complémentaires : la gouvernance, l’économie, les citoyens et parties prenantes, la mobilité et l’organisation des flux, l’environnement et la durabilité, ainsi que le cadre de vie ou la qualité de service. Cette grille d’analyse a servi de support à la priorisation des mesures, à la lecture des impacts et à la construction d’un dispositif de pilotage cohérent.<br>
+            </p>
+        </div>
+
+        <h3>Périmètre de la mission</h3>
+        <ul>
+            <li><strong>Diagnostic:</strong> La mission a couvert le diagnostic économique et organisationnel de l’association, l’analyse de la structure de coûts, la modélisation des scénarios d’évolution, l’identification des activités critiques et des zones de déséquilibre, ainsi que la préparation des éléments nécessaires à la conduite du PSE. Elle a également inclus la mise en place d’outils de contrôle de gestion destinés à fiabiliser le suivi budgétaire, éclairer la prise de décision et renforcer l’anticipation.</li>
+            <li><strong>Indicateurs:</strong> Une attention particulière a été portée à la traduction des enjeux stratégiques en indicateurs de pilotage, à la clarification des responsabilités décisionnelles, à l’alignement entre projet social et contraintes financières, ainsi qu’à la capacité de l’organisation à réinscrire son action dans une logique territoriale durable et partenariale.</li>
+        </ul>
+
+        <h3>Timeline</h3>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-phase">Phase 1</div>
+                <div class="timeline-title">Diagnostic économique, organisationnel et territorial</div>
+                <div class="timeline-desc">
+                    Analyse des subventions, des ressources propres, des charges fixes et variables, de la masse salariale, des activités financées, et de l’ancrage territorial de l’association afin d’identifier les déséquilibres structurels et les points de vigilance.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-phase">Phase 2</div>
+                <div class="timeline-title">Construction du référentiel de pilotage en contrôle de gestion</div>
+                <div class="timeline-desc">
+                    Définition d’indicateurs budgétaires, sociaux, d’activité et d’impact, mise en place d’une lecture analytique des coûts, et structuration d’un cadre de reporting permettant de suivre les écarts et d’éclairer les décisions de restructuration.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-phase">Phase 3</div>
+                <div class="timeline-title">Élaboration des scénarios de restructuration</div>
+                <div class="timeline-desc">
+                    Formalisation de plusieurs scénarios fondés sur le niveau de financement attendu, la soutenabilité des activités, l’évolution des effectifs et les conséquences sur la mission associative, avec comparaison des impacts à court et moyen terme.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-phase">Phase 4</div>
+                <div class="timeline-title">Conduite du PSE et sécurisation du dispositif social</div>
+                <div class="timeline-desc">
+                    Appui à la structuration du processus, préparation des éléments de décision, coordination des dimensions économiques et humaines, et accompagnement des étapes de dialogue social dans une logique de rigueur, de traçabilité et de responsabilité.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-phase">Phase 5</div>
+                <div class="timeline-title">Réorganisation selon les dimensions Smart and Sustainable City</div>
+                <div class="timeline-desc">
+                    Relecture du modèle associatif autour des axes gouvernance, économie, citoyens, mobilité, environnement et cadre de vie afin de concevoir une organisation plus résiliente, plus lisible pour les financeurs et plus cohérente avec les besoins du territoire.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-phase">Phase 6</div>
+                <div class="timeline-title">Stabilisation du modèle cible et dispositif de suivi</div>
+                <div class="timeline-desc">
+                    Mise en place d’un pilotage post-transformation, définition des responsabilités, des rythmes de revue, des tableaux de bord et des mécanismes d’alerte pour sécuriser l’exécution du nouveau modèle et prévenir de futurs déséquilibres.
+                </div>
+            </div>
+        </div>
+
+        <h3>Parties prenantes</h3>
+        <div class="stakeholder-grid">
+            <div class="stakeholder-card">
+                <h4>Direction de l'association</h4>
+                <p>
+                    La réussite du projet dépendait de la capacité à concilier des attentes parfois divergentes entre impératifs financiers, protection des personnes, maintien de la mission associative et crédibilité du modèle futur.
+                </p>
+            </div>
+
+            <div class="stakeholder-card">
+                <h4>Directeurs territoriaux</h4>
+                <p>
+                    Le travail de coordination a reposé sur une communication structurée, une explicitation constante des hypothèses économiques et une mise en transparence des critères de décision. Cette dynamique a permis de soutenir l’appropriation du changement malgré la sensibilité sociale du contexte.
+                </p>
+            </div>
+
+        </div>
+
+        <h3>Résultats et apports</h3>
+        <ul>
+            <li><strong>Indicateurs :</strong> Standardisation et centralisation des indicateurs sociaux et financiers régionaux.</li>
+            <li><strong>Budgétisation:</strong> Versioning des budgets annuels régionaux en fonction des indicateurs définis et complétés.</li>
+        </ul>
+
+        <h3>Lessons apprises</h3>
+        <ul>
+            <li><strong>Gestion de crise :</strong> Les parties prenantes ont eu des attitudes variées vis à vis des enjeux, il a donc fallu faire preuve de pédagogie pour avancer.</li>
+            <li><strong>Exécution :</strong> Afin de convaincre les directions terroriales, il a fallu itérer certaines phases du projet, afin de structurer et argumenter correctement la communication auprès de leurs équipes.</li>
+        </ul>
+
+        <h3>Classification du projet (PMI)</h3>
+
+        <div class="tag-block">
+            <div class="tag-block-title">Approche de la Gestion de Projet (Project Management)</div>
+            <div class="tag-container">
+                <span class="tag tag-approach">PRATIQUES HYBRIDES</span>
+                <span class="tag tag-approach">INDICATEURS/KPI</span>
+                <span class="tag tag-approach">CONTROLE DE GESTION PROJET</span>
+            </div>
+        </div>
+
+        <div class="tag-block">
+            <div class="tag-block-title">Responsabilités fonctionnelles</div>
+            <div class="tag-container">
+                <span class="tag tag-func">GESTION COUTS & BUDGET</span>
+                <span class="tag tag-func">PEDAGOGIE FINANCIERE</span>
+                <span class="tag tag-func">COMMUNICATION PARTIES PRENANTES</span>
+                <span class="tag tag-func">DROIT SOCIAL</span>
+                <span class="tag tag-func">GESTION DES RISQUES</span>
+            </div>
+        </div>
+
+        <div class="tag-block">
+            <div class="tag-block-title">Caractéristiques du projet</div>
+            <div class="tag-container">
+                <span class="tag tag-char">BUDGETAIRE</span>
+                <span class="tag tag-char">GESTION SOCIALE</span>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
+

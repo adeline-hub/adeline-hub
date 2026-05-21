@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comité de pilotage financier | .danki studio</title>
+    <link rel="icon" type="image/png" href="assets/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* DANKI BRAND CSS */
+        :root { --bg-charcoal: #121212; --text-main: #FFFFFF; --text-muted: #737373; --neon-green: #33FFA2; --neon-violet: #FF33FF; --card-bg: #1A1A1A; --border-color: #2A2A2A; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--bg-charcoal); color: var(--text-main); font-family: 'Roboto', sans-serif; line-height: 1.6; }
+        a { text-decoration: none; color: inherit; transition: color 0.3s ease; }
+        header { padding: 2rem 5%; border-bottom: 1px solid var(--border-color); position: sticky; top: 0; background: rgba(18, 18, 18, 0.95); z-index: 100; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 2rem; font-weight: 700; text-transform: uppercase; } .logo span { color: var(--neon-violet); }
+        .global-nav { display: flex; gap: 2rem; font-size: 0.9rem; text-transform: uppercase; font-weight: 500; }
+        .global-nav a { color: var(--text-muted); } .global-nav a.current-page { color: var(--text-main); border-bottom: 2px solid var(--neon-green); }
+        
+        /* TEMPLATE SPECIFIC CSS */
+        .content-wrapper { max-width: 1000px; margin: 4rem auto; padding: 0 5%; }
+        .page-title { font-size: 2.5rem; margin-bottom: 2rem; line-height: 1.2; }
+        
+        /* Dashboard Stats */
+        .project-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-bottom: 3rem; background: var(--card-bg); padding: 1.5rem; border: 1px solid var(--border-color); border-radius: 4px; border-top: 3px solid var(--neon-violet); }
+        .stat-item { display: flex; flex-direction: column; }
+        .stat-label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.3rem; }
+        .stat-value { font-size: 1.1rem; font-weight: 500; color: var(--text-main); }
+        
+        .img-placeholder { width: 100%; aspect-ratio: 21/9; background: #111; border: 1px solid var(--border-color); border-radius: 4px; margin-bottom: 3rem; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-style: italic; }
+        
+        h3 { color: var(--neon-violet); text-transform: uppercase; letter-spacing: 1.5px; font-size: 1rem; margin: 2.5rem 0 1rem 0; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; }
+        p { color: #CCCCCC; margin-bottom: 1.5rem; font-weight: 300; }
+        ul { color: #CCCCCC; margin-bottom: 1.5rem; padding-left: 1.5rem; font-weight: 300; }
+        li { margin-bottom: 0.5rem; }
+
+        /* Tag Sections */
+        .tag-block { margin-bottom: 1.5rem; }
+        .tag-block-title { font-size: 0.85rem; color: var(--text-main); margin-bottom: 0.8rem; font-weight: 500; }
+        .tag-container { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+        .tag { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1px; padding: 4px 10px; border: 1px solid; border-radius: 20px; font-weight: 500; }
+        .tag-approach { border-color: var(--neon-violet); color: var(--neon-violet); }
+        .tag-func { border-color: var(--neon-green); color: var(--neon-green); }
+        .tag-char { border-color: var(--text-muted); color: #E0E0E0; }
+
+        /* Finance Table */
+        .finance-box { background: #0A0A0A; padding: 1.5rem; border-left: 4px solid var(--neon-green); margin-bottom: 1.5rem; font-size: 0.95rem; }
+        .finance-box strong { color: var(--text-main); }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo"><span>.</span>danki studio</a>
+        <div class="global-nav"><a href="index.html">About</a><a href="data.html">Data Management</a><a href="projects.html" class="current-page">Project Management</a><a href="insights.html">Insights</a></div>
+    </header>
+
+    <main class="content-wrapper">
+        <h1 class="page-title">Comité de pilotage financier</h1>
+        
+        <!-- Project Details Dashboard -->
+        <div class="project-stats">
+            <div class="stat-item"><span class="stat-label">Rôle</span><span class="stat-value">Co Project Manager</span></div>
+            <div class="stat-item"><span class="stat-label">Coopérateurs au comité</span><span class="stat-value">5-1500</span></div>
+            <div class="stat-item"><span class="stat-label">Budget annuel</span><span class="stat-value">€ 2.500.000</span></div>
+            <div class="stat-item"><span class="stat-label">Fréquence des livrables</span><span class="stat-value">Récurrente</span></div>
+            <div class="stat-item"><span class="stat-label">Industrie</span><span class="stat-value">Distribution</span></div>
+        </div>
+
+        <div class="img-placeholder">
+            <img src="images/laura-ollier-emksFqo_N_w-unsplash.jpg" alt="Photo de Laura Ollier unsplash.com" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+
+        <h3>Objectif du projet</h3>
+        <p>Diagnostiquer et assainir, assurer l'intégrité des données financières (produits, banque, fournisseurs), tout en facilitant les taches quotidiennes des salariés et coopérateurs liés à ces opérations de caisse, de comptabilité, ou gestion de trésorerie. Dans le cadre d'un projet participatif, il est important d'avoir l'adhésion du plus grand nombre et de communiquer à chaque étape du projet et de sa restitution.</p>
+
+        <h3>Cadre économique</h3>
+        <div class="finance-box">
+            <p><strong>Coût du projet :</strong> 3 heures / mois par collateur impliqué<br>
+            <strong>Coût de gestion supplémentaire :</strong> 0 € (optimisation organisationnelle)<br>
+            <strong>Investissement total:</strong> 0 € (se libérer d'abonnements digitaux non utiles)<br>
+        </div>
+
+        <h3>Description des étapes (semestre)</h3>
+        <ul>
+            <li><strong>2022-02 – Relance du comité de pilotage financier :</strong> Présentation des points de blocage et définition des objectifs.</li>
+            <li><strong>2022-03 – Annonde des attendus :</strong> Rédaction des procédures aidant à la réalisation des livrables attensus er récurrents.</li>
+            <li><strong>2022-05 – Livrables:</strong> Répartition des livrables, réalisation.</li>
+            <li><strong>2022-06 – Présentation des résultatsc:</strong> Présentation des livrables en réunion collectives, optimisation ou adaptation si besoin.</li>
+        </ul>
+
+        <h3>Bénéfices collectifs</h3>
+        <ul>
+            <li><strong>Centralisation de l'information :</strong> L'information financière de l'organisation est centralisée et ainsi plus sécurisée, et transparente.</li>
+            <li><strong>Procédures internes standardisées :</strong> Le corpus de procédures financière revu est ainsi adapté aux besoins actuels de la coopérative, certaines activités sont réalisées plus rapidement.</li>
+            <li><strong>Délégation :</strong> Les salariés de la coopératives sont déchargés de tâches pouvant être réalisées par d'autres membres de la coopérative correctement informés.</li>
+        </ul>
+
+        <h3>Lessons apprises</h3>
+        <ul>
+            <li><strong>Excellence collective :</strong> Le travail collectif permet d'innover et apporte une certaine excellence au résultat attendu, un non financier ayant des attendus parfois allant au delà des coutumes du métier.</li>
+            <li><strong>Outils de gestion de projet :</strong> Dans le cadre d'une coopération bénévole, des outils stables et simples sont des atouts indispensables lorsque les collabprateurs au projet se succèdent d'une semaine à l'autre.</li>
+        </ul>
+
+        <!-- PM TAGGING SYSTEM -->
+        <h3>Classification du projet (PMI)</h3>
+        
+        <div class="tag-block">
+            <div class="tag-block-title">Approche de la Gestion de Projet (Project Management)</div>
+            <div class="tag-container">
+                <span class="tag tag-approach">PRATIQUES HYBRIDES</span>
+                <span class="tag tag-approach">COLLABORATION</span>
+                <span class="tag tag-approach">INNOVATION</span>
+            </div>
+        </div>
+
+        <div class="tag-block">
+            <div class="tag-block-title">Responsabilités fonctionnelles</div>
+            <div class="tag-container">
+                <span class="tag tag-func">GESTION COUTS & BUDGET</span>
+                <span class="tag tag-func">COMMUNICATION PARTIES PRENANTES</span>
+                <span class="tag tag-func">GESTION RESPONSABLE</span>
+                <span class="tag tag-func">BENEVOLAT</span>
+            </div>
+        </div>
+
+        <div class="tag-block">
+            <div class="tag-block-title">Caractéristiques du projet</div>
+            <div class="tag-container">
+                <span class="tag tag-char">PARTICIPATIF / COLLECTIF</span>
+                <span class="tag tag-char">DIGITAL / EDUCATIF</span>
+                <span class="tag tag-char">ECHEANCES RECURRENTES</span>
+            </div>
+        </div>
+
+    </main>
+</body>
+</html>

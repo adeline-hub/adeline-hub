@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PropTech VC Fund | .danki studio</title>
+    <link rel="icon" type="image/png" href="assets/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* DANKI BRAND CSS */
+        :root { --bg-charcoal: #121212; --text-main: #FFFFFF; --text-muted: #737373; --neon-green: #33FFA2; --neon-violet: #FF33FF; --card-bg: #1A1A1A; --border-color: #2A2A2A; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--bg-charcoal); color: var(--text-main); font-family: 'Roboto', sans-serif; line-height: 1.6; }
+        a { text-decoration: none; color: inherit; transition: color 0.3s ease; }
+        header { padding: 2rem 5%; border-bottom: 1px solid var(--border-color); position: sticky; top: 0; background: rgba(18, 18, 18, 0.95); z-index: 100; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 2rem; font-weight: 700; text-transform: uppercase; } .logo span { color: var(--neon-violet); }
+        .global-nav { display: flex; gap: 2rem; font-size: 0.9rem; text-transform: uppercase; font-weight: 500; }
+        .global-nav a { color: var(--text-muted); } .global-nav a.current-page { color: var(--text-main); border-bottom: 2px solid var(--neon-green); }
+        
+        /* TEMPLATE SPECIFIC CSS */
+        .content-wrapper { max-width: 1000px; margin: 4rem auto; padding: 0 5%; }
+        .page-title { font-size: 2.5rem; margin-bottom: 2rem; line-height: 1.2; }
+        
+        /* Dashboard Stats */
+        .project-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-bottom: 3rem; background: var(--card-bg); padding: 1.5rem; border: 1px solid var(--border-color); border-radius: 4px; border-top: 3px solid var(--neon-violet); }
+        .stat-item { display: flex; flex-direction: column; }
+        .stat-label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.3rem; }
+        .stat-value { font-size: 1.1rem; font-weight: 500; color: var(--text-main); }
+        
+        .img-placeholder { width: 100%; aspect-ratio: 21/9; background: #111; border: 1px solid var(--border-color); border-radius: 4px; margin-bottom: 3rem; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-style: italic; }
+        
+        h3 { color: var(--neon-violet); text-transform: uppercase; letter-spacing: 1.5px; font-size: 1rem; margin: 2.5rem 0 1rem 0; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; }
+        p { color: #CCCCCC; margin-bottom: 1.5rem; font-weight: 300; }
+        ul { color: #CCCCCC; margin-bottom: 1.5rem; padding-left: 1.5rem; font-weight: 300; }
+        li { margin-bottom: 0.5rem; }
+
+        /* Tag Sections */
+        .tag-block { margin-bottom: 1.5rem; }
+        .tag-block-title { font-size: 0.85rem; color: var(--text-main); margin-bottom: 0.8rem; font-weight: 500; }
+        .tag-container { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+        .tag { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1px; padding: 4px 10px; border: 1px solid; border-radius: 20px; font-weight: 500; }
+        .tag-approach { border-color: var(--neon-violet); color: var(--neon-violet); }
+        .tag-func { border-color: var(--neon-green); color: var(--neon-green); }
+        .tag-char { border-color: var(--text-muted); color: #E0E0E0; }
+
+        /* Finance Table */
+        .finance-box { background: #0A0A0A; padding: 1.5rem; border-left: 4px solid var(--neon-green); margin-bottom: 1.5rem; font-size: 0.95rem; }
+        .finance-box strong { color: var(--text-main); }
+        .timeline {position: relative; margin: 2rem 0 3rem 0; padding-left: 1.5rem; border-left: 2px solid var(--border-color);}
+        .timeline-item {position: relative; margin-bottom: 1.8rem; padding-left: 1rem;}
+        .timeline-item::before {content: ""; position: absolute; left: -1.95rem; top: 0.35rem; width: 10px; height: 10px; background: var(--neon-green); border-radius: 50%; box-shadow: 0 0 0 4px rgba(51, 255, 162, 0.08);}
+        .timeline-phase {font-size: 0.78rem; text-transform: uppercase; letter-spacing: 1px; color: var(--neon-green); margin-bottom: 0.25rem; font-weight: 500;}
+        .timeline-title {font-size: 1.05rem; font-weight: 500; color: var(--text-main); margin-bottom: 0.35rem;}
+        .timeline-desc {color: #CCCCCC; font-weight: 300;}
+        .stakeholder-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-bottom: 2rem;}
+        .stakeholder-card {background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 4px; padding: 1.2rem;}
+        .stakeholder-card h4 {font-size: 0.95rem; margin-bottom: 0.7rem; color: var(--text-main); text-transform: uppercase; letter-spacing: 1px;}
+        .stakeholder-card p {margin-bottom: 0; font-size: 0.95rem;}
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo"><span>.</span>danki studio</a>
+        <div class="global-nav">
+            <a href="index.html">About</a>
+            <a href="data.html">Data Management</a>
+            <a href="projects.html" class="current-page">Project Management</a>
+            <a href="insights.html">Insights</a>
+        </div>
+    </header>
+
+<main class="content-wrapper">
+
+    <h1 class="page-title">PropTech VC Fund Framework</h1>
+
+    <div class="project-stats">
+        <div class="stat-item"><span class="stat-label">Role</span><span class="stat-value">Product Owner</span></div>
+        <div class="stat-item"><span class="stat-label">Project Type</span><span class="stat-value">Fund Formation</span></div>
+        <div class="stat-item"><span class="stat-label">Location</span><span class="stat-value">France</span></div>
+        <div class="stat-item"><span class="stat-label">Asset Class</span><span class="stat-value">PropTech Venture Capital Fund</span></div>
+        <div class="stat-item"><span class="stat-label">Phase</span><span class="stat-value">Prepare a compliant and investable fund framework for professional investors</span></div>
+    </div>
+
+    <div class="img-placeholder">
+        <img src="images/cernunnos.jpg" alt="PropTech venture capital fund structuring framework in France" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+
+    <h3>Project Objective</h3>
+    <p>
+        Develop an investor-ready venture capital fund model in the PropTech sector in France through a compliant financial engineering framework, jointly structured between a financial engineering company and a PropTech incubator. The assignment focused on transforming an investment thesis into a credible fund architecture with governance, operational logic, lifecycle clarity, and execution discipline suitable for presentation to prospective investors and strategic partners.
+    </p>
+
+    <h3>Core Mandate</h3>
+    <p>The mandate was to create a robust venture capital fund framework capable of being presented to external investors with confidence. This meant bridging strategic ambition and execution discipline: translating an opportunity in proptech innovation into a structured fund vehicle with clear operating rules, risk boundaries, decision rights, and financial lifecycle consistency from fund launch through portfolio realization.</p>
+    <div class="finance-box">
+        <p>
+            <strong>Investment Thesis Design:</strong> Defined the strategic rationale of the fund, including target market logic, portfolio orientation, value creation assumptions, and alignment between sector opportunity and investor expectations.<br>
+            <strong>Fund Architecture:</strong> Structured the operating backbone of the fund across governance, decision flows, capital allocation principles, portfolio review mechanisms, and lifecycle checkpoints.<br>
+            <strong>External Investor Positioning:</strong> Developed a framework that could support due diligence discussions by making the fund understandable, coherent, and financially disciplined before active investor solicitation.
+        </p>
+    </div>
+
+    <h3>Scope of Work</h3>
+    <ul>
+        <li><strong>Lifecycle Model:</strong> Mapped the full fund lifecycle from structuring and launch through sourcing, screening, investment, portfolio support, reporting, and exit realization.</li>
+        <li><strong>Financial Engineering:</strong> Built the financial logic supporting fund mechanics, including allocation principles, operating assumptions, and performance framing suitable for investor engagement.</li>
+        <li><strong>Compliance Framing:</strong> Ensured the project evolved within a financially compliant framework so the fund proposition could be advanced with stronger institutional credibility.</li>
+        <li><strong>Investor Readiness:</strong> Organized the structure, language, and governance narrative required to make the initiative presentable to external capital partners and strategic backers.</li>
+    </ul>
+
+    <h3>Development Timeline</h3>
+    <div class="timeline">
+        <div class="timeline-item">
+            <div class="timeline-phase">Phase 1</div>
+            <div class="timeline-title">Opportunity Framing</div>
+            <div class="timeline-desc">
+                Clarified market opportunity, strategic intent, and the role of the proptech incubator within the broader fund proposition.
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-phase">Phase 2</div>
+            <div class="timeline-title">Fund Thesis Development</div>
+            <div class="timeline-desc">
+                Shaped the investment narrative, sector positioning, and value creation logic required to support a differentiated fund identity.
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-phase">Phase 3</div>
+            <div class="timeline-title">Structure and Governance</div>
+            <div class="timeline-desc">
+                Defined decision frameworks, management roles, oversight principles, and core operational rules for disciplined fund management.
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-phase">Phase 4</div>
+            <div class="timeline-title">Compliance Integration</div>
+            <div class="timeline-desc">
+                Aligned the model with financial compliance expectations to strengthen legitimacy and reduce structural risk before investor engagement.
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-phase">Phase 5</div>
+            <div class="timeline-title">Lifecycle Operating Design</div>
+            <div class="timeline-desc">
+                Detailed how investments would be sourced, assessed, monitored, supported, and reported through the life of the fund.
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-phase">Phase 6</div>
+            <div class="timeline-title">Investor Presentation Readiness</div>
+            <div class="timeline-desc">
+                Consolidated the model into a coherent proposition suitable for discussion with prospective external investors and institutional stakeholders.
+            </div>
+        </div>
+    </div>
+
+    <h3>My Function Across Stakeholders</h3>
+    <div class="stakeholder-grid">
+        <div class="stakeholder-card">
+            <h4>Project Sponsors</h4>
+            <p>
+                Converted a strategic ambition into a structured and governable fund model, aligning the interests of the initiating parties around a coherent investment, governance, and operational framework.
+            </p>
+        </div>
+
+        <div class="stakeholder-card">
+            <h4>Financial Engineering Partner</h4>
+            <p>
+                Supported the translation of technical structuring logic into a clear fund architecture, connecting investment mechanics with governance discipline and investor-facing clarity.
+            </p>
+        </div>
+
+        <div class="stakeholder-card">
+            <h4>PropTech Incubator</h4>
+            <p>
+                Integrated the incubator’s ecosystem role into the operating model by linking pipeline access, startup proximity, market insight, and value creation potential with the fund’s investment logic.
+            </p>
+        </div>
+
+        <div class="stakeholder-card">
+            <h4>Investors and Strategic Partners</h4>
+            <p>
+                Presented the initiative as a credible venture capital platform with clearer governance, lifecycle visibility, operating rationale, and strategic differentiation within the French PropTech market.
+            </p>
+        </div>
+    </div>
+
+    <h3>Key Outcomes and Strategic Value</h3>
+    <ul>
+        <li><strong>Investor-Ready Fund Model:</strong> Transformed an initial investment thesis into a structured venture capital framework with clearer architecture, governance logic, and operational coherence.</li>
+        <li><strong>Governance-Driven Credibility:</strong> Reinforced the attractiveness of the project by clarifying decision rights, role boundaries, oversight mechanisms, and lifecycle controls expected by sophisticated investors.</li>
+        <li><strong>Operational Clarity Across the Fund Lifecycle:</strong> Moved beyond concept-stage positioning by defining how the fund would function in practice from sourcing and investment review to portfolio support and exit preparation.</li>
+        <li><strong>Strategic Ecosystem Integration:</strong> Strengthened the market relevance of the vehicle by combining financial engineering capability with incubator-driven PropTech access, creating a more differentiated and credible platform.</li>
+    </ul>
+
+    <h3>PMI-Oriented Delivery Sensibility</h3>
+    <ul>
+        <li><strong>Integration:</strong> Balanced financial, legal, strategic, and ecosystem inputs into a single coherent development pathway.</li>
+        <li><strong>Risk and Governance:</strong> Treated compliance, oversight, and decision rights as foundational design variables rather than supporting documents.</li>
+        <li><strong>Stakeholder Management:</strong> Maintained alignment across organizations with different priorities, time horizons, and definitions of success.</li>
+    </ul>
+
+    <h3>Lessons Learned</h3>
+    <ul>
+        <li><strong>Investment Theses Need Operating Logic:</strong> A compelling thesis alone is not enough. Investors require clarity on how a fund will actually function, make decisions, govern risk, and create value over time.</li>
+        <li><strong>Governance Is Part of Product Design:</strong> In fund structuring, governance should not be treated as an administrative layer added at the end. It is central to the credibility and investability of the vehicle itself.</li>
+        <li><strong>Ecosystem Access Must Be Structurally Embedded:</strong> The strategic value of an incubator partnership becomes more credible when it is translated into sourcing, screening, and portfolio support mechanisms within the fund model.</li>
+        <li><strong>Compliance-Aware Structuring Improves Confidence:</strong> Integrating regulatory and financial engineering considerations early helps create a stronger basis for investor dialogue and reduces ambiguity in execution expectations.</li>
+    </ul>
+
+    <h3>Project Classification (PMI)</h3>
+
+    <div class="tag-block">
+        <div class="tag-block-title">Project Management Approaches</div>
+        <div class="tag-container">
+            <span class="tag tag-approach">STRATEGIC STRUCTURING</span>
+            <span class="tag tag-approach">GOVERNANCE DESIGN</span>
+            <span class="tag tag-approach">PREDICTIVE + ADAPTIVE PLANNING</span>
+            <span class="tag tag-approach">RISK-BASED DECISION SUPPORT</span>
+            <span class="tag tag-approach">STAKEHOLDER-CENTRIC DELIVERY</span>
+        </div>
+    </div>
+
+    <div class="tag-block">
+        <div class="tag-block-title">Functional Responsibilities</div>
+        <div class="tag-container">
+            <span class="tag tag-func">FUND STRUCTURING</span>
+            <span class="tag tag-func">FINANCIAL ENGINEERING</span>
+            <span class="tag tag-func">GOVERNANCE DESIGN</span>
+            <span class="tag tag-func">OPERATING MODEL DESIGN</span>
+            <span class="tag tag-func">STAKEHOLDER ALIGNMENT</span>
+            <span class="tag tag-func">INVESTMENT PROCESS DESIGN</span>
+            <span class="tag tag-func">RISK MANAGEMENT</span>
+            <span class="tag tag-func">INVESTOR READINESS</span>
+        </div>
+    </div>
+
+    <div class="tag-block">
+        <div class="tag-block-title">Project Characteristics</div>
+        <div class="tag-container">
+            <span class="tag tag-char">VENTURE CAPITAL</span>
+            <span class="tag tag-char">PROPTECH</span>
+            <span class="tag tag-char">FRANCE</span>
+            <span class="tag tag-char">MULTI-STAKEHOLDER</span>
+            <span class="tag tag-char">HIGH GOVERNANCE COMPLEXITY</span>
+            <span class="tag tag-char">INVESTOR-READY MODEL</span>
+            <span class="tag tag-char">COMPLIANCE-SENSITIVE</span>
+            <span class="tag tag-char">ECOSYSTEM-DRIVEN</span>
+        </div>
+    </div>
+
+</main>
+</body>
+</html>

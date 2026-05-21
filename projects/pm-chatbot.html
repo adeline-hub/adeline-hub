@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Most Sustainable AI Chatbot Framework | .danki studio</title>
+    <link rel="icon" type="image/png" href="assets/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* DANKI BRAND CSS */
+        :root { --bg-charcoal: #121212; --text-main: #FFFFFF; --text-muted: #737373; --neon-green: #33FFA2; --neon-violet: #FF33FF; --card-bg: #1A1A1A; --border-color: #2A2A2A; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--bg-charcoal); color: var(--text-main); font-family: 'Roboto', sans-serif; line-height: 1.6; }
+        a { text-decoration: none; color: inherit; transition: color 0.3s ease; }
+        header { padding: 2rem 5%; border-bottom: 1px solid var(--border-color); position: sticky; top: 0; background: rgba(18, 18, 18, 0.95); z-index: 100; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 2rem; font-weight: 700; text-transform: uppercase; } .logo span { color: var(--neon-violet); }
+        .global-nav { display: flex; gap: 2rem; font-size: 0.9rem; text-transform: uppercase; font-weight: 500; }
+        .global-nav a { color: var(--text-muted); } .global-nav a.current-page { color: var(--text-main); border-bottom: 2px solid var(--neon-green); }
+        
+        /* TEMPLATE SPECIFIC CSS */
+        .content-wrapper { max-width: 1000px; margin: 4rem auto; padding: 0 5%; }
+        .page-title { font-size: 2.5rem; margin-bottom: 2rem; line-height: 1.2; }
+        
+        /* Dashboard Stats */
+        .project-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-bottom: 3rem; background: var(--card-bg); padding: 1.5rem; border: 1px solid var(--border-color); border-radius: 4px; border-top: 3px solid var(--neon-violet); }
+        .stat-item { display: flex; flex-direction: column; }
+        .stat-label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.3rem; }
+        .stat-value { font-size: 1.1rem; font-weight: 500; color: var(--text-main); }
+        
+        .img-placeholder { width: 100%; aspect-ratio: 21/9; background: #111; border: 1px solid var(--border-color); border-radius: 4px; margin-bottom: 3rem; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-style: italic; }
+        
+        h3 { color: var(--neon-violet); text-transform: uppercase; letter-spacing: 1.5px; font-size: 1rem; margin: 2.5rem 0 1rem 0; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; }
+        p { color: #CCCCCC; margin-bottom: 1.5rem; font-weight: 300; }
+        ul { color: #CCCCCC; margin-bottom: 1.5rem; padding-left: 1.5rem; font-weight: 300; }
+        li { margin-bottom: 0.5rem; }
+
+        /* Tag Sections */
+        .tag-block { margin-bottom: 1.5rem; }
+        .tag-block-title { font-size: 0.85rem; color: var(--text-main); margin-bottom: 0.8rem; font-weight: 500; }
+        .tag-container { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+        .tag { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1px; padding: 4px 10px; border: 1px solid; border-radius: 20px; font-weight: 500; }
+        .tag-approach { border-color: var(--neon-violet); color: var(--neon-violet); }
+        .tag-func { border-color: var(--neon-green); color: var(--neon-green); }
+        .tag-char { border-color: var(--text-muted); color: #E0E0E0; }
+
+        /* Finance Table */
+        .finance-box { background: #0A0A0A; padding: 1.5rem; border-left: 4px solid var(--neon-green); margin-bottom: 1.5rem; font-size: 0.95rem; }
+        .finance-box strong { color: var(--text-main); }
+        .timeline {position: relative; margin: 2rem 0 3rem 0; padding-left: 1.5rem; border-left: 2px solid var(--border-color);}
+        .timeline-item {position: relative; margin-bottom: 1.8rem; padding-left: 1rem;}
+        .timeline-item::before {content: ""; position: absolute; left: -1.95rem; top: 0.35rem; width: 10px; height: 10px; background: var(--neon-green); border-radius: 50%; box-shadow: 0 0 0 4px rgba(51, 255, 162, 0.08);}
+        .timeline-phase {font-size: 0.78rem; text-transform: uppercase; letter-spacing: 1px; color: var(--neon-green); margin-bottom: 0.25rem; font-weight: 500;}
+        .timeline-title {font-size: 1.05rem; font-weight: 500; color: var(--text-main); margin-bottom: 0.35rem;}
+        .timeline-desc {color: #CCCCCC; font-weight: 300;}
+        .stakeholder-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-bottom: 2rem;}
+        .stakeholder-card {background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 4px; padding: 1.2rem;}
+        .stakeholder-card h4 {font-size: 0.95rem; margin-bottom: 0.7rem; color: var(--text-main); text-transform: uppercase; letter-spacing: 1px;}
+        .stakeholder-card p {margin-bottom: 0; font-size: 0.95rem;}
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo"><span>.</span>danki studio</a>
+        <div class="global-nav">
+            <a href="index.html">About</a>
+            <a href="data.html">Data Management</a>
+            <a href="projects.html" class="current-page">Project Management</a>
+            <a href="insights.html">Insights</a>
+        </div>
+    </header>
+
+    <main class="content-wrapper">
+
+        <h1 class="page-title">AI Chatbot Project Management Framework</h1>
+
+        <!-- Citation -->
+        <div style="padding: 1rem 1.5rem; background: rgba(255, 51, 255, 0.05); border-left: 3px solid #33FFA2; margin: 1.5rem 0; border-radius: 0 4px 4px 0;">
+            <p style="color: #33FFA2; font-style: italic; font-size: 1rem; margin: 0;">
+                        « What decisions, tasks, or frustrations is this chatbot supposed to improve for people? »<br>
+                <span style="color: #737373; font-size: 0.85rem;">— nambo yang, first question to ask</span>
+            </p>
+        </div>
+
+        <div class="project-stats">
+            <div class="stat-item"><span class="stat-label">Role</span><span class="stat-value">Project / GenAI Consultant</span></div>
+            <div class="stat-item"><span class="stat-label">Project Type</span><span class="stat-value">Sustainable AI / RAG / Knowledge Management</span></div>
+            <div class="stat-item"><span class="stat-label">Location</span><span class="stat-value">Enterprise Digital Environment</span></div>
+            <div class="stat-item"><span class="stat-label">Asset Class</span><span class="stat-value">Responsible Conversational AI Platform</span></div>
+            <div class="stat-item"><span class="stat-label">Phase</span><span class="stat-value">Initiation, Planning, Execution and Closure</span></div>
+        </div>
+
+        <div class="img-placeholder">
+            <img src="images/chatbot-project.jpg" alt="Sustainable AI chatbot project management framework" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+
+        <h3>Project Overview</h3>
+
+        <p>
+            This project aimed to design, develop, and prepare the deployment of a next-generation intelligent chatbot capable of interacting with complex and heterogeneous knowledge bases in a reliable, human-centered, and sustainable way. The initiative combined retrieval-augmented generation architecture, data pipelines, model orchestration, evaluation mechanisms, and industrialization within Databricks to create a scalable enterprise AI solution designed for long-term value, responsible use, maintainability, and efficient resource consumption.
+        </p>
+
+        <h3>Initiation</h3>
+
+        <div class="finance-box">
+            <p>
+                <strong>Synthetic Project Charter:</strong> The project was initiated to address the need for faster, more reliable, and more traceable access to organizational knowledge through an intelligent conversational interface, while embedding sustainability principles from the outset across governance, technology choices, and user experience.<br><br>
+                <strong>Objective:</strong> Build a chatbot able to answer user questions using trusted enterprise content with source citation, transparent logic, and predictable behavior, while promoting responsible AI practices, efficient system design, and long-term operational sustainability.<br><br>
+                <strong>Scope:</strong> Architecture design, document ingestion logic, Python and LangChain orchestration, Databricks integration, prompt engineering, LLM evaluation, response-quality assessment, and sustainability-oriented design choices such as model efficiency, maintainable pipelines, governance rules, and human oversight mechanisms.<br><br>
+                <strong>Sustainability Focus:</strong> The solution was designed not only for technical performance, but also for durability, trust, accessibility, controlled operating costs, and reduced unnecessary computation. This included selecting proportionate model configurations, defining monitoring and review processes, and ensuring the chatbot supports users without creating dependency, confusion, or opaque decision-making.<br><br>
+                <strong>Out of Scope:</strong> Full enterprise-wide rollout, long-term support operating model, and non-priority use case expansion during the initial phase.
+            </p>
+        </div>
+
+        <h3>Initiation Stakeholder Framing</h3>
+        <div class="stakeholder-grid">
+            <div class="stakeholder-card">
+                <h4>Sponsor</h4>
+                <p>
+                    Defined the business ambition, expected value, and success rationale for the chatbot initiative.
+                </p>
+            </div>
+
+            <div class="stakeholder-card">
+                <h4>Business Users</h4>
+                <p>
+                    A human-centric chatbot should know when to help, when to ask for clarification, and when to escalate to a human.
+                </p>
+            </div>
+
+            <div class="stakeholder-card">
+                <h4>Technical Team</h4>
+                <p>
+                    Designed and implemented the architecture, pipelines, integrations, and model-serving mechanisms.
+                </p>
+            </div>
+
+            <div class="stakeholder-card">
+                <h4>Governance / Data Leads</h4>
+                <p>
+                    Ensured data accessibility, model controls, and alignment with enterprise platform and governance requirements.
+                </p>
+            </div>
+        </div>
+
+        <h3>Planning</h3>
+
+        <p>
+            The planning phase translated the charter into a structured delivery model with defined milestones, work packages, evaluation logic, and phased implementation priorities. The objective was to ensure that experimentation, technical build, and industrial readiness progressed within a coherent project structure.
+        </p>
+
+        <h3>Main Milestones</h3>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-phase">M 1</div>
+                <div class="timeline-title">Week 1</div>
+                <div class="timeline-desc">
+                    Project charter validation and business alignment.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-phase">M 2</div>
+                <div class="timeline-title">Week 3</div>
+                <div class="timeline-desc">
+                    RAG architecture definition and technical design.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-phase">M 3</div>
+                <div class="timeline-title">Week 6</div>
+                <div class="timeline-desc">
+                    Development of Python and LangChain pipelines.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-phase">M 4</div>
+                <div class="timeline-title">Week 8</div>
+                <div class="timeline-desc">
+                    Databricks integration including Unity Catalog and Model Serving.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-phase">M 5</div>
+                <div class="timeline-title">Week 10</div>
+                <div class="timeline-desc">
+                    LLM testing, prompt optimization, and evaluation setup.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-phase">M 6</div>
+                <div class="timeline-title">Week 12</div>
+                <div class="timeline-desc">
+                    Pilot deployment readiness and stakeholder validation.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-phase">M 7</div>
+                <div class="timeline-title">Week 13</div>
+                <div class="timeline-desc">
+                    Project closure and lessons learned consolidation.
+                </div>
+            </div>
+        </div>
+
+
+        
+        <h3>Work Breakdown Structure (WBS)</h3>
+        <ul>
+            <li><strong>1. Project Initiation</strong>
+                <ul>
+                    <li>1.1 Clarify business need and expected value</li>
+                    <li>1.2 Define objectives, scope, and constraints</li>
+                    <li>1.3 Identify key stakeholders and governance model</li>
+                </ul>
+            </li>
+            <li><strong>2. Solution Design</strong>
+                <ul>
+                    <li>2.1 Design RAG architecture</li>
+                    <li>2.2 Define source ingestion and retrieval logic</li>
+                    <li>2.3 Select candidate LLMs and evaluation criteria</li>
+                </ul>
+            </li>
+            <li><strong>3. Development</strong>
+                <ul>
+                    <li>3.1 Build data processing pipelines</li>
+                    <li>3.2 Develop orchestration with Python and LangChain</li>
+                    <li>3.3 Configure serving and catalog components in Databricks</li>
+                </ul>
+            </li>
+            <li><strong>4. Validation</strong>
+                <ul>
+                    <li>4.1 Execute functional tests</li>
+                    <li>4.2 Compare model responses and prompt variants</li>
+                    <li>4.3 Implement evaluation metrics including faithfulness checks</li>
+                </ul>
+            </li>
+            <li><strong>5. Deployment and Closure</strong>
+                <ul>
+                    <li>5.1 Prepare pilot rollout</li>
+                    <li>5.2 Document solution and recommendations</li>
+                    <li>5.3 Conduct lessons learned review</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>Execution</h3>
+
+        <p>
+            Execution followed an iterative delivery model combining technical development, prompt refinement, model comparison, and ongoing validation against expected business outcomes. Progress was tracked not only through build completion, but through evidence of response quality, traceability, and deployment readiness.
+        </p>
+
+        <h3>Agile Artifact – Product Backlog</h3>
+        <table class="backlog-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>User Story</th>
+                    <th>Priority</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>US1</td>
+                    <td>As a user, I want to ask questions in natural language and receive accurate answers.</td>
+                    <td>High</td>
+                    <td>Done</td>
+                </tr>
+                <tr>
+                    <td>US2</td>
+                    <td>As an administrator, I want the chatbot to connect to multiple knowledge sources.</td>
+                    <td>High</td>
+                    <td>In Progress</td>
+                </tr>
+                <tr>
+                    <td>US3</td>
+                    <td>As a project team member, I want to compare several LLMs to select the most suitable one.</td>
+                    <td>High</td>
+                    <td>Done</td>
+                </tr>
+                <tr>
+                    <td>US4</td>
+                    <td>As a business user, I want the chatbot response to reference the source content used.</td>
+                    <td>High</td>
+                    <td>Done</td>
+                </tr>
+                <tr>
+                    <td>US5</td>
+                    <td>As the delivery team, I want to measure response faithfulness and answer quality.</td>
+                    <td>Medium</td>
+                    <td>In Progress</td>
+                </tr>
+                <tr>
+                    <td>US6</td>
+                    <td>As an operator, I want the selected model deployed through Model Serving for pilot use.</td>
+                    <td>High</td>
+                    <td>Planned</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Execution Highlights</h3>
+        <ul>
+            <li><strong>Architecture Delivery:</strong> Established a RAG-based framework connecting enterprise knowledge sources with generative response capabilities.</li>
+            <li><strong>Model Evaluation:</strong> Tested multiple LLM candidates and assessed answer relevance, consistency, and operational suitability.</li>
+            <li><strong>Prompt Engineering:</strong> Iteratively refined prompts to improve response quality, contextual grounding, and explainability.</li>
+            <li><strong>Industrialization:</strong> Structured deployment components within Databricks to support governance and scalable serving.</li>
+        </ul>
+
+        <h3>Closure</h3>
+
+        <p>
+            The closure phase focused on consolidating outcomes, documenting what worked, identifying improvement areas, and preparing the project for future scale-up. Closure was not treated as an administrative endpoint only, but as a source of structured learning for subsequent AI delivery cycles.
+        </p>
+
+        <h3>Lessons Learned</h3>
+        <ul>
+        <li><strong>Evaluation Must Start Early:</strong> Quality metrics and answer validation methods should be defined from the beginning, not left to the final testing stage.</li>
+        <li><strong>Data Quality Drives AI Value:</strong> The effectiveness of the chatbot depends heavily on the structure, accessibility, and relevance of the underlying knowledge sources.</li>
+        <li><strong>Prompting Needs Governance:</strong> Prompt engineering improves outcomes significantly, but prompts need versioning, traceability, and reuse logic.</li>
+        </ul>
+
+        <h3>Project Classification (PMI)</h3>
+
+        <div class="tag-block">
+            <div class="tag-block-title">Project Management Approaches</div>
+            <div class="tag-container">
+                <span class="tag tag-approach">PORTFOLIO FRAMING</span>
+                <span class="tag tag-approach">PROGRAM GOVERNANCE</span>
+                <span class="tag tag-approach">PREDICTIVE + ADAPTIVE PLANNING</span>
+                <span class="tag tag-approach">RISK-BASED DECISION SUPPORT</span>
+                <span class="tag tag-approach">STAKEHOLDER-CENTRIC DELIVERY</span>
+            </div>
+        </div>
+
+        <div class="tag-block">
+            <div class="tag-block-title">Functional Responsibilities</div>
+            <div class="tag-container">
+                <span class="tag tag-func">STRATEGIC LEADERSHIP</span>
+                <span class="tag tag-func">CROSS-FUNCTIONAL COORDINATION</span>
+                <span class="tag tag-func">SCOPE INTEGRATION</span>
+                <span class="tag tag-func">GOVERNANCE DESIGN</span>
+                <span class="tag tag-func">RISK MANAGEMENT</span>
+                <span class="tag tag-func">FINANCIAL STRUCTURING</span>
+                <span class="tag tag-func">IMPLEMENTATION PLANNING</span>
+                <span class="tag tag-func">STAKEHOLDER ENGAGEMENT</span>
+            </div>
+        </div>
+
+        <div class="tag-block">
+            <div class="tag-block-title">Project Characteristics</div>
+            <div class="tag-container">
+                <span class="tag tag-char">SMART CITY</span>
+                <span class="tag tag-char">SUSTAINABLE DEVELOPMENT</span>
+                <span class="tag tag-char">FREE ECONOMIC ZONE</span>
+                <span class="tag tag-char">MULTI-STAKEHOLDER</span>
+                <span class="tag tag-char">CAPITAL-INTENSIVE</span>
+                <span class="tag tag-char">HIGH GOVERNANCE COMPLEXITY</span>
+                <span class="tag tag-char">PHASED INVESTMENT MODEL</span>
+                <span class="tag tag-char">STRATEGIC INFRASTRUCTURE</span>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

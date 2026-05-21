@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart and Sustainable City Framework | .danki studio</title>
+    <link rel="icon" type="image/png" href="assets/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* DANKI BRAND CSS */
+        :root { --bg-charcoal: #121212; --text-main: #FFFFFF; --text-muted: #737373; --neon-green: #33FFA2; --neon-violet: #FF33FF; --card-bg: #1A1A1A; --border-color: #2A2A2A; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--bg-charcoal); color: var(--text-main); font-family: 'Roboto', sans-serif; line-height: 1.6; }
+        a { text-decoration: none; color: inherit; transition: color 0.3s ease; }
+        header { padding: 2rem 5%; border-bottom: 1px solid var(--border-color); position: sticky; top: 0; background: rgba(18, 18, 18, 0.95); z-index: 100; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 2rem; font-weight: 700; text-transform: uppercase; } .logo span { color: var(--neon-violet); }
+        .global-nav { display: flex; gap: 2rem; font-size: 0.9rem; text-transform: uppercase; font-weight: 500; }
+        .global-nav a { color: var(--text-muted); } .global-nav a.current-page { color: var(--text-main); border-bottom: 2px solid var(--neon-green); }
+        
+        /* TEMPLATE SPECIFIC CSS */
+        .content-wrapper { max-width: 1000px; margin: 4rem auto; padding: 0 5%; }
+        .page-title { font-size: 2.5rem; margin-bottom: 2rem; line-height: 1.2; }
+        
+        /* Dashboard Stats */
+        .project-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-bottom: 3rem; background: var(--card-bg); padding: 1.5rem; border: 1px solid var(--border-color); border-radius: 4px; border-top: 3px solid var(--neon-violet); }
+        .stat-item { display: flex; flex-direction: column; }
+        .stat-label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.3rem; }
+        .stat-value { font-size: 1.1rem; font-weight: 500; color: var(--text-main); }
+        
+        .img-placeholder { width: 100%; aspect-ratio: 21/9; background: #111; border: 1px solid var(--border-color); border-radius: 4px; margin-bottom: 3rem; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-style: italic; }
+        
+        h3 { color: var(--neon-violet); text-transform: uppercase; letter-spacing: 1.5px; font-size: 1rem; margin: 2.5rem 0 1rem 0; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; }
+        p { color: #CCCCCC; margin-bottom: 1.5rem; font-weight: 300; }
+        ul { color: #CCCCCC; margin-bottom: 1.5rem; padding-left: 1.5rem; font-weight: 300; }
+        li { margin-bottom: 0.5rem; }
+
+        /* Tag Sections */
+        .tag-block { margin-bottom: 1.5rem; }
+        .tag-block-title { font-size: 0.85rem; color: var(--text-main); margin-bottom: 0.8rem; font-weight: 500; }
+        .tag-container { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+        .tag { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1px; padding: 4px 10px; border: 1px solid; border-radius: 20px; font-weight: 500; }
+        .tag-approach { border-color: var(--neon-violet); color: var(--neon-violet); }
+        .tag-func { border-color: var(--neon-green); color: var(--neon-green); }
+        .tag-char { border-color: var(--text-muted); color: #E0E0E0; }
+
+        /* Finance Table */
+        .finance-box { background: #0A0A0A; padding: 1.5rem; border-left: 4px solid var(--neon-green); margin-bottom: 1.5rem; font-size: 0.95rem; }
+        .finance-box strong { color: var(--text-main); }
+
+        .timeline {position: relative; margin: 2rem 0 3rem 0; padding-left: 1.5rem; border-left: 2px solid var(--border-color);}
+
+        .timeline-item {position: relative; margin-bottom: 1.8rem; padding-left: 1rem;}
+
+        .timeline-item::before {content: ""; position: absolute; left: -1.95rem; top: 0.35rem; width: 10px; height: 10px; background: var(--neon-green); border-radius: 50%; box-shadow: 0 0 0 4px rgba(51, 255, 162, 0.08);}
+
+        .timeline-phase {font-size: 0.78rem; text-transform: uppercase; letter-spacing: 1px; color: var(--neon-green); margin-bottom: 0.25rem; font-weight: 500;}
+
+        .timeline-title {font-size: 1.05rem; font-weight: 500; color: var(--text-main); margin-bottom: 0.35rem;}
+
+        .timeline-desc {color: #CCCCCC; font-weight: 300;}
+
+        .stakeholder-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-bottom: 2rem;}
+
+        .stakeholder-card {background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 4px; padding: 1.2rem;}
+
+        .stakeholder-card h4 {font-size: 0.95rem; margin-bottom: 0.7rem; color: var(--text-main); text-transform: uppercase; letter-spacing: 1px;}
+
+        .stakeholder-card p {margin-bottom: 0; font-size: 0.95rem;}
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo"><span>.</span>danki studio</a>
+        <div class="global-nav">
+            <a href="index.html">About</a>
+            <a href="data.html">Data Management</a>
+            <a href="projects.html" class="current-page">Project Management</a>
+            <a href="insights.html">Insights</a>
+        </div>
+    </header>
+
+    <main class="content-wrapper">
+        <h1 class="page-title">Smart & Sustainable City Framework</h1>
+
+        <div class="project-stats">
+            <div class="stat-item"><span class="stat-label">Role</span><span class="stat-value">PM Consultant</span></div>
+            <div class="stat-item"><span class="stat-label">Project Type</span><span class="stat-value">SSC / Free Economic Zone / Urban Development</span></div>
+            <div class="stat-item"><span class="stat-label">Location</span><span class="stat-value">Libya</span></div>
+            <div class="stat-item"><span class="stat-label">Asset Class</span><span class="stat-value">Urban Development</span></div>
+            <div class="stat-item"><span class="stat-label">Phase</span><span class="stat-value">Strategic Planning, Design and Investment Structuring</span></div>
+        </div>
+
+        <div class="img-placeholder">
+            <img src="images/smart_city_image-768x491.jpeg" alt="Smart and Sustainable City Development Framework in Libya" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+
+        <h3>Project Objective</h3>
+        <p>
+            Develop an investor-ready smart and sustainable city framework for a strategic desert city in Libya, integrating the planning of a free economic zone, urban systems, governance architecture, delivery methodology, financial logic, implementation structure, and compliance approach.<br> The assignment was designed to convert a complex territorial ambition into a coherent development portfolio that could be presented credibly to institutional partners, public stakeholders, and potential investors.
+        </p>
+
+        <h3>Strategic Mandate and Portfolio Framing</h3>
+        <div class="finance-box">
+            <p>
+                <strong>Mandate:</strong> Lead a cross-functional team to structure the city vision, define the development model, coordinate technical planning streams, and translate the initiative into a phased and governable investment proposition.<br>
+                <strong>Portfolio Logic:</strong> The city was framed as a portfolio of interdependent programs including land development, infrastructure systems, governance enablement, economic activation, environmental sustainability, and implementation readiness.<br>
+                <strong>Primary Outputs:</strong> Master planning inputs, development roadmap, free zone concept, stakeholder model, financial plan, delivery methodology, governance framework, risk register, and compliance considerations.
+            </p>
+        </div>
+
+        <h3>Scope of Work</h3>
+        <ul>
+            <li><strong>City and Economic Zone Design:</strong> Led the integrated definition of the smart city concept, spatial logic, economic positioning, and the free economic zone model to align urban development with investment attraction and long-term sustainability objectives.</li>
+            <li><strong>Cross-Functional Planning:</strong> Coordinated inputs across planning, mapping, infrastructure, governance, finance, compliance, and development strategy to create a unified program architecture rather than isolated studies.</li>
+            <li><strong>Delivery and Implementation Structuring:</strong> Established phased implementation logic, delivery sequencing, high-level governance controls, and program dependencies to support realistic execution planning.</li>
+            <li><strong>Risk and Compliance Integration:</strong> Embedded risk identification, regulatory awareness, and oversight principles early in the development framework so decision-makers could evaluate both opportunity and execution exposure.</li>
+        </ul>
+
+        <h3>Development Timeline</h3>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-phase">Phase 1</div>
+                <div class="timeline-title">Vision Definition and Strategic Alignment</div>
+                <div class="timeline-desc">
+                    Established the project mandate, strategic intent, investment narrative, and key development objectives. This phase aligned the sponsor vision with economic, urban, governance, and sustainability priorities.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-phase">Phase 2</div>
+                <div class="timeline-title">Territorial Analysis, Mapping and Needs Assessment</div>
+                <div class="timeline-desc">
+                    Organized baseline planning inputs including land logic, spatial opportunities, infrastructure needs, city functions, development constraints, and priority requirements across multiple sectors.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-phase">Phase 3</div>
+                <div class="timeline-title">Concept Design and Free Economic Zone Structuring</div>
+                <div class="timeline-desc">
+                    Defined the city concept, economic zone rationale, sector positioning, and high-level development structure to support both public value creation and investor relevance.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-phase">Phase 4</div>
+                <div class="timeline-title">Financial Planning and Delivery Methodology</div>
+                <div class="timeline-desc">
+                    Built the financial logic, phased investment thinking, implementation approach, and major workstream sequencing required to translate the strategy into an actionable program.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-phase">Phase 5</div>
+                <div class="timeline-title">Governance, Risk and Compliance Framework</div>
+                <div class="timeline-desc">
+                    Structured governance principles, stakeholder interfaces, compliance considerations, and risk management foundations to strengthen decision control and delivery credibility.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-phase">Phase 6</div>
+                <div class="timeline-title">Partner and Investor Presentation Readiness</div>
+                <div class="timeline-desc">
+                    Consolidated the work into a coherent development and governance framework suitable for communication with partners, sponsors, and prospective investors.
+                </div>
+            </div>
+        </div>
+
+        <h3>My Function Across Stakeholders</h3>
+        <div class="stakeholder-grid">
+            <div class="stakeholder-card">
+                <h4>Project Sponsors</h4>
+                <p>
+                    Translated strategic ambition of the sponsor (institutional partners and local construction company) into a governable development structure, clarified decision pathways, and maintained alignment between vision, scope, and investment logic.
+                </p>
+            </div>
+
+            <div class="stakeholder-card">
+                <h4>Technical Experts</h4>
+                <p>
+                    Directed cross-functional collaboration across planning, design, infrastructure, economics, and compliance disciplines to ensure integration of all major city systems.
+                </p>
+            </div>
+
+            <div class="stakeholder-card">
+                <h4>Public and Regulatory Stakeholders</h4>
+                <p>
+                    Framed the initiative in terms of governance, regulatory fit, phased implementation, and public-interest value, supporting more credible institutional dialogue.
+                </p>
+            </div>
+
+            <div class="stakeholder-card">
+                <h4>Investors and Partners</h4>
+                <p>
+                    Presented the city as an investable portfolio of coordinated programs with clearer phasing, risk visibility, financial rationale, and strategic development potential.
+                </p>
+            </div>
+        </div>
+
+        <h3>Key Outcomes and Strategic Value</h3>
+        <ul>
+            <li><strong>Integrated Development Logic:</strong> Converted a broad smart city ambition into a structured framework linking land use, economic activation, infrastructure planning, governance, sustainability, and implementation.</li>
+            <li><strong>Investor-Ready Positioning:</strong> Improved the project’s presentation quality for partners and investors by packaging the initiative as a phased opportunity with clearer rationale, scope boundaries, and decision architecture.</li>
+            <li><strong>Governance-Centered Planning:</strong> Reinforced the importance of accountability, oversight, and delivery structure at an early stage, reducing the common gap between master planning and implementation readiness.</li>
+            <li><strong>Risk-Informed Strategy:</strong> Integrated risk, compliance, and execution constraints into the planning model so the initiative could be assessed not only for ambition, but also for practical viability.</li>
+        </ul>
+
+        <h3>PMI-Oriented Delivery Sensibility</h3>
+        <p>
+            This assignment can be framed through a PMI lens as a portfolio-level strategic initiative composed of interdependent programs and projects. The work combined predictive planning for governance and delivery structure with adaptive coordination across emerging planning streams, reflecting the practical need to balance long-range control with iterative development in complex environments.
+        </p>
+        <p>
+            The engagement also demonstrated core PMI performance domains in stakeholder engagement, planning, uncertainty, delivery, and measurement thinking. From a governance standpoint, the framework emphasized stage-based progression, role clarity, integrated risk awareness, and decision support mechanisms appropriate for large-scale development portfolios.
+        </p>
+
+        <h3>Lessons Learned</h3>
+        <ul>
+            <li><strong>Complex City Projects Need Portfolio Thinking:</strong> Smart city development is rarely one project. It is better understood as a portfolio of coordinated initiatives requiring governance, sequencing, and dependency management from the outset.</li>
+            <li><strong>Governance Must Start Before Execution:</strong> In large territorial developments, governance design should not wait until implementation. It should be embedded early to guide scope control, accountability, and investor confidence.</li>
+            <li><strong>Integrated Planning Improves Credibility:</strong> Bringing planning, economics, compliance, and implementation logic into one coherent framework made the proposal more credible than a design-led concept alone.</li>
+            <li><strong>Risk Visibility Strengthens Strategy:</strong> Explicit treatment of risk, regulatory exposure, and delivery constraints improved the quality of strategic conversations with both sponsors and external stakeholders.</li>
+        </ul>
+
+        <h3>Project Classification (PMI)</h3>
+
+        <div class="tag-block">
+            <div class="tag-block-title">Project Management Approaches</div>
+            <div class="tag-container">
+                <span class="tag tag-approach">PORTFOLIO FRAMING</span>
+                <span class="tag tag-approach">PROGRAM GOVERNANCE</span>
+                <span class="tag tag-approach">PREDICTIVE + ADAPTIVE PLANNING</span>
+                <span class="tag tag-approach">RISK-BASED DECISION SUPPORT</span>
+                <span class="tag tag-approach">STAKEHOLDER-CENTRIC DELIVERY</span>
+            </div>
+        </div>
+
+        <div class="tag-block">
+            <div class="tag-block-title">Functional Responsibilities</div>
+            <div class="tag-container">
+                <span class="tag tag-func">STRATEGIC LEADERSHIP</span>
+                <span class="tag tag-func">CROSS-FUNCTIONAL COORDINATION</span>
+                <span class="tag tag-func">SCOPE INTEGRATION</span>
+                <span class="tag tag-func">GOVERNANCE DESIGN</span>
+                <span class="tag tag-func">RISK MANAGEMENT</span>
+                <span class="tag tag-func">FINANCIAL STRUCTURING</span>
+                <span class="tag tag-func">IMPLEMENTATION PLANNING</span>
+                <span class="tag tag-func">STAKEHOLDER ENGAGEMENT</span>
+            </div>
+        </div>
+
+        <div class="tag-block">
+            <div class="tag-block-title">Project Characteristics</div>
+            <div class="tag-container">
+                <span class="tag tag-char">SMART CITY</span>
+                <span class="tag tag-char">SUSTAINABLE DEVELOPMENT</span>
+                <span class="tag tag-char">FREE ECONOMIC ZONE</span>
+                <span class="tag tag-char">MULTI-STAKEHOLDER</span>
+                <span class="tag tag-char">CAPITAL-INTENSIVE</span>
+                <span class="tag tag-char">HIGH GOVERNANCE COMPLEXITY</span>
+                <span class="tag tag-char">PHASED INVESTMENT MODEL</span>
+                <span class="tag tag-char">STRATEGIC INFRASTRUCTURE</span>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

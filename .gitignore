@@ -2,10 +2,10 @@
 __pycache__/
 *.pyc
 .DS_Store
-data
-finance
-insights
-projects
+
+
+
+
 templates
 *.pdf
 archives/

@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medieval Poetesses: Emotional Intensity in Historical Verse | .danki studio</title>
+    <link rel="icon" type="image/png" href="assets/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* DANKI BRAND CSS */
+        :root { 
+            --bg-charcoal: #121212; 
+            --text-main: #FFFFFF; 
+            --text-muted: #737373; 
+            --neon-green: #33FFA2; 
+            --neon-violet: #FF33FF; 
+            --card-bg: #1A1A1A; 
+            --border-color: #2A2A2A; 
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background-color: var(--bg-charcoal); 
+            color: var(--text-main); 
+            font-family: 'Roboto', sans-serif; 
+            line-height: 1.6; 
+        }
+        a { 
+            text-decoration: none; 
+            color: inherit; 
+            transition: color 0.3s ease; 
+        }
+        header { 
+            padding: 2rem 5%; 
+            border-bottom: 1px solid var(--border-color); 
+            position: sticky; 
+            top: 0; 
+            background: rgba(18, 18, 18, 0.95); 
+            z-index: 100; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+        }
+        .logo { 
+            font-size: 2rem; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+        } 
+        .logo span { 
+            color: var(--neon-violet); 
+        }
+        .global-nav { 
+            display: flex; 
+            gap: 2rem; 
+            font-size: 0.9rem; 
+            text-transform: uppercase; 
+            font-weight: 500; 
+        }
+        .global-nav a { 
+            color: var(--text-muted); 
+        } 
+        .global-nav a.current-page { 
+            color: var(--text-main); 
+            border-bottom: 2px solid var(--neon-green); 
+        }
+        
+        /* TEMPLATE SPECIFIC CSS */
+        .content-wrapper { 
+            max-width: 900px; 
+            margin: 4rem auto; 
+            padding: 0 5%; 
+        }
+        .page-title { 
+            font-size: 2.5rem; 
+            margin-bottom: 1rem; 
+            line-height: 1.2; 
+        }
+        .tag-container { 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 0.8rem; 
+            margin-bottom: 2rem; 
+        }
+        .tag { 
+            font-size: 0.7rem; 
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
+            padding: 4px 12px; 
+            border: 1px solid var(--text-muted); 
+            border-radius: 20px; 
+            font-weight: 500; 
+        }
+        
+        .img-placeholder { 
+            width: 100%; 
+            aspect-ratio: 16/9; 
+            background: var(--card-bg); 
+            border: 1px solid var(--border-color); 
+            border-radius: 4px; 
+            margin-bottom: 3rem; 
+            position: relative; 
+            overflow: hidden; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            color: var(--text-muted); 
+            font-style: italic;
+        }
+        
+        h3 { 
+            color: var(--neon-green); 
+            text-transform: uppercase; 
+            letter-spacing: 1.5px; 
+            font-size: 1rem; 
+            margin: 2.5rem 0 1rem 0; 
+            border-bottom: 1px solid var(--border-color); 
+            padding-bottom: 0.5rem; 
+        }
+        p { 
+            color: #CCCCCC; 
+            margin-bottom: 1.5rem; 
+            font-weight: 300; 
+        }
+        ul { 
+            color: #CCCCCC; 
+            margin-bottom: 1.5rem; 
+            padding-left: 1.5rem; 
+            font-weight: 300; 
+        }
+        li { 
+            margin-bottom: 0.5rem; 
+        }
+        
+        /* Code Block */
+        pre { 
+            background: #0A0A0A; 
+            border: 1px solid var(--border-color); 
+            border-left: 4px solid var(--neon-violet); 
+            padding: 1.5rem; 
+            border-radius: 4px; 
+            overflow-x: auto; 
+            margin-bottom: 2rem; 
+        }
+        code { 
+            font-family: 'Courier New', Courier, monospace; 
+            color: #E0E0E0; 
+            font-size: 0.9rem; 
+        }
+        
+        .tools-grid { 
+            display: flex; 
+            gap: 1rem; 
+            flex-wrap: wrap; 
+            margin-bottom: 2rem; 
+        }
+        .tool-badge { 
+            background: var(--card-bg); 
+            padding: 8px 16px; 
+            border-radius: 4px; 
+            border: 1px solid var(--border-color); 
+            font-size: 0.85rem; 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo"><span>.</span>danki studio</a>
+        <div class="global-nav">
+            <a href="index.html">About</a>
+            <a href="data.html" class="current-page">Data Management</a>
+            <a href="projects.html">Project Management</a>
+            <a href="insights.html">Insights</a>
+        </div>
+    </header>
+
+    <main class="content-wrapper">
+        <div class="tag-container">
+            <span class="tag" style="border-color: var(--neon-violet); color: var(--neon-violet);">NLP</span>
+            <span class="tag" style="border-color: var(--neon-green); color: var(--neon-green);">LINGUISTIC</span>
+            <span class="tag" style="border-color: var(--text-main); color: var(--text-main);">MEDIEVAL POETESSES</span>
+        </div>
+        
+        <h1 class="page-title">Medieval Poetesses: Emotional Intensity in Historical Verse</h1>
+        
+            <p>They already fought ...</p>
+
+        <!-- CITATION Wallada -->
+        <figure style="
+            margin: 2.5rem 0;
+            padding: 1.8rem 2rem;
+            border-left: 3px solid #FF33FF;
+            background: #121212;
+            border-radius: 0 6px 6px 0;
+        ">
+            <blockquote style="
+                font-style: italic;
+                color: #CCCCCC;
+                font-size: 0.95rem;
+                font-weight: 300;
+                line-height: 1.8;
+                margin: 0 0 1rem 0;
+            ">
+                « If you were truly in love with me, you would not blame my unveiled face.»
+            </blockquote>
+            <figcaption style="
+                font-size: 0.78rem;
+                color: #FF33FF;
+                text-transform: uppercase;
+                letter-spacing: 1.5px;
+                font-weight: 500;
+            ">— Wallada bint al-Mustakfi (~1010-1091), <em style="text-transform: none; font-weight: 300; color: #737373;">Córdoba</em></figcaption>
+        </figure>
+
+
+        <div class="img-placeholder">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi96zTuyzlTuPgz_3BNXVLIBLgtSTi_fZyPLntnP-GFeyyMKeEopWan3OWw-uDX0hhx0UIOc9W-s3YiYWBSSPGdq8bYoJFFkokbIrzrt7qgBZstTkEp2HwQf-bUBEvY9dmmOOVRtttaYXQM/s600/ibn+zaydun+y+wallada+escultura+cordoba.jpg" alt="escultura en Córdoba a Ibn Zaydún y Wallada" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+
+        <h3>Ideation</h3>
+        <p>This project dives into the powerful words of four amazing medieval women: <strong>Anne Komnene</strong>, <strong>Hildegard von Bingen</strong>, <strong>Marie de France</strong>, and their guest  <strong>Wallada bint al-Mustakfi</strong> who wrote poems, lais, and texts full of emotion, insight, and imagination.
+            
+            Through <strong>clustering</strong>, connected scatterplots, <strong>Natural Language Processing - NLP</strong>, and thematic mapping, the project seeks to:
+Spot themes and emotions in their writing. See how their styles compare and what makes each unique.| Show how their stories connect across time, space, and language.| Make their work feel alive and accessible through creative visuals.</p>
+
+                <!-- objectives — 4 colonnes -->
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+                    <div style="padding: 1.2rem; background: #121212; border: 1px solid #2A2A2A; border-radius: 6px;">
+                        <div style="font-size: 1rem; margin-bottom: 0.5rem;">Text Emotion Classification</div>
+                        <div style="color: #33FFA2; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;">NLP (Natural Language Processing)</div>
+                        <p style="color: #CCCCCC; font-size: 0.85rem; font-weight: 300; margin: 0;">
+                            Spot themes and emotions in their writing.
+                        </p>
+                    </div>
+            
+                    <div style="padding: 1.2rem; background: #121212; border: 1px solid #2A2A2A; border-radius: 6px;">
+                        <div style="font-size: 1rem; margin-bottom: 0.5rem;">Stylometry & Authorship Attribution</div>
+                        <div style="color: #33FFA2; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;">PCA (Principal Component Analysis)</div>
+                        <p style="color: #CCCCCC; font-size: 0.85rem; font-weight: 300; margin: 0;">
+                           See how their styles compare and what makes each unique.
+                        </p>
+                    </div>
+            
+                    <div style="padding: 1.2rem; background: #121212; border: 1px solid #2A2A2A; border-radius: 6px;">
+                        <div style="font-size: 1rem; margin-bottom: 0.5rem;">Clustering (Non-supervised Learning)</div>
+                        <div style="color: #33FFA2; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;">Scikit-learn (K-Means)</div>
+                        <p style="color: #CCCCCC; font-size: 0.85rem; font-weight: 300; margin: 0;">
+                            Show how their stories connect across time, space, and language.
+                        </p>
+                    </div>
+                    <div style="padding: 1.2rem; background: #121212; border: 1px solid #2A2A2A; border-radius: 6px;">
+                        <div style="font-size: 1rem; margin-bottom: 0.5rem;">Interactive Data Visualization</div>
+                        <div style="color: #33FFA2; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;">Plotly</div>
+                        <p style="color: #CCCCCC; font-size: 0.85rem; font-weight: 300; margin: 0;">
+                            Make their work feel alive and accessible through creative visuals.
+                        </p>
+                    </div>  
+</div>
+        <h3>Tools-grid</h3>
+        <div class="tools-grid">
+            <span class="tool-badge">Python</span>
+            <span class="tool-badge">NLP (Natural Language Processing)</span>
+            <span class="tool-badge">PCA (Principal Component Analysis)</span>
+            <span class="tool-badge">Scikit-learn (K-Means)</span>
+            <span class="tool-badge">Plotly</span>
+        </div>
+        
+        <h2>Data Analysis Pipeline</h2>
+
+        <p>To transform raw medieval texts into the interactive <strong>dashboard</strong>, the analysis follows a structured pipeline integrating linguistic preprocessing and machine learning.</p>
+
+        <h4>CH01 - Linguistic Feature Extraction (NLP)</h4>
+        <h4>CH02 - Comparative Stylometry (PCA)</h4>
+        <h4>CH03 -Unsupervised Clustering (K-Means)</h4>
+        <h4>CH04 -Dynamic Visual Synthesis (Plotly)</h4><br>
+
+        <h2>Random extraction and poetesses'presentation</h2>
+
+        <pre><code>import streamlit as st
+import pandas as pd
+import numpy as np
+
+#Sample 1 random row per author
+if not df.empty:
+    random_extracts = df.groupby('autrice').sample(n=1)
+    cols = st.columns(4)  
+    for i, (idx, row) in enumerate(random_extracts.iterrows()):
+        with cols[i]:
+...</code></pre>
+
+        <div class="img-placeholder">
+            <img src="assets/images/random_quote.png" alt="random_quote" style="width: 100%; height: 200px; object-fit: cover;">
+        </div>
+
+        <p>Now, relax!</p>
+
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/xDFBJFC7oy0?si=Z35sRLnelb2ss4cZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+        <!-- Grid Container -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+            <!-- 1. Anna Komnene -->
+            <div class="tissue-sample">
+                <img src="https://cdn1.booknode.com/book_cover/1480/alexiade-1479638-264-432.webp" alt="Anna Komnene" style="width: 100%; height: 180px; object-fit: cover;" 
+             class="tissue-img" onclick="openLightbox(this)">
+                <div class="tissue-info">
+                    <h3>ANNA KOMNENE</h3>
+                    <div class="detail"><strong>Origin:</strong> Byzantine Empire</div>
+                    <div class="detail"><strong>Focus:</strong> Political History</div>
+                    <p><em>Author of the Alexiad, documenting the reign of her father Alexis. Her work bridges the gap between classical rhetoric and imperial reality.</em></p>
+                </div>
+            </div>
+
+            <!-- 2. Hildegard von Bingen -->
+            <div class="tissue-sample">
+                <img src="https://www.perthobservatory.com.au/wp-content/uploads/hildegard-von-bingen.jpg" alt="Hildegard von Bingen" style="width: 100%; height: 180px; object-fit: cover;" 
+             class="tissue-img" onclick="openLightbox(this)">
+                <div class="tissue-info">
+                    <h3>HILDEGARD VON BINGEN</h3>
+                    <div class="detail"><strong>Origin:</strong> Holy Roman Empire</div>
+                    <div class="detail"><strong>Focus:</strong> Cosmology & Spirituality</div>
+                    <p><em>Her "O Clarissima Mater" explores the divine strength of humanity and the mirrors of creation.</em></p>
+                </div>
+            </div>
+
+            <!-- 3. Marie de France -->
+            <div class="tissue-sample">
+                <img src="https://www.actes-sud.fr/sites/default/files/couvertures/9782742777204.jpg" alt="Marie de France" style="width: 100%; height: 180px; object-fit: cover;" 
+             class="tissue-img" onclick="openLightbox(this)">
+                <div class="tissue-info">
+                    <h3>MARIE DE FRANCE</h3>
+                    <div class="detail"><strong>Origin:</strong> Anglo-Norman England</div>
+                    <div class="detail"><strong>Focus:</strong> Courtly Love & Lais</div>
+                    <p><em>Famous for the "Chevrefeuille," she uses the metaphor of the honeysuckle and hazel tree to describe inseparable love.</em></p>
+                </div>
+            </div>
+
+            <!-- 4. Wallada bint al-Mustakfi -->
+            <div class="tissue-sample">
+                <img src="https://images.gr-assets.com/authors/1519487580p5/17087091.jpg" alt="Wallada" style="width: 100%; height: 180px; object-fit: cover;" 
+             class="tissue-img" onclick="openLightbox(this)">
+                <div class="tissue-info">
+                    <h3>WALLADA BINT AL-MUSTAKFI</h3>
+                    <div class="detail"><strong>Origin:</strong> Al-Andalus</div>
+                    <div class="detail"><strong>Focus:</strong> Independence & Passion</div>
+                    <p><em>A noble poetess who wrote of her high condition and the fierce jealousy and passion of her heart.</em></p>
+                </div>
+            </div>
+        </div>
+
+
+<div class="tissue-sample global-corpus" style="border: 1px solid var(--border-color); background: var(--card-bg); border-radius: 4px; overflow: hidden;">
+    
+    <div class="heart-container" style="height: 180px; display: flex; align-items: center; justify-content: center; background: #0A0A0A; border-bottom: 1px solid var(--border-color);">
+        <svg viewBox="0 0 100 100" style="width: 80px; fill: none; stroke: var(--neon-violet); stroke-width: 2.5; stroke-linecap: round; filter: drop-shadow(0 0 5px var(--neon-violet));">
+            <path d="M50,30 
+                     C50,10 90,10 90,40 
+                     C90,70 50,90 50,90 
+                     C50,90 10,70 10,40 
+                     C10,10 50,10 50,30
+                     M48,32 Q52,28 55,35" /> </svg>
+    </div>
+
+    <div class="tissue-info" style="padding: 1.5rem;">
+        <h3 style="margin-top: 0;">THE GLOBAL CORPUS</h3>
+        <div class="detail" style="color: var(--neon-green); margin-bottom: 0.5rem; font-weight: 500;"><strong>Expansion:</strong> Unanalyzed Voices</div>
+        
+        <p style="font-size: 0.85rem; font-style: italic;">"Mapping the heartbeats of poetesses whose verses transcend the current digital sample."</p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem; font-size: 0.8rem; color: #CCCCCC;">
+            <div>
+                <strong style="color: var(--text-main); display: block; margin-bottom: 5px;">ASIA & AFRICA</strong>
+                <ul style="list-style: none; padding: 0;">
+                    <li>• <span style="color: var(--neon-green);">Li Qingzhao</span> (China)</li>
+                    <li>• <span style="color: var(--neon-green);">Kristos Samra</span> (Ethiopia)</li>
+                    <li>• <span style="color: var(--neon-green);">Akka Mahadevi</span> (India)</li>
+                </ul>
+            </div>
+            <div>
+                <strong style="color: var(--text-main); display: block; margin-bottom: 5px;">LATAM & EURASIA</strong>
+                <ul style="list-style: none; padding: 0;">
+                    <li>• <span style="color: var(--neon-green);">Sor Juana*</span> (Latin Am.)</li>
+                    <li>• <span style="color: var(--neon-green);">Princess Olga</span> (Russia)</li>
+                    <li>• <span style="color: var(--neon-green);">Oral Traditions</span> (Global)</li>
+                </ul>
+            </div>
+        </div>
+        
+        <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 1rem; border-top: 1px solid var(--border-color); padding-top: 0.5rem;">
+            *Note: Includes voices from the edge of the medieval/early modern transition.
+        </p>
+    </div>
+</div>
+
+        <h3>CH01 - Linguistic Feature Extraction (NLP)</h3>
+
+        <p>To <strong>spot themes and emotions</strong>, we employ Natural Language Processing techniques. The <strong>translation pipeline</strong> is used to translate French text into English, making it easier to apply emotion analysis models that work with English text. The translation model used here is `Helsinki-NLP/opus-mt-fr-en`, which is specifically trained for machine translation between French and English.</p>
+        <p>The <strong>emotion classification</strong> model detects the emotion conveyed in each translated line of text. It assigns each line an emotion label and a confidence score. This is a supervised machine learning model applied to textual data, trained to classify emotions like joy, sadness, anger, etc.</p>
+        <p><strong>Categorical encoding</strong> is applied to convert the emotional labels into numerical codes. This transformation allows the emotional labels to be used effectively in visualizations, where color and size can represent these numerical values.</p>
+        
+        <div class="tools-grid" style="margin-bottom: 2rem;">
+            <span class="tool-badge">Translation</span>
+            <span class="tool-badge">Classification</span>
+            <span class="tool-badge">Tokenization</span>
+        </div>
+        
+        <p>From raw text to DataFrame</p>
+
+            <center>
+            <iframe 
+            src="assets/images/emotion_sample.html" 
+            width="100%" 
+            height="400px" 
+            style="border:none; max-width: 900px;">
+            </iframe>
+            </center>   
+            
+            <center>
+            <iframe 
+            src="assets/images/emotion_chart.html" 
+            width="100%" 
+            height="400px" 
+            style="border:none; max-width: 900px;">
+            </iframe>
+            </center>               
+
+
+        <p>This project uses <strong>Natural Language Processing (NLP)</strong to perform a cross-linguistic sentiment analysis of medieval texts by four poetesses. The goal is to translate archaic French or localized dialects into modern English to map and compare dominant emotional intensities across different centuries and cultures.</p>
+        
+        <ul>
+            <li><strong>Linguistic Translation (NMT):</strong> The script utilizes the Helsinki-NLP neural machine translation model to bridge the gap between medieval syntax and modern English, ensuring the sentiment engine receives data it was specifically trained to understand.</li>
+            <li><strong>Semantic Vectorization:</strong> Using a DistilRoBERTa architecture, the code transforms translated sentences into high-dimensional vectors that capture the contextual meaning and relationship between words.</li>
+            <li><strong>Emotion Classification:</strong> The NLP engine calculates the mathematical probability of seven distinct emotions (including Joy, Sadness, Anger), selecting the label with the highest confidence score for each line.</li>
+            <li><strong>Nested Result Extraction</strong> The logic includes a recursive check (isinstance) to safely navigate the model's nested list outputs, extracting the raw label and score while preventing script crashes from unexpected data shapes.</li>
+            <li><strong>Nested Result Extraction</strong> Processed results are aggregated into a pandas DataFrame.</li>
+        </ul>
+
+        <h3>CH02 - Comparative Stylometry (PCA)</h3>
+        <p>To <strong>compare unique styles</strong>, the data is projected into a multidimensional space. While the current dashboard focuses on thematic axes, the underlying logic utilizes Principal Component Analysis (PCA) principles to reduce complex linguistic variances into visible patterns, highlighting what distinguishes each poetess’s "voice."</p>
+
+        <div class="tools-grid" style="margin: 2rem 0;">
+            <span class="tool-badge" style="border-color: var(--neon-violet); color: var(--neon-violet);">TfidfVectorizer</span>
+            <span class="tool-badge" style="border-color: var(--neon-green); color: var(--neon-green);">PCA</span>
+            <span class="tool-badge" style="border-color: var(--text-main); color: var(--text-main);">KMeans</span>
+        </div>
+
+        <center>
+            <iframe 
+            src="assets/images/medieval_stylometry.html" 
+            width="100%" 
+            height="600px" 
+            style="border:none; max-width: 900px;">
+            </iframe>
+        </center>
+
+        <p>Here, with <strong>TF-IDF (Term Frequency-Inverse Document Frequency)</strong>, I prioritize words that are uniquely characteristic of a poetess.
+        <strong>PCA (Principal Component Analysis)</strong> then compresses hundreds of linguistic features into two axes, allowing us to see the "gravitational pull" of different styles.</p>
+        <p>Unlike a static cluster, the <strong>Connected Scatterplot</strong> treats the text as a sequence. By connecting dots (verses) in order, we visualize the tonal journey of a poem.</p>
+        <p>By applying K-Means Clustering, we allow the data to "speak" without human bias.</p>
+        <ul>
+            <li><strong>We can visually identify if Anna Komnene's historical prose shares a structural "DNA" with Wallada’s independent verses, despite their different centuries.</li>
+            <li><strong>Sudden "spikes" in the line represent thematic ruptures—moments where a poetess shifts from a neutral narrative to a highly emotional or political outburst.</li>
+            <li><strong>When the algorithm groups Hildegard and Marie de France together in a specific cluster, it scientifically validates the shared use of natural metaphors.</li>
+        </ul>
+        
+     
+        <h3>CH03 - Unsupervised Clustering (K-Means)</h3>
+        <p>To <strong>reveal connections across time and space</strong>, we utilize the <code>Scikit-learn</code> implementation of the K-Means algorithm. By analyzing the proximity of verses within the thematic vector space, the system automatically groups segments into four academic clusters. This reveals structural similarities in storytelling that transcend geographical and linguistic barriers.</p>
+
+        <div class="tools-grid" style="margin-bottom: 2rem;">
+            <span class="tool-badge">Translation</span>
+            <span class="tool-badge">Classification</span>
+            <span class="tool-badge">Tokenization</span>
+        </div>        
+
+        <center>
+            <iframe 
+            src="assets/images/cluster_map.html" 
+            width="100%" 
+            height="600px" 
+            style="border:none; max-width: 900px;">
+            </iframe>
+        </center>
+
+        <p>This project uses <strong>>Natural Language Processing (NLP)</strong to perform a cross-linguistic sentiment analysis of medieval texts by four poetesses. The goal is to translate archaic French or localized dialects into modern English to map and compare dominant emotional intensities across different centuries and cultures.</p>
+        
+        <ul>
+            <li><strong>Vectorization:</strong> The raw text is converted into a numerical matrix. Each word becomes a dimension, creating a "thematic space" where similar verses are mathematically close to each other.</li>
+            <li><strong>Clustering & Projection:</strong> The K-Means algorithm assigns each verse to one of four clusters. PCA then flattens this multi-dimensional space into pca1 and pca2 coordinates so they can be plotted on a standard X/Y axis</li>
+        </ul>
+
+         <div style="background: var(--card-bg); padding: 1.5rem; border-radius: 4px; border-left: 4px solid var(--neon-green); margin: 2rem 0;">
+            <h4 style="color: var(--neon-green); margin-bottom: 1rem;">Why 4 Clusters?</h4>
+            
+            <div class="tools-grid" style="margin: 1rem 0;">
+                <div style="flex: 1; min-width: 200px;">
+                    <h5 style="color: var(--text-main); font-size: 0.9rem;">Cluster 1: Nature/Love</h5>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">Focuses on natural imagery (the hazel and the honeysuckle) and romantic longing, frequently bridging the works of Marie de France and Wallada</p>
+                </div>
+                
+                <div style="flex: 1; min-width: 200px;">
+                    <h5 style="color: var(--text-main); font-size: 0.9rem;">Cluster 2: Power/History</h5>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">Groups together formal rhetoric, historical accounts, and lineage, a space dominated by Anna Komnene’s Alexiad</p>
+                </div>
+                
+                <div style="flex: 1; min-width: 200px;">
+                    <h5 style="color: var(--text-main); font-size: 0.9rem;">Cluster 3: Spirituality</h5>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">Identifies language of divine revelation and cosmic order, specifically isolating the unique theological vocabulary of Hildegard von Bingen</p>
+                </div>
+                
+                <div style="flex: 1; min-width: 200px;">
+                    <h5 style="color: var(--text-main); font-size: 0.9rem;">Cluster 4: Loss/Memory</h5>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">A "cross-temporal" cluster where the melancholy of lost love or political displacement creates a mathematical bond between verses from different continents</p>
+                </div>
+            </div>
+            
+            <div style="margin-top: 1.5rem; font-size: 0.9rem; color: var(--text-muted);">
+                <strong>In unsupervised learning</strong>, selecting the number of clusters (the $k$ in K-Means) is an intentional choice to balance granularity with clarity. For this project, four clusters were chosen to mirror the four distinct voices of the poetesses while testing if their themes would actually merge or stay isolated -                
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+            <h3>Thematic vs. Stylometric Analysis</h3>
+            
+            <div style="overflow-x: auto; margin-bottom: 2rem;">
+                <table style="width: 100%; border-collapse: collapse; background: var(--card-bg); border: 1px solid var(--border-color);">
+                    <thead>
+                        <tr style="border-bottom: 2px solid var(--neon-green);">
+                            <th style="padding: 1rem; text-align: left; color: var(--neon-green); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px;">Analysis Type</th>
+                            <th style="padding: 1rem; text-align: left; color: var(--neon-green); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px;">Focus</th>
+                            <th style="padding: 1rem; text-align: left; color: var(--neon-green); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px;">DANKI Objective</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid var(--border-color);">
+                            <td style="padding: 1rem; color: var(--neon-violet); font-weight: 500; font-size: 0.8rem;">STYLOMETRY (PCA)</td>
+                            <td style="padding: 1rem;">Linguistic habits, syntax, and rhythmic patterns.</td>
+                            <td style="padding: 1rem;">To <strong>isolate</strong> and celebrate the unique genius of the individual creator.</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 1rem; color: var(--neon-violet); font-weight: 500; font-size: 0.8rem;">CLUSTERING (K-MEANS)</td>
+                            <td style="padding: 1rem;">Semantic meaning, shared vocabulary, and topics.</td>
+                            <td style="padding: 1rem;">To <strong>connect</strong> voices across time through universal human archetypes.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p>While <strong>Stylometry</strong> verifies the inimitable signature of each poetess, <strong>K-Means Clustering</strong> reveals the invisible threads that bind them together, proving that shared emotional landscapes transcend geographical and linguistic borders.</p>
+        </div>
+
+
+
+        <h3>CH04 - Dynamic Visual Synthesis (Plotly)</h3>
+        <p>The final objective—<strong>making the work feel alive</strong>—is achieved through Plotly. We map the statistical results to a high-contrast scatter plot where:</p>
+        
+        <h4>Plotting the Emotion Trajectory</h4>
+
+        <p>For each poet, a line is added to represent the emotional trajectory of each poem, based on the scores for each line.</p>    
+
+        <center>
+            <iframe 
+            src="assets/images/trajectory_wallada.html" 
+            width="100%" 
+            height="400px" 
+            style="border:none; max-width: 900px;">
+            </iframe>
+        </center>
+        
+        <center>
+            <iframe 
+            src="assets/images/trajectory_marie_de_france.html" 
+            width="100%" 
+            height="400px" 
+            style="border:none; max-width: 900px;">
+            </iframe>
+        </center>
+        
+        <center>
+            <iframe 
+            src="assets/images/trajectory_hildegard_von_bingen.html" 
+            width="100%" 
+            height="400px" 
+            style="border:none; max-width: 900px;">
+            </iframe>
+        </center>
+        
+        <center>
+            <iframe 
+            src="assets/images/trajectory_anna_komnene.html" 
+            width="100%" 
+            height="400px" 
+            style="border:none; max-width: 900px;">
+            </iframe>
+        </center>
+
+        <h4>Distribution of emotional intensities by poetess</h4>
+
+        <p>Violin plots to display distribution of emotion's density by poetess or by emotion.</p>
+        <p>While the previous trajectory chart showed the order of emotions, this chart shows the statistical distribution—revealing who is consistently intense and who is more balanced.</p>
+
+        <center>
+            <iframe 
+            src="assets/images/emotional_distribution.html" 
+            width="100%" 
+            height="600px" 
+            style="border:none; max-width: 900px;">
+            </iframe>
+        </center>
+
+        <p>Here, distribution of emotional intensity by emotion</p>
+        <p>Instead of looking at who wrote what, you are looking at the nature of the emotions. For example, you might see that "JOY" always has a very high confidence score, while "SADNESS" is more widely distributed.</p>
+
+        <center>
+            <iframe 
+            src="assets/images/emotion_intensity_distribution.html" 
+            width="100%" 
+            height="600px" 
+            style="border:none; max-width: 900px;">
+            </iframe>
+        </center>
+
+        <h4>Playing with clusters</h4>
+
+        <p>Comparative Trajectory Dashboard</p>
+        
+        <p>Connected scatterplot is an hybrid between a scatter plot and a line plot, the scatter dots are connected with a ligne.</p>
+        <p>By plotting all four poetesses on the same graph, we can see where their "clusters" intersect. Each author has a distinct shape (Circle, Diamond, Star, Square). Even when the lines cross, the geometry remains clear—very much in the spirit of a technical studio blueprint.</p>
+
+        <center>
+            <iframe 
+            src="assets/images/comparative_trajectory.html" 
+            width="100%" 
+            height="600px" 
+            style="border:none; max-width: 900px;">
+            </iframe>
+        </center>
+
+        <p><strong>Clustering Based on Emotional Intensity</strong></p>
+        <p>Cluster the verses based on emotional intensity into 3 groups with a simple clustering algorithm such as KMeans on the score column.</p>
+        <p>Using a Convex Hull (those shaded shapes) visually groups verses not by who wrote them, but by the intensity they share. It creates "climates" of emotion across your entire global corpus.</p>
+        <p>Using K-Means clustering to create three tiers: Low, Medium, and High Intensity, then draw the hulls around them.</p>
+
+        <center>
+            <iframe 
+            src="assets/images/intensity_hulls.html" 
+            width="100%" 
+            height="600px" 
+            style="border:none; max-width: 900px;">
+            </iframe>
+        </center>
+
+        <p><strong>Cluster Poem Generator</strong></p>
+
+        <ul>
+            <li><strong>Deconstruction:</strong> It breaks the original poems down into their emotional atoms (verses).</li>
+            <li><strong>Reconstruction</strong> It uses the AI's "understanding" of intensity (previous analysis on emotion like) to group them into new meaningful units.</li>
+        </ul>
+
+        <center>
+            <iframe 
+            src="assets/images/poetic_remixes.html" 
+            width="100%" 
+            height="1200px" 
+            style="border:none; max-width: 900px;">
+            </iframe>
+        </center>        
+
+    </main>
+</body>
+</html>
