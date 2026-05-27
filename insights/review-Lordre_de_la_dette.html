@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Reviews | L’ordre de la dette</title>
+    <link rel="icon" type="image/png" href="favicon.ico">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* DANKI BRAND CSS */
+        :root { --bg-charcoal: #121212; --text-main: #FFFFFF; --text-muted: #737373; --neon-green: #33FFA2; --neon-violet: #FF33FF; --card-bg: #1A1A1A; --border-color: #2A2A2A; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--bg-charcoal); color: var(--text-main); font-family: 'Roboto', sans-serif; line-height: 1.7; }
+        a { text-decoration: none; color: inherit; transition: color 0.3s ease; }
+        header { padding: 2rem 5%; border-bottom: 1px solid var(--border-color); position: sticky; top: 0; background: rgba(18, 18, 18, 0.95); z-index: 100; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 2rem; font-weight: 700; text-transform: uppercase; } .logo span { color: var(--neon-violet); }
+        .global-nav { display: flex; gap: 2rem; font-size: 0.9rem; text-transform: uppercase; font-weight: 500; }
+        .global-nav a { color: var(--text-muted); } .global-nav a.current-page { color: var(--text-main); border-bottom: 2px solid var(--neon-green); }
+        
+        /* TEMPLATE SPECIFIC CSS */
+        .content-wrapper { max-width: 800px; margin: 4rem auto; padding: 0 5%; }
+        
+        .article-meta { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem; }
+        .page-title { font-size: 2.8rem; margin-bottom: 2rem; line-height: 1.2; font-weight: 700; }
+        
+        .tag { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1px; padding: 4px 10px; border: 1px solid var(--neon-green); color: var(--neon-green); border-radius: 20px; font-weight: 500; }
+        
+        .img-placeholder { width: 100%; aspect-ratio: 16/9; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 4px; margin-bottom: 3rem; }
+        
+        h2 { color: var(--text-main); font-size: 1.5rem; margin: 2.5rem 0 1rem 0; font-weight: 500; }
+        p { color: #CCCCCC; margin-bottom: 1.5rem; font-weight: 300; font-size: 1.05rem; }
+        
+        .highlight { color: var(--neon-green); font-weight: 500; }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo"><span>.</span>danki studio</a>
+        <div class="global-nav"><a href="index.html">About</a><a href="data.html">Data Management</a><a href="projects.html">Project Management</a><a href="insights.html" class="current-page">Insights</a></div>
+    </header>
+
+    <main class="content-wrapper">
+        <div class="article-meta">
+            <span>April 21, 2026</span>
+            <span class="tag" style="border-color: var(--text-main); color: var(--text-main);">BOOK REVIEW</span>
+            <span class="tag">Debt</span>
+            <span class="tag" style="border-color: var(--text-main); color: var(--text-main);">ECONOMY</span>
+        </div>
+        
+        <h1 class="page-title">L’ordre de la dette. Enquête sur l'invisibilisation de l'État</h1>
+
+        <div class="img-placeholder" style="width: 150px; height: 220px; overflow: hidden;">
+            <img src="https://www.interforum.fr/images/DEC/P3/9782348073540.jpg" alt="L’ordre de la dette" style="width: 100%; height: 100%; object-fit: contain;">
+        </div>
+
+      <p><em>Benjamin Lemoine, Éditions La Découverte, 2022</em></p>
+       
+    <p>Benjamin LEMOINE est sociologue, chercheur au CNRS et spécialiste des finances publiques.</p>
+    <p>L’ouvrage nous plonge au cœur des mécanismes de la dette souveraine française, démontrant comment la gestion des finances publiques a basculé d’un outil de choix politique à une contrainte technique indiscutable. 
+        L’auteur utilise une approche historique et sociologique pour décortiquer la transformation de l’État, qui s'est progressivement soumis aux règles et au jugement des marchés financiers.</p>
+    <p>Dans son développement, le texte met en lumière la manière dont la dette publique a été financiarisée à partir des années 1970, transformant les citoyens en débiteurs et les banques en créanciers incontournables. 
+        L'auteur <strong>dénonce l'argumentaire dominant qui utilise la dette pour justifier les politiques d'austérité et le démantèlement des services publics</strong>. 
+        Plusieurs pistes de réflexion se dégagent pour repenser la souveraineté monétaire et redonner au politique le pouvoir de décider de l'allocation des ressources face aux marchés.</p>
+
+    <h2>Idées principales ceuillies</h2>
+    <ul class="highlight">
+        <li><strong>La transformation de la dette publique d'un outil politique de développement en une contrainte de marché indiscutable</strong></li>
+        <li><strong>Le processus historique de financiarisation de l'État et la dépendance accrue envers les créanciers privés</strong></li>
+        <li><strong>L'invisibilisation des choix politiques derrière l'argument technique et moral de la nécessité du remboursement</strong></li>
+        <li><strong>La remise en cause de la souveraineté monétaire et la nécessité de repenser le rôle de l'État face aux marchés financiers</strong></li>
+    </ul>
+
+    </main>
+</body>
+</html>

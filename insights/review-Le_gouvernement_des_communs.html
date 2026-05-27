@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Reviews | Le gouvernement des communs</title>
+    <link rel="icon" type="image/png" href="favicon.ico">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* DANKI BRAND CSS */
+        :root { --bg-charcoal: #121212; --text-main: #FFFFFF; --text-muted: #737373; --neon-green: #33FFA2; --neon-violet: #FF33FF; --card-bg: #1A1A1A; --border-color: #2A2A2A; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--bg-charcoal); color: var(--text-main); font-family: 'Roboto', sans-serif; line-height: 1.7; }
+        a { text-decoration: none; color: inherit; transition: color 0.3s ease; }
+        header { padding: 2rem 5%; border-bottom: 1px solid var(--border-color); position: sticky; top: 0; background: rgba(18, 18, 18, 0.95); z-index: 100; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 2rem; font-weight: 700; text-transform: uppercase; } .logo span { color: var(--neon-violet); }
+        .global-nav { display: flex; gap: 2rem; font-size: 0.9rem; text-transform: uppercase; font-weight: 500; }
+        .global-nav a { color: var(--text-muted); } .global-nav a.current-page { color: var(--text-main); border-bottom: 2px solid var(--neon-green); }
+        
+        /* TEMPLATE SPECIFIC CSS */
+        .content-wrapper { max-width: 800px; margin: 4rem auto; padding: 0 5%; }
+        
+        .article-meta { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem; }
+        .page-title { font-size: 2.8rem; margin-bottom: 2rem; line-height: 1.2; font-weight: 700; }
+        
+        .tag { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1px; padding: 4px 10px; border: 1px solid var(--neon-green); color: var(--neon-green); border-radius: 20px; font-weight: 500; }
+        
+        .img-placeholder { width: 100%; aspect-ratio: 16/9; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 4px; margin-bottom: 3rem; }
+        
+        h2 { color: var(--text-main); font-size: 1.5rem; margin: 2.5rem 0 1rem 0; font-weight: 500; }
+        p { color: #CCCCCC; margin-bottom: 1.5rem; font-weight: 300; font-size: 1.05rem; }
+        
+        .highlight { color: var(--neon-green); font-weight: 500; }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo"><span>.</span>danki studio</a>
+        <div class="global-nav"><a href="index.html">About</a><a href="data.html">Data Management</a><a href="projects.html">Project Management</a><a href="insights.html" class="current-page">Insights</a></div>
+    </header>
+
+    <main class="content-wrapper">
+        <div class="article-meta">
+            <span>April 21, 2026</span>
+            <span class="tag" style="border-color: var(--text-main); color: var(--text-main);">BOOK REVIEW</span>
+            <span class="tag">Economic governance</span>
+            <span class="tag" style="border-color: var(--text-main); color: var(--text-main);">ECONOMY</span>
+        </div>
+        
+        <h1 class="page-title">Elinor OSTROM, Le gouvernement des communs </h1>
+
+        <div class="img-placeholder" style="width: 150px; height: 220px; overflow: hidden;">
+            <img src="https://products-images.di-static.com/image/edouard-jourdain-elinor-ostrom/9782841869718-475x500-1.jpg" alt="Le gouvernement des communs" style="width: 100%; height: 100%; object-fit: contain;">
+        </div>
+
+      <p><em>Edouard JOURDAIN – Éditions Michalon, Le bien commun – février 2022</em></p>
+       
+        <p>L’auteur analyse, sous un prisme juridique et économique les écrits de Elinor Ostrom, prix Nobel d’économie en 2009, qui vient enrichir la pensée de Garrett Hardin de 1968 qui n’envisageait la gestion des communs que sur des modèles de privatisation ou nationalisation. </p>
+    <p>Edouard Jourdain nous résume la pensée du Nobel en commençant par nous donner sa définition du terme de biens communs, ces « communs réels gérés collectivement depuis des millénaires » dont le souci est de « concilier le droit d’usage avec la préservation des ressources ». Les communs, selon Elinor Ostrom sont liés à des communautés et constituent un bien à préserver pour l’existence collective.</p>
+    <p>Elinor Ostrom critique les partisans de la centralisation et ceux de la privatisation qui produisent des normes qui ne permettent pas de régler les problèmes et conduisent à des tragédies, car elles n’impliquent pas les individus concernés. Une des solutions abordées est de déplacer cette capacité normative vers les usagers des biens communs, une troisième voie abordée par la prix Nobel d’économie.</p>
+
+
+        <h2>Idées principales ceuillies</h2>
+        <ul class="highlight">
+            <li><strong>L'émergence d'une troisième voie pour la gestion des communs, alternative à la privatisation et à la nationalisation</strong></li>
+            <li><strong>La conciliation du droit d'usage avec la préservation durable des ressources par et pour les communautés</strong></li>
+            <li><strong>Le déplacement de la capacité normative vers les usagers directement concernés plutôt qu'une centralisation étatique</strong></li>
+            <li><strong>Les limites théoriques liées à la porosité de la gestion des communs et à l'altruisme supposé des groupes d'usagers</strong></li>
+        </ul>
+
+       <h2>Conclusion</h2>
+    <p>Cette approche, bien qu’elle alimente une réflexion indispensable, me semble quelque peu théorique car il y a souvent une porosité importante dans la gestion des communs, que leur définition est mouvante et dynamique, et qu’un groupe, fusse t-il d’usagers n’en fera pas nécessairement une utilisation plus durable du fait de sa qualité d’usager. </p>
+    
+    </main>
+</body>
+</html>

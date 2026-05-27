@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Reviews | L'Océan numérique</title>
+    <link rel="icon" type="image/png" href="favicon.ico">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* DANKI BRAND CSS */
+        :root { --bg-charcoal: #121212; --text-main: #FFFFFF; --text-muted: #737373; --neon-green: #33FFA2; --neon-violet: #FF33FF; --card-bg: #1A1A1A; --border-color: #2A2A2A; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--bg-charcoal); color: var(--text-main); font-family: 'Roboto', sans-serif; line-height: 1.7; }
+        a { text-decoration: none; color: inherit; transition: color 0.3s ease; }
+        header { padding: 2rem 5%; border-bottom: 1px solid var(--border-color); position: sticky; top: 0; background: rgba(18, 18, 18, 0.95); z-index: 100; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 2rem; font-weight: 700; text-transform: uppercase; } .logo span { color: var(--neon-violet); }
+        .global-nav { display: flex; gap: 2rem; font-size: 0.9rem; text-transform: uppercase; font-weight: 500; }
+        .global-nav a { color: var(--text-muted); } .global-nav a.current-page { color: var(--text-main); border-bottom: 2px solid var(--neon-green); }
+        
+        /* TEMPLATE SPECIFIC CSS */
+        .content-wrapper { max-width: 800px; margin: 4rem auto; padding: 0 5%; }
+        
+        .article-meta { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem; }
+        .page-title { font-size: 2.8rem; margin-bottom: 2rem; line-height: 1.2; font-weight: 700; }
+        
+        .tag { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1px; padding: 4px 10px; border: 1px solid var(--neon-green); color: var(--neon-green); border-radius: 20px; font-weight: 500; }
+        
+        .img-placeholder { width: 100%; aspect-ratio: 16/9; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 4px; margin-bottom: 3rem; }
+        
+        h2 { color: var(--text-main); font-size: 1.5rem; margin: 2.5rem 0 1rem 0; font-weight: 500; }
+        p { color: #CCCCCC; margin-bottom: 1.5rem; font-weight: 300; font-size: 1.05rem; }
+        
+        .highlight { color: var(--neon-green); font-weight: 500; }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo"><span>.</span>danki studio</a>
+        <div class="global-nav"><a href="index.html">About</a><a href="data.html">Data Management</a><a href="projects.html">Project Management</a><a href="insights.html" class="current-page">Insights</a></div>
+    </header>
+
+    <main class="content-wrapper">
+        <div class="article-meta">
+            <span>April 21, 2026</span>
+            <span class="tag" style="border-color: var(--text-main); color: var(--text-main);">BOOK REVIEW</span>
+            <span class="tag">Infrastructure</span>
+            <span class="tag" style="border-color: var(--text-main); color: var(--text-main);">DATA</span>
+        </div>
+        
+        <h1 class="page-title">L'Océan numérique</h1>
+
+        <div class="img-placeholder" style="width: 150px; height: 220px; overflow: hidden;">
+            <img src="https://editionsdesequateurs.fr/media/cache/book/couvertures/Couve_LNA%20ocean%20numerique%201200.jpg" alt="L'Océan numérique" style="width: 100%; height: 100%; object-fit: contain;">
+        </div>
+
+      <p><em>Cyrille P. COUTANSAIS, Éditions Équateurs, 169 pages, collectif, janvier 2024 </em></p>
+
+    <p>La France héberge le point d’échange Internet (IPX) le plus important d’Europe, à Marseille, qui constitue une voie majeure des capitaux de la mer Méditerranée vers Paris et Francfort. Sur le plancher océanique, des câbles transportent nos données entre deux continents pour qu’elles circulent sur Internet, ces autoroutes en fibre optique gèrent aujourd’hui plus de 90% des échanges numériques.</p>
+    <p>Le champ de recherche de cet ouvrage collectif est cependant plus large, et les articles coordonnés par Cyrille P. Coutansais et rédigés par des auteurs représentant l’ensemble des secteurs impliqués par les enjeux de la data marine, regardent les données issues des océans.</p>
+    <p>Sachant que « les océans couvrent 70 % de la surface de la terre », il est clair que l'économie bleue est une préoccupation majeure pour l'Europe, ce qui rend ces avancées dans les domaines maritimes particulièrement opportunes pour le développement d’applications civiles et militaires. Des outils innovants tels que l'imagerie spatiale, la cartographie des océans, ainsi que le déploiement de produits spécialisés pour des acteurs appelés à coopérer entre eux, offrent des opportunités passionnantes au service de la gestion des domaines aéro-maritime et maritime.</p>
+    <p>À l’avenir, le prochain défi consistera à valoriser les « données marines », à développer des jumeaux numériques maritimes et à exploiter l’informatique quantique comme priorité stratégique nationale pour accélérer la transition de la recherche vers les applications industrielles pratiques.</p>
+
+
+    <h2>Idées principales ceuillies</h2>
+    <ul class="highlight">
+        <li><strong>L'importance vitale des câbles sous-marins et des points d'échange comme Marseille dans le transit mondial des flux de données</strong></li>
+        <li><strong>La centralité de la "data marine" et des données océaniques pour le développement d'applications civiles et militaires de l'économie bleue</strong></li>
+        <li><strong>Le déploiement d'outils d'imagerie spatiale et de cartographie pour optimiser la surveillance et la gestion coopérative des espaces maritimes</strong></li>
+        <li><strong>Les futurs défis stratégiques axés sur la création de jumeaux numériques maritimes et l'exploitation de l'informatique quantique</strong></li>
+    </ul>
+       <h2>Conclusion</h2>
+    <p>En conclusion, Cyrille P. COUTANSAIS partage avec nous un entretien empli d’humanité avec Michel Serres et son point de vue de marin et philosophe sur les nouvelles technologies et la mer.</p>
+    <p>L’océan numérique est un livre passionnant, passant d’une application à l’autre qui nous présente un aperçu de la recherche avec toute la vulgarisation nécessaire pour en comprendre les contours.</p>
+    </main>
+</body>
+</html>

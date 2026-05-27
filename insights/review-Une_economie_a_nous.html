@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Reviews | Les globalistes</title>
+    <link rel="icon" type="image/png" href="favicon.ico">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* DANKI BRAND CSS */
+        :root { --bg-charcoal: #121212; --text-main: #FFFFFF; --text-muted: #737373; --neon-green: #33FFA2; --neon-violet: #FF33FF; --card-bg: #1A1A1A; --border-color: #2A2A2A; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--bg-charcoal); color: var(--text-main); font-family: 'Roboto', sans-serif; line-height: 1.7; }
+        a { text-decoration: none; color: inherit; transition: color 0.3s ease; }
+        header { padding: 2rem 5%; border-bottom: 1px solid var(--border-color); position: sticky; top: 0; background: rgba(18, 18, 18, 0.95); z-index: 100; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 2rem; font-weight: 700; text-transform: uppercase; } .logo span { color: var(--neon-violet); }
+        .global-nav { display: flex; gap: 2rem; font-size: 0.9rem; text-transform: uppercase; font-weight: 500; }
+        .global-nav a { color: var(--text-muted); } .global-nav a.current-page { color: var(--text-main); border-bottom: 2px solid var(--neon-green); }
+        
+        /* TEMPLATE SPECIFIC CSS */
+        .content-wrapper { max-width: 800px; margin: 4rem auto; padding: 0 5%; }
+        
+        .article-meta { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem; }
+        .page-title { font-size: 2.8rem; margin-bottom: 2rem; line-height: 1.2; font-weight: 700; }
+        
+        .tag { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1px; padding: 4px 10px; border: 1px solid var(--neon-green); color: var(--neon-green); border-radius: 20px; font-weight: 500; }
+        
+        .img-placeholder { width: 100%; aspect-ratio: 16/9; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 4px; margin-bottom: 3rem; }
+        
+        h2 { color: var(--text-main); font-size: 1.5rem; margin: 2.5rem 0 1rem 0; font-weight: 500; }
+        p { color: #CCCCCC; margin-bottom: 1.5rem; font-weight: 300; font-size: 1.05rem; }
+        
+        .highlight { color: var(--neon-green); font-weight: 500; }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo"><span>.</span>danki studio</a>
+        <div class="global-nav"><a href="index.html">About</a><a href="data.html">Data Management</a><a href="projects.html">Project Management</a><a href="insights.html" class="current-page">Insights</a></div>
+    </header>
+
+    <main class="content-wrapper">
+        <div class="article-meta">
+            <span>April 21, 2026</span>
+            <span class="tag" style="border-color: var(--text-main); color: var(--text-main);">BOOK REVIEW</span>
+            <span class="tag">Impact investment</span>
+            <span class="tag" style="border-color: var(--text-main); color: var(--text-main);">ECONOMY</span>
+        </div>
+        
+        <h1 class="page-title">Une économie à nous</h1>
+
+        <div class="img-placeholder" style="width: 150px; height: 220px; overflow: hidden;">
+            <img src="https://books.google.fr/books/publisher/content?id=Eb5VEAAAQBAJ&hl=fr&pg=PA1991&img=1&zoom=3&sig=ACfU3U24pVRwqbSZHVwC0agypFU5J4zBWw&w=1280" alt="Les globalistes" style="width: 100%; height: 100%; object-fit: contain;">
+        </div>
+
+      <p><em>Eva Sadoun – Manifestes, Actes Sud, 2022</em></p>
+       
+
+        <p>Eva Sadoun est la cofondatrice de la plateforme d'investissement dans des entreprises à impact social et environnemental LITA.co. Elle est aussi coprésidente du Mouvement Impact France.</p>
+        <p>Forte de son expérience professionnelle, l’auteure commence par définir l’économie, oikos (la maison) et nomos (la gestion) pour nous amener ensuite vers l’idée que « nous pourrions toutes et tous habiter » l’économie, afin de « reprendre les manettes, recentrer l’économie sus ses objectifs originels », et « mener des politiques publiques sociales et écologiques à la hauteur des urgences ».</p>
+        <p>L’objectif actuel de cet ouvrage est sans aucun doute de répondre à l’urgence écologique et sociale tout en faisant de la transition une opportunité pour les entreprises.</p>
+        <p>Son développement nous secoue un peu, ainsi que sa vision catastrophique d’un monde que l’auteure trouve invivable, mais l’argumentaire reste réformiste et non révolutionnaire. L’auteure reconnait d’ailleurs l’avancée de certaines mesures récentes comme la Loi Pacte, la Convention citoyenne pour le climat de 2019 et la Taxonomie verte européenne. </p>
+        <p>Eva Sadoun veut ici plus de citoyenneté au cœur de l’économie. Et son constat est triple : « l’économie n’est plus un outil mais une idéologie », et l’auteure suggère de redonner sa place à l’économie en temps que réelle science humaine dans son enseignement, c’est-à-dire en redonnant sa place au doute, aux expérimentations, à la diversité de pensée. Le second constat concerne son terrain d’action professionnel, l’usage d’indicateurs de mesure économiques et financiers qui lui semblent incomplets et figés. Enfin, les codes et systèmes de représentation freinent les dirigeants d’entreprise, l’économie réelle, dans leurs velléités de transformation.</p>
+
+
+        <h2>Idées principales ceuillies</h2>
+        <ul class="highlight">
+            <li><strong>La réappropriation citoyenne et démocratique de l'économie face aux urgences sociales et écologiques</strong></li>
+            <li><strong>Le besoin de réformer l'enseignement de l'économie pour en refaire une science humaine ouverte au doute et à la diversité</strong></li>
+            <li><strong>L'obsolescence et l'incomplétude des indicateurs de mesure uniquement économiques et financiers actuels</strong></li>
+            <li><strong>Le développement de solutions concrètes et horizontales pour lever les freins de la transition dans les entreprises</strong></li>
+        </ul>
+       <h2>Conclusion</h2>
+      <p>Eva Sadoun jette à l’eau quelques pistes, toutes intéressantes, pour les pouvoirs publics, afin de réussir notre transition écologique et sociale pour lever les freins de la transition écologique et sociale en France et pour faire du citoyen un acteur, avec une recherche constante d’horizontalité.</p>
+    
+    </main>
+</body>
+</html>
