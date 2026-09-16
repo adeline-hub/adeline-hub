@@ -1,2 +1,2 @@
 
-**Website**: https://adeline-hub.github.io/adeline-hub/  
+**Page**: https://adeline-hub.github.io/adeline-hub/  
